@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#pragma warning disable IDE1006 // Naming Styles
 
+using System;
 /// <summary>
-/// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk
+/// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk  
+/// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
+/// author and contributors.  Please see:
+/// https://github.com/cjvandyk/Quix/blob/master/LICENSE
 /// Source code has been held to 80 character width for printing and porting
 /// reasons.
 /// </summary>
