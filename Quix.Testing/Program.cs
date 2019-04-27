@@ -35,7 +35,7 @@ namespace Quix.Testing
         }
         private static void Log(string message, Quix.Logging log)
         {
-            log.Log(message);  //test
+            log.Log(message);  
         }
     }
 }
