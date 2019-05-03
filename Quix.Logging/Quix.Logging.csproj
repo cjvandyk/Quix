@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <AssemblyVersion>1.0.3</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Quix.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Quix.Logging.1.0.0.nupkg" />
+    <None Include="Quix.Logging.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

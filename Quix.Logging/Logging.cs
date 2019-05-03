@@ -199,7 +199,7 @@ namespace Quix
             // through exceptions.
             try
             {
-                logPath = getExecutingAssemblyFileName() + ".log";
+                logPath = getExecutingAssemblyFileName() + TimeStamp() + ".log";
                 writer = new System.IO.StreamWriter(logPath, true);
                 Initialized = true;
             }
