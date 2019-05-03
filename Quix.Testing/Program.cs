@@ -27,6 +27,28 @@ namespace Quix.Testing
                 Log("log2", log2);
             }
             Log("log");
+            string folderPath = System.IO.Path.GetDirectoryName(
+                System.Reflection.Assembly.GetEntryAssembly().Location)
+                .TrimEnd('\\');
+            for (int i = 0; i < 3; i++)  //Traverse to the solution root.
+            {
+                folderPath = folderPath.Substring(0, folderPath.LastIndexOf(@"\"));
+            }
+            List<string> files = Quix.File.Enumeration.getAllChildObjects(folderPath);
+            int textFiles = 0, binaryFiles = 0, lockFiles = 0;
+            foreach (string file in files)
+            {
+                switch (Quix.File.FileType.getFileType(file))
+                {
+                    case File.FileType.Content.Text:
+                        textFiles++;
+                        break;
+                    case File.FileType.Content.Binary:
+                        binaryFiles++;
+                        break;
+                }
+            }
+            Log(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
         }
 
         private static void Log(string message)

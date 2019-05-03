@@ -51,9 +51,5 @@
   <ItemGroup>
     <Content Include="Quix.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Quix.Logging.1.0.0.nupkg" />
-    <None Include="Quix.Logging.nuspec" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
