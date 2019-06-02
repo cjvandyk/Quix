@@ -1,4 +1,4 @@
-﻿#pragma warning disable IDE1006 // Naming Styles
+﻿#pragma warning disable IDE1006, CS0162 //Naming Styles, break after return
 
 using System;
 using System.Collections.Generic;
