@@ -17,13 +17,12 @@ namespace Quix.File
     
     public static class Enumeration
     {
-        //public static class childObjects
-        //{
-        //    public static List<string> files;
-        //    public static List<string> folders;
-        //}
-    //}
-
+        public static class childObjects
+        {
+            public static List<string> files;
+            public static List<string> folders;
+        }
+    
         /// <summary>
         /// DEPRECATED - Use getAllChildFiles instead.
         /// </summary>
