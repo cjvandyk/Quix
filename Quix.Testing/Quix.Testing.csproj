@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>1.0.18</AssemblyVersion>
+    <AssemblyVersion>1.0.23</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,14 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Quix.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Quix.File, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Quix.Logging\packages\Quix.File.1.0.15\lib\net40\Quix.File.dll</HintPath>
-    </Reference>
-    <Reference Include="Quix.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Quix.Logging\packages\Quix.Logging.1.0.0\lib\net20\Quix.Logging.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,7 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Quix.ico" />
+    <ProjectReference Include="..\Quix.Logging\Quix.Logging.csproj">
+      <Project>{3ede9217-96e6-4d92-878a-51dcdf901a60}</Project>
+      <Name>Quix.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

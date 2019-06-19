@@ -1,5 +1,13 @@
-﻿#pragma warning disable IDE1006 // Naming Styles
+﻿#pragma warning disable IDE1006, IDE0017, CS0162, IDE0060 // Naming Styles, Simplify declaration (FQCN used), break after return, Remove unused (string[] args)
 
+/// <summary>
+/// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk  
+/// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
+/// author and contributors.  Please see:
+/// https://github.com/cjvandyk/Quix/blob/master/LICENSE
+/// Source code has been held to 80 character width for printing and porting
+/// reasons.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +21,18 @@ namespace Quix.Testing
     /// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
     /// author and contributors.  Please see:
     /// https://github.com/cjvandyk/Quix/blob/master/LICENSE
+    /// https://opensource.org/licenses/GPL-3.0
     /// Source code has been held to 80 character width for printing and porting
     /// reasons.
     /// </summary>
     class Program
     {
-        private static Quix.Logging log = new Logging();
+        private static readonly Quix.Logging _log = new Logging();
 
+        /// <summary>
+        /// Testing app for Quix Utilities.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             using (Quix.Logging log2 = new Quix.Logging())
@@ -51,10 +64,20 @@ namespace Quix.Testing
             Log(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
         }
 
+        /// <summary>
+        /// Short hand method for calling the logging tool.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         private static void Log(string message)
         {
-            log.Log(message);
+            _log.Log(message);
         }
+
+        /// <summary>
+        /// Short hand method for calling the logging tool.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="log">The logging instance to use for logging.</param>
         private static void Log(string message, Quix.Logging log)
         {
             log.Log(message);    

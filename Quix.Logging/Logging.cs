@@ -1,6 +1,5 @@
-﻿#pragma warning disable IDE1006 // Naming Styles
+﻿#pragma warning disable IDE1006, IDE0017, CS0162, IDE0060 // Naming Styles, Simplify declaration (FQCN used), break after return, Remove unused (string[] args)
 
-using System;
 /// <summary>
 /// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk  
 /// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
@@ -9,6 +8,8 @@ using System;
 /// Source code has been held to 80 character width for printing and porting
 /// reasons.
 /// </summary>
+using System;
+
 namespace Quix
 {
     /// <summary>
@@ -28,7 +29,7 @@ namespace Quix
     /// of executed actions.
     /// The date/time stamp format is yyyyMMdd@hhmmssfff.
     /// </summary>
-    public class Logging:IDisposable
+    public class Logging : IDisposable
     {
         /// <summary>
         /// Used to save the cursor output position and console color when 
@@ -83,8 +84,7 @@ namespace Quix
                                 writer.Close();
                                 writer.Dispose();
                             }
-                            catch (Exception ex)  // Caught when writer is already
-                                                  // closed.
+                            catch   // Caught when writer is already closed.
                             {
                                 try
                                 {
