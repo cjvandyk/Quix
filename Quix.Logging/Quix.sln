@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\Quix.File.1.0.20.nupkg = ..\Quix.File.1.0.20.nupkg
 		..\Quix.File.1.0.20.symbols.nupkg = ..\Quix.File.1.0.20.symbols.nupkg
+		..\Quix.ico = ..\Quix.ico
 		..\Quix.Logging.1.0.3.nupkg = ..\Quix.Logging.1.0.3.nupkg
 		..\Quix.Logging.1.0.3.symbols.nupkg = ..\Quix.Logging.1.0.3.symbols.nupkg
 		Quix.snk = Quix.snk
