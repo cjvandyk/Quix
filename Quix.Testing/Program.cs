@@ -38,8 +38,11 @@ namespace Quix.Testing
             using (Quix.Logging log2 = new Quix.Logging())
             {
                 Log("log2", log2);
+                Quix.Static.logToEventLog = true;
+                sLog("slog2");
             }
             Log("log");
+            sLog("slog");
             string folderPath = System.IO.Path.GetDirectoryName(
                 System.Reflection.Assembly.GetEntryAssembly().Location)
                 .TrimEnd('\\');
@@ -62,6 +65,7 @@ namespace Quix.Testing
                 }
             }
             Log(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
+            sLog(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
         }
 
         /// <summary>
@@ -81,6 +85,15 @@ namespace Quix.Testing
         private static void Log(string message, Quix.Logging log)
         {
             log.Log(message);    
+        }
+
+        /// <summary>
+        /// Short hand method for calling the logging tool.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        private static void sLog(string message)
+        {
+            Quix.Static.Log(message);
         }
     }
 }
