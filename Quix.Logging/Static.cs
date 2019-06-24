@@ -55,6 +55,12 @@ namespace Quix
         public static bool logToConsole { get; set; } = true;
 
         /// <summary>
+        /// When set to true, will output logging content to the Event Log
+        /// as well as the log file.  Default = false;
+        /// </summary>
+        public static bool logToEventLog { get; set; } = false;
+
+        /// <summary>
         /// Initialize the log file path, but include an identifying string
         /// provided by the caller, in the name of the log file.
         /// The log file can be changed at any time by a call to the 
@@ -101,7 +107,9 @@ namespace Quix
             }
             catch (Exception ex)
             {
-                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
+                System.Diagnostics.EventLog.WriteEntry("Application", 
+                    ex.ToString(), 
+                    System.Diagnostics.EventLogEntryType.Warning);
                 // Write exception info to the console in RED.
                 Quix.Core.writeConsoleError(ex.ToString());
             }
@@ -171,11 +179,20 @@ namespace Quix
                             message, noTimeStamp));
                     }
                 }
+                if (logToEventLog)
+                {
+                    // Write to Event Log's Application log
+                    System.Diagnostics.EventLog.WriteEntry("Application",
+                        prependTimeStamp(message, noTimeStamp), 
+                        System.Diagnostics.EventLogEntryType.Warning);
+                }
             }
             // Something went wrong.
             catch (Exception ex)
             {
-                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
+                System.Diagnostics.EventLog.WriteEntry("Application", 
+                    ex.ToString(), 
+                    System.Diagnostics.EventLogEntryType.Warning);
                 _outputColor = Console.ForegroundColor;
                 Console.ForegroundColor = ConsoleColor.Red;
                 // Check if output is going to the console.
@@ -205,7 +222,9 @@ namespace Quix
                 // Have to distinguish between inner and outer exceptions.
                 catch (Exception ex2)
                 {
-                    System.Diagnostics.EventLog.WriteEntry("Application", ex2.ToString(), System.Diagnostics.EventLogEntryType.Warning);
+                    System.Diagnostics.EventLog.WriteEntry("Application", 
+                        ex2.ToString(), 
+                        System.Diagnostics.EventLogEntryType.Warning);
                     // Write the inner exception error.
                     Quix.Core.writeConsoleError(ex2.ToString());
                 }
@@ -236,7 +255,9 @@ namespace Quix
             // As a super method, just swallow the error.
             catch (Exception ex)
             {
-                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
+                System.Diagnostics.EventLog.WriteEntry("Application", 
+                    ex.ToString(), 
+                    System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
             return true;
@@ -270,7 +291,9 @@ namespace Quix
             }
             catch (Exception ex)
             {
-                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
+                System.Diagnostics.EventLog.WriteEntry("Application", 
+                    ex.ToString(), 
+                    System.Diagnostics.EventLogEntryType.Warning);
                 Quix.Core.writeConsoleError(ex.ToString());
                 //Return empty string instead of null as null could cause
                 // an exception to be trown by the calling code.
