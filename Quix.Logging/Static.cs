@@ -83,7 +83,8 @@ namespace Quix
                     _writer.Close();
                     _writer.Dispose();
                 }
-                catch { }
+                catch { }  // Swallow exception if there's a problem flushing
+                           // the file.
                 if (logFileString == null)
                 {
                     _logPath = Quix.Core.getExecutingAssemblyFileName() + 
@@ -100,6 +101,7 @@ namespace Quix
             }
             catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                 // Write exception info to the console in RED.
                 Quix.Core.writeConsoleError(ex.ToString());
             }
@@ -173,6 +175,7 @@ namespace Quix
             // Something went wrong.
             catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                 _outputColor = Console.ForegroundColor;
                 Console.ForegroundColor = ConsoleColor.Red;
                 // Check if output is going to the console.
@@ -202,6 +205,7 @@ namespace Quix
                 // Have to distinguish between inner and outer exceptions.
                 catch (Exception ex2)
                 {
+                    System.Diagnostics.EventLog.WriteEntry("Application", ex2.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                     // Write the inner exception error.
                     Quix.Core.writeConsoleError(ex2.ToString());
                 }
@@ -230,8 +234,9 @@ namespace Quix
                 Quix.Core.writeConsoleError("ERROR!!! >>> " + Message);
             }
             // As a super method, just swallow the error.
-            catch
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
             return true;
@@ -265,6 +270,7 @@ namespace Quix
             }
             catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                 Quix.Core.writeConsoleError(ex.ToString());
                 //Return empty string instead of null as null could cause
                 // an exception to be trown by the calling code.
