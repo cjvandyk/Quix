@@ -64,7 +64,7 @@ namespace Quix
             catch (Exception ex)
             {
                 // Write exception to Event Log.
-                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString());
+                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                 // Write exception info to the console in RED.
                 writeConsoleError(ex.ToString());
                 //Return empty string instead of null as null could cause
