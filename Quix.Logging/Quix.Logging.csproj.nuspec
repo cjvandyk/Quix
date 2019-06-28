@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Quix.Logging</id>
-    <version>1.0.15</version>
+    <version>1.0.29</version>
     <authors>Cornelius J. van Dyk</authors>
     <owners>Cornelius J. van Dyk</owners>
     <licenseUrl>https://github.com/cjvandyk/Quix/blob/master/LICENSE</licenseUrl>
@@ -10,7 +10,7 @@
     <iconUrl>https://github.com/cjvandyk/Quix/blob/master/Quix.File/Quix.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Logging framework for Quix Utilities.</description>
-    <releaseNotes>Quick update to a signed assembly.</releaseNotes>
+    <releaseNotes>Added static logging class.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Quix Logging Crayveon</tags>
     <dependencies>
