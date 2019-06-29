@@ -12,7 +12,7 @@
     <description>Logging framework for Quix Utilities.</description>
     <releaseNotes>Added static logging class.</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>Quix Logging Crayveon</tags>
+    <tags>Quix Logging Crayveon cjvandyk</tags>
     <dependencies>
       <dependency id="Quix.Core" version="1.0.8" />
     </dependencies>

@@ -13,9 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quix.File", "..\Quix.File\Q
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F211EF6-E30D-4BF5-A98D-D28DBEE65937}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Quix.Core.1.0.8.nupkg = ..\..\..\..\Quix.Core.1.0.8.nupkg
+		..\..\..\..\Quix.Core.1.0.8.symbols.nupkg = ..\..\..\..\Quix.Core.1.0.8.symbols.nupkg
 		..\Quix.File.1.0.20.nupkg = ..\Quix.File.1.0.20.nupkg
 		..\Quix.File.1.0.20.symbols.nupkg = ..\Quix.File.1.0.20.symbols.nupkg
 		..\Quix.ico = ..\Quix.ico
+		..\..\..\..\Quix.Logging.1.0.15.nupkg = ..\..\..\..\Quix.Logging.1.0.15.nupkg
+		..\..\..\..\Quix.Logging.1.0.15.symbols.nupkg = ..\..\..\..\Quix.Logging.1.0.15.symbols.nupkg
+		..\..\..\..\Quix.Logging.1.0.29.nupkg = ..\..\..\..\Quix.Logging.1.0.29.nupkg
+		..\..\..\..\Quix.Logging.1.0.29.symbols.nupkg = ..\..\..\..\Quix.Logging.1.0.29.symbols.nupkg
 		..\Quix.Logging.1.0.3.nupkg = ..\Quix.Logging.1.0.3.nupkg
 		..\Quix.Logging.1.0.3.symbols.nupkg = ..\Quix.Logging.1.0.3.symbols.nupkg
 		Quix.snk = Quix.snk
@@ -31,8 +37,8 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Debug|x86.Build.0 = Debug|Any CPU
 		{3EDE9217-96E6-4D92-878A-51DCDF901A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,8 +59,8 @@ Global
 		{0FCD44E6-BE8E-418B-8A42-8633A36AA213}.Release|Any CPU.ActiveCfg = Release|x86
 		{0FCD44E6-BE8E-418B-8A42-8633A36AA213}.Release|x86.ActiveCfg = Release|x86
 		{0FCD44E6-BE8E-418B-8A42-8633A36AA213}.Release|x86.Build.0 = Release|x86
-		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Debug|x86.Build.0 = Debug|Any CPU
 		{8A3BCF6A-6B2F-41EA-A219-36F6B3E85C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
