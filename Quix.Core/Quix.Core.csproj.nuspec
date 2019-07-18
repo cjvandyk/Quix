@@ -33,6 +33,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Quix.Core.dll" target="" />
+    <file src="bin\Release\Quix.Core.dll" target="" />
   </files>
 </package>
