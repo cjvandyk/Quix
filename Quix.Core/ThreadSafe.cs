@@ -16,7 +16,7 @@ namespace Quix
 
         /// <summary>
         /// Get method to retrieve an object from the provided Dictionary.
-        /// Usage is Quix.Core.ThreadSafe.Get(<key>, 
+        /// Usage is Quix.ThreadSafe.Get(<key>, 
         /// ref <dictionary<string, object>> [, timeout]);
         /// The <dictionary<string, object>> parameter is passed as a ref in
         /// order to minimize memory consumption when the dictionary can
@@ -54,7 +54,7 @@ namespace Quix
 
         /// <summary>
         /// Set method to update an object in the given Dictionary.
-        /// Usage is Quix.Core.ThreadSafe.Set(ref <value>, <key>, 
+        /// Usage is Quix.ThreadSafe.Set(ref <value>, <key>, 
         /// ref <dictionary<string, object>> [, timeout]);
         /// The <value> and <dictionary<string, object>> parameters are passed
         /// as a ref in order to minimize memory consumption when the 
@@ -102,7 +102,7 @@ namespace Quix
 
         /// <summary>
         /// Set method to add an object in the given Dictionary.
-        /// Usage is Quix.Core.ThreadSafe.Add(ref <value>, <key>, 
+        /// Usage is Quix.ThreadSafe.Add(ref <value>, <key>, 
         /// ref <dictionary<string, object>> [, timeout]);
         /// The <value> and <dictionary<string, object>> parameters are passed
         /// as a ref in order to minimize memory consumption when the 
@@ -151,7 +151,7 @@ namespace Quix
         /// <summary>
         /// Set method to remove an object from the given Dictionary, given
         /// the specified key.
-        /// Usage is Quix.Core.ThreadSafe.Remove(<key>, 
+        /// Usage is Quix.ThreadSafe.Remove(<key>, 
         /// ref <dictionary<string, object>> [, timeout]);
         /// The <dictionary<string, object>> parameters is passed as a ref in
         /// order to minimize memory consumption when the dictionary can 
