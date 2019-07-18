@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Quix.Core
+namespace Quix
 {
     public static class ThreadSafe
     {
         /// <summary>
         /// ReaderWriterLockSlim object used in managing thread safety.
         /// </summary>
-        private static ReaderWriterLockSlim readerWriterLockSlim = 
+        private static readonly ReaderWriterLockSlim readerWriterLockSlim = 
             new System.Threading.ReaderWriterLockSlim();
 
         /// <summary>
