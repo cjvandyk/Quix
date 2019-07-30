@@ -7,8 +7,9 @@
     <owners>cjvandyk</owners>
     <licenseUrl>https://github.com/cjvandyk/Quix/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/cjvandyk/Quix</projectUrl>
-    <iconUrl>https://github.com/cjvandyk/Quix/blob/master/Quix.File/Quix.ico</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/cjvandyk/Quix/master/Quix.File/Quix.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <title>Quix.Core</title>
     <description>
       Core components for Quix Utilities.  
       Quix.Core contains:
@@ -26,6 +27,23 @@
           Add()
           Remove()
     </description>
+    <summary>
+      Core components for Quix Utilities.
+      Quix.Core contains:
+      WriteConsoleError()
+      getExecutingAssemblyFileName()
+      htmlStrip()
+      timeStamp()
+      getRegistryKey()
+      getDotNET45PlusVersion()
+      convert45PlusVersion()
+      getDotNETVersion()
+      Quix.ThreadSafe contains:
+      Get()
+      Set()
+      Add()
+      Remove()
+    </summary>
     <releaseNotes>Added the Quix.ThreadSafe class.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Quix Core ThreadSafe Crayveon cjvandyk</tags>

@@ -47,7 +47,8 @@ namespace Quix
         ///          C:\Users\CvD\My Documents\App Name.exe
         ///          becomes
         ///          C:\Users\CvD\My Documents\App_Name.exe</returns>
-        public static string getExecutingAssemblyFileName(bool noSpacesInFileName = true)
+        public static string getExecutingAssemblyFileName(
+            bool noSpacesInFileName = true)
         {
             // No logging code should EVER terminate it's parent program 
             // through exceptions.
@@ -55,8 +56,8 @@ namespace Quix
             {
                 return System.IO.Path.GetDirectoryName(
                            System.Reflection.Assembly.GetEntryAssembly()
-                           .Location).TrimEnd('\\') + "\\" +  // Ensure no double
-                                                              // trailing slash.
+                           .Location).TrimEnd('\\') + "\\" +  //Ensure no double
+                                                              //trailing slash.
                        System.Uri.EscapeDataString(
                            System.Reflection.Assembly.GetEntryAssembly()
                            .ManifestModule.Name.Replace(" ", "_"));
@@ -64,7 +65,8 @@ namespace Quix
             catch (Exception ex)
             {
                 // Write exception to Event Log.
-                System.Diagnostics.EventLog.WriteEntry("Application", ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
+                System.Diagnostics.EventLog.WriteEntry("Application", 
+                    ex.ToString(), System.Diagnostics.EventLogEntryType.Warning);
                 // Write exception info to the console in RED.
                 writeConsoleError(ex.ToString());
                 //Return empty string instead of null as null could cause
@@ -88,8 +90,11 @@ namespace Quix
             // through exceptions.
             try
             {
-                return url.ToLower().Replace("https://", "").Replace("http://", "")
-                .Replace("/", "_").Replace(" ", "-");
+                return url.ToLower()
+                    .Replace("https://", "")
+                    .Replace("http://", "")
+                    .Replace("/", "_")
+                    .Replace(" ", "-");
             }
             catch (Exception ex)
             {
@@ -134,7 +139,8 @@ namespace Quix
         /// </summary>
         /// <param name="registryPath">The registry path beyond HKLM.</param>
         /// <returns>Microsoft.Win32.RegistryKey</returns>
-        public static Microsoft.Win32.RegistryKey getRegistryKey(string registryPath)
+        public static Microsoft.Win32.RegistryKey getRegistryKey(
+            string registryPath)
         {
             return Microsoft.Win32.RegistryKey.OpenBaseKey(
                     Microsoft.Win32.RegistryHive.LocalMachine,
@@ -221,7 +227,8 @@ namespace Quix
                         returnString += "\n" + getDotNET45PlusVersion();
                         ver45PlusPresent = true;
                     }
-                    else if (versionKeyName.StartsWith("v4.0") && ver45PlusPresent)
+                    else if (versionKeyName.StartsWith("v4.0") && 
+                        ver45PlusPresent)
                     {
                         continue;
                     }
