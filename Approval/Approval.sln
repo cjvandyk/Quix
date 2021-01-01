@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Approval", "Approval.csproj", "{54B884F4-11B5-4096-A1A5-A954CF36714F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "..\Auth\Auth.csproj", "{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quix.Core", "..\Quix.Core\Quix.Core.csproj", "{7E64BA20-3F89-4B11-BA82-5C19AE04323D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54B884F4-11B5-4096-A1A5-A954CF36714F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B884F4-11B5-4096-A1A5-A954CF36714F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B884F4-11B5-4096-A1A5-A954CF36714F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B884F4-11B5-4096-A1A5-A954CF36714F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D62083D4-8927-4750-9E09-07FEBDC76931}
+	EndGlobalSection
+EndGlobal
