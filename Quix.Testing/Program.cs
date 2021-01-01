@@ -1,7 +1,7 @@
 ﻿#pragma warning disable IDE1006, IDE0017, CS0162, IDE0060 // Naming Styles, Simplify declaration (FQCN used), break after return, Remove unused (string[] args)
 
 /// <summary>
-/// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk  
+/// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk
 /// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
 /// author and contributors.  Please see:
 /// https://github.com/cjvandyk/Quix/blob/master/LICENSE
@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Quix.Testing
 {
     /// <summary>
-    /// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk  
+    /// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk
     /// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
     /// author and contributors.  Please see:
     /// https://github.com/cjvandyk/Quix/blob/master/LICENSE
@@ -35,6 +35,7 @@ namespace Quix.Testing
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            TestQuixStringExtensions();
             using (Quix.Logging log2 = new Quix.Logging())
             {
                 Log("log2", log2);
@@ -50,22 +51,22 @@ namespace Quix.Testing
             {
                 folderPath = folderPath.Substring(0, folderPath.LastIndexOf(@"\"));
             }
-            List<string> files = Quix.File.Enumeration.getAllChildObjects(folderPath);
-            int textFiles = 0, binaryFiles = 0, lockFiles = 0;
-            foreach (string file in files)
-            {
-                switch (Quix.File.FileType.getFileType(file))
-                {
-                    case File.FileType.Content.Text:
-                        textFiles++;
-                        break;
-                    case File.FileType.Content.Binary:
-                        binaryFiles++;
-                        break;
-                }
-            }
-            Log(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
-            sLog(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
+            //List<string> files = Quix.File.Enumeration.getAllChildObjects(folderPath);
+            //int textFiles = 0, binaryFiles = 0, lockFiles = 0;
+            //foreach (string file in files)
+            //{
+            //    switch (Quix.File.FileType.getFileType(file))
+            //    {
+            //        case File.FileType.Content.Text:
+            //            textFiles++;
+            //            break;
+            //        case File.FileType.Content.Binary:
+            //            binaryFiles++;
+            //            break;
+            //    }
+            //}
+            //Log(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
+            //sLog(string.Format("{0} Text files, {1} Binary files and {2} Lock files.", textFiles, binaryFiles, lockFiles));
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Quix.Testing
         /// <param name="log">The logging instance to use for logging.</param>
         private static void Log(string message, Quix.Logging log)
         {
-            log.Log(message);    
+            log.Log(message);
         }
 
         /// <summary>
@@ -94,6 +95,17 @@ namespace Quix.Testing
         private static void sLog(string message)
         {
             Quix.Static.Log(message);
+        }
+
+        private static void TestQuixStringExtensions()
+        {
+            string str = "This is my test sentence!  This is the second sentence. \nIs this the second line? \nThis could be line three; then again it could still be two.";
+            System.Text.StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(str);
+            Console.WriteLine(str.Words());
+            Console.WriteLine(stringBuilder.Words());
+            Console.WriteLine(str.Lines());
+            Console.WriteLine(stringBuilder.Lines());
         }
     }
 }
