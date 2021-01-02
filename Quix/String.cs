@@ -1,4 +1,4 @@
-﻿#pragma warning disable IDE1006, IDE0017, CS0162, IDE0060 // Naming Styles, Simplify declaration (FQCN used), break after return, Remove unused (string[] args)
+﻿#pragma warning disable IDE1006, IDE0017, CS0162, IDE0060, IDE0079 // Naming Styles, Simplify declaration (FQCN used), break after return, Remove unused (string[] args, Remove unnecessary suppression)
 
 /// <summary>
 /// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk
@@ -18,6 +18,39 @@ namespace Quix
     /// </summary>
     public static class String
     {
+        /// <summary>
+        /// Get the URL root for the given string object containing a URL.
+        /// For example:
+        ///   "https://cjvandyk.sharepoint.com".GetUrlRoot() 
+        ///   will return "https://cjvandyk.sharepoint.com" whereas
+        ///   "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
+        ///   will also return "https://cjvandyk.sharepoint.com".
+        /// </summary>
+        /// <param name="url">The System.String object containing the URL
+        /// from which the root is to be extracted.</param>
+        /// <returns>The root of the URL given the URL string.</returns>
+        public static string GetUrlRoot(this System.String url)
+        {
+            string root = url.ToLower().Replace("https://", "");
+            return ("https://" + root.Substring(0, root.IndexOf('/')));
+        }
+
+        /// <summary>
+        /// Get the URL root for the given string builder object containing a
+        /// URL.  For example:
+        ///   "https://cjvandyk.sharepoint.com".GetUrlRoot() 
+        ///   will return "https://cjvandyk.sharepoint.com" whereas
+        ///   "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
+        ///   will also return "https://cjvandyk.sharepoint.com".
+        /// </summary>
+        /// <param name="url">The System.Text.StringBuilder object containing
+        /// the URL from which the root is to be extracted.</param>
+        /// <returns>The root of the URL given the URL string.</returns>
+        public static string GetUrlRoot(this System.Text.StringBuilder url)
+        {
+            return GetUrlRoot(url.ToString());
+        }
+
         /// <summary>
         /// Checks if the given string contains all alphabetic characters.
         /// </summary>
@@ -147,6 +180,43 @@ namespace Quix
         public static bool IsChar(this System.Text.StringBuilder str, char[] Chars, bool Classic = false)
         {
             return IsChar(str.ToString(), Chars, Classic);
+        }
+
+        /// <summary>
+        /// Check if the given string object containing a URL, is that of the
+        /// URL root only.  Returns True if so, False if not.  For example:
+        ///   "https://cjvandyk.sharepoint.com".IsUrlRootOnly() 
+        ///   will return True whereas
+        ///   "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+        ///   will return False.
+        /// </summary>
+        /// <param name="url">The System.String object containing the URL to 
+        /// be checked.</param>
+        /// <returns>True if the URL is a root, False if not.</returns>
+        public static bool IsUrlRoot(this System.String url)
+        {
+            if (url.ToLower().Replace("https://", "").IndexOf('/') == -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Check if the given string builder object containing a URL, is that
+        ///  of the URL root only.  Returns True if so, False if not.  
+        ///  For example:
+        ///   "https://cjvandyk.sharepoint.com".IsUrlRootOnly() 
+        ///   will return True whereas
+        ///   "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+        ///   will return False.
+        /// </summary>
+        /// <param name="url">The System.Text.StringBuilder object containing 
+        /// the URL to be checked.</param>
+        /// <returns>True if the URL is a root, False if not.</returns>
+        public static bool IsUrlRoot(this System.Text.StringBuilder url)
+        {
+            return IsUrlRoot(url.ToString());
         }
 
         /// <summary>

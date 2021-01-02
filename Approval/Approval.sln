@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Approval", "Approval.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "..\Auth\Auth.csproj", "{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quix.Core", "..\Quix.Core\Quix.Core.csproj", "{7E64BA20-3F89-4B11-BA82-5C19AE04323D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quix", "..\Quix\Quix.csproj", "{EDCE7940-02BE-4988-8E06-35BFD89DBD64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D3EFE8-3723-4537-BCA1-E7D2B26A31F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E64BA20-3F89-4B11-BA82-5C19AE04323D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

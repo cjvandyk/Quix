@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <AssemblyVersion>1.0.13</AssemblyVersion>
+    <AssemblyVersion>1.0.22</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,9 +88,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Quix.Core\Quix.Core.csproj">
-      <Project>{7e64ba20-3f89-4b11-ba82-5c19ae04323d}</Project>
-      <Name>Quix.Core</Name>
+    <ProjectReference Include="..\Quix\Quix.csproj">
+      <Project>{edce7940-02be-4988-8e06-35bfd89dbd64}</Project>
+      <Name>Quix</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
