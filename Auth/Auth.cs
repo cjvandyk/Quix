@@ -128,7 +128,7 @@ namespace Quix
             }
         }
 
-        System.Net.Http.HttpClient GetHttpClient()
+        public System.Net.Http.HttpClient GetHttpClient()
         {
             GetValidAccessToken();
             return httpClient;

@@ -30,7 +30,9 @@ namespace Approval.Controllers
         // GET api/values/5
         public string Get(string id)
         {
-            return "value {" + id + "}";
+            System.Net.Http.HttpClient client = auth.GetHttpClient();
+            System.Net.Http.HttpResponseMessage response = client.GetAsync("https://cjvandyk.sharepoint.com/sites/Approval/_api/web/lists/GetByTitle('Approval')/items?$select=Title,ID&$filter=Title%20eq%20%27Test%27").GetAwaiter().GetResult();
+            return "value {" + id + "}" + response.ToString();
         }
 
         // POST api/values
