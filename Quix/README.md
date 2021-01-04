@@ -9,7 +9,11 @@ with these methods:
 
   - `GetUrlRoot()`
     > _Get the URL root for the given string object containing a URL.<br>
-       For example:<br>_
+       For example:<br>
+          "https://cjvandyk.sharepoint.com".GetUrlRoot()<br>
+          will return "https://cjvandyk.sharepoint.com" whereas<br>
+          "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()<br>
+          will also return "https://cjvandyk.sharepoint.com"._
 
   - `IsAlphabetic()`
     > _This method validates that the given string object contains all
