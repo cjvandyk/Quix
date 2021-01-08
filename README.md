@@ -85,7 +85,7 @@ The toolset contains the following projects:
       > _Poplates the given string with a given number of paragraphs of dummy<br>
          text in the lorem ipsum style e.g.<br>
          `"".LoremIpsum(2)`<br>
-         would yield<br>
+         would yield:<br>
          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
           aliquam arcu rhoncus erat consectetur, quis rutrum augue tincidunt. 
           Suspendisse elit ipsum, lobortis lobortis tellus eu, vulputate 
