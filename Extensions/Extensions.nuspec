@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Extensions.cs</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <license type="expression">GPL-3.0-or-later</license>
+    <projectUrl>https://github.com/cjvandyk/Quix/tree/master/Quix</projectUrl>
+    <iconUrl>https://github.com/cjvandyk/Quix/tree/master/Quix/Quix.ico</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <summary>
+      Extensions.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
+      These methods are included:
+      Elevate()
+      GetUrlRoot()
+      IsAlphabetic()
+      IsNumeric()
+      IsAlphaNumeric()
+      IsChar()
+      IsUrlRoot()
+      Lines()
+      LoremIpsum()
+      ReplaceTokens()
+      Words()
+    </summary>
+    <releaseNotes>
+      Elevate()
+      Restarts the current process with elevated permissions.
+      For example:
+      System.Diagnostics.Process.GetCurrentProcess().Elevate(args)
+      will restart the current console app in admin mode.
+
+      GetUrlRoot()
+      Get the URL root for the given string object containing a URL.
+      For example:
+      "https://cjvandyk.sharepoint.com".GetUrlRoot()
+      will return
+      "https://cjvandyk.sharepoint.com"
+      whereas
+      "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
+      will also return
+      "https://cjvandyk.sharepoint.com".
+
+      IsAlphabetic()
+      Validates that the given string object contains all alphabetic
+      characters (a-z and A-Z) returning True if it does and False if
+      it doesn't.
+      For example:
+      "abcXYZ".IsAlphabetic()
+      will return True whereas
+      "abc123".IsAlphabetic()
+      will return False.
+
+      IsNumeric()
+      Validates that the given string object contains all numeric
+      characters (0-9) returning True if it does and False  if it
+      doesn't.
+      For example:
+      "123456".IsNumeric()
+      will return True whereas
+      "abc123".IsNumeric()
+      will return False.
+
+      IsAlphaNumeric()
+      Validates that the given string object contains all alphabetic
+      and/or numeric characters (a-z and A-Z and 0-9) returning True if it
+      does and False  if it doesn't.
+      For example:
+      "abc123".IsAlphaNumeric()
+      will return True whereas
+      "abcxyz".IsAlphaNumeric()
+      will also return True and
+      "123456".IsAlphaNumeric()
+      will also return True but
+      "abc!@#".IsAlphaNumeric()
+      will return False.
+
+      IsChar()
+      This method takes a char[] as one of its arguments against which the
+      given string object is validated.  If the given string object contains
+      only characters found in the char[] it will return True, otherwise it
+      will return False.
+      For example:
+      "aacc".IsChar(new char[] {'a', 'c'})
+      will return True whereas
+      "abc123".IsNumeric()
+      will return False.
+
+      IsUrlRoot()
+      Check if the given string object containing a URL, is that of the
+      URL root only.  Returns True if so, False if not.  For example:
+      "https://cjvandyk.sharepoint.com".IsUrlRootOnly()
+      will return True whereas
+      "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+      will return False.
+
+      Lines()
+      This method returns the number of lines/sentences in the given string
+      object.
+
+      LoremIpsum()
+      Poplates the given string with a given number of paragraphs of dummy
+      text in the lorem ipsum style e.g.
+      "".LoremIpsum(2)
+      would yield
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+      aliquam arcu rhoncus erat consectetur, quis rutrum augue tincidunt.
+      Suspendisse elit ipsum, lobortis lobortis tellus eu, vulputate
+      fringilla lorem. Cras molestie nibh sed turpis dapibus sollicitudin
+      ut a nulla. Suspendisse blandit suscipit egestas. Nunc et ante mattis
+      nulla vehicula rhoncus. Vivamus commodo nunc id ultricies accumsan.
+      Mauris vitae ante ut justo venenatis tempus.
+
+      Nunc posuere, nisi eu convallis convallis, quam urna sagittis ipsum,
+      et tempor ante libero ac ex. Aenean lacus mi, blandit non eros luctus,
+      ultrices consectetur nunc. Vivamus suscipit justo odio, a porta massa
+      posuere ac. Aenean varius leo non ipsum porttitor eleifend. Phasellus
+      accumsan ultrices massa et finibus. Nunc vestibulum augue ut bibendum
+      facilisis. Donec est massa, lobortis quis molestie at, placerat a
+      neque. Donec quis bibendum leo. Pellentesque ultricies ac odio id
+      pharetra. Nulla enim massa, lacinia nec nunc nec, egestas pulvinar
+      odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu.
+      Suspendisse et sapien quis ipsum scelerisque rutrum."
+
+      ReplaceTokens()
+      Takes a given string object and replaces 1 to n tokens in the string
+      with replacement tokens as defined in the given Dictionary of strings.
+
+      Words()
+      This method returns the number of words used in the given string
+      object.
+      For example:
+      "This is my test".Words()
+      will return 4 whereas
+      "ThisIsMyTest".Words()
+      will return 1.
+    </releaseNotes>
+    <copyright>Copyright 2020-2021</copyright>
+    <tags>Quix Extensions C# cjvandyk Crayveon</tags>
+  </metadata>
+</package>
