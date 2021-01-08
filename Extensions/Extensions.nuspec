@@ -7,7 +7,7 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <license type="expression">GPL-3.0-or-later</license>
-    <projectUrl>https://github.com/cjvandyk/Quix/tree/master/Quix</projectUrl>
+    <projectUrl>https://github.com/cjvandyk/Quix/tree/master/Extensions</projectUrl>
     <iconUrl>https://github.com/cjvandyk/Quix/tree/master/Quix/Quix.ico</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
