@@ -20,7 +20,7 @@ with these methods:
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
         For example:<br>
-            `Microsoft.SharePoint.Client client = new Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
+            `Microsoft.SharePoint.Client client = new Microsoft.SharePoint.Client("https://blog.cjvandyk.com");`<br>
             `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;`<br>
             `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");`<br>
         This allows the creation of the extension property "HeaderDecoration"<br>
@@ -42,10 +42,10 @@ with these methods:
 - ### **GetUrlRoot()**
     > _Get the URL root for the given string object containing a URL.<br>
         For example:<br>
-            `"https://cjvandyk.sharepoint.com".GetUrlRoot()`<br>
-        will return "https://cjvandyk.sharepoint.com" whereas<br>
-            `"https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()`<br>
-        will also return "https://cjvandyk.sharepoint.com"._
+            `"https://blog.cjvandyk.com".GetUrlRoot()`<br>
+        will return "https://blog.cjvandyk.com" whereas<br>
+            `"https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()`<br>
+        will also return "https://blog.cjvandyk.com"._
 
 - ### **IsAlphabetic()**
     > _Validates that the given string object contains all alphabetic<br>
@@ -96,9 +96,9 @@ with these methods:
     > _Check if the given string object containing a URL, is that of the<br>
         URL root only.  Returns True if so, False if not.<br>
         For example:<br>
-            `"https://cjvandyk.sharepoint.com".IsUrlRootOnly()`<br>
+            `"https://blog.cjvandyk.com".IsUrlRootOnly()`<br>
         will return True whereas<br>
-            `"https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()`<br>
+            `"https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()`<br>
         will return False._
 
 - ### **Lines()**
@@ -155,7 +155,7 @@ with these methods:
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
         For example:<br>
-            `Microsoft.SharePoint.Client client = new Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
+            `Microsoft.SharePoint.Client client = new Microsoft.SharePoint.Client("https://blog.cjvandyk.com");`<br>
             `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;`<br>
             `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");`<br>
         This allows the creation of the extension property "HeaderDecoration"<br>
