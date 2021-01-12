@@ -10,13 +10,13 @@ The following classes have been extended:
 
 with these methods:
 
-- ### ***Elevate()***
+- ### **Elevate()**
     > _Restarts the current process with elevated permissions.<br>
         For example:<br>
             `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
         will restart the current console app in admin mode._
 
-- ### ***Get()***
+- ### **Get()**
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
         For example:<br>
@@ -39,7 +39,7 @@ with these methods:
         A derived override method for Get() and Set() can be defined<br>
         using specific class objects if finer controls is needed.<br>_
 
-- ### ***GetUrlRoot()***
+- ### **GetUrlRoot()**
     > _Get the URL root for the given string object containing a URL.<br>
         For example:<br>
             `"https://cjvandyk.sharepoint.com".GetUrlRoot()`<br>
@@ -47,7 +47,7 @@ with these methods:
             `"https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()`<br>
         will also return "https://cjvandyk.sharepoint.com"._
 
-- ### ***IsAlphabetic()***
+- ### **IsAlphabetic()**
     > _Validates that the given string object contains all alphabetic<br>
         characters (a-z and A-Z) returning True if it does and False if<br>
         it doesn't.<br>
@@ -57,7 +57,7 @@ with these methods:
             `"abc123".IsAlphabetic()`<br>
         will return False._
     
-- ### ***IsNumeric()***
+- ### **IsNumeric()**
     > _Validates that the given string object contains all numeric<br>
         characters (0-9) returning True if it does and False  if it<br>
         doesn't.<br>
@@ -67,7 +67,7 @@ with these methods:
             `"abc123".IsNumeric()`<br>
         will return False._
 
-- ### ***IsAlphaNumeric()***
+- ### **IsAlphaNumeric()**
     > _Validates that the given string object contains all alphabetic<br>
         and/or numeric characters (a-z and A-Z and 0-9) returning True if it<br>
         does and False  if it doesn't.<br>
@@ -81,7 +81,7 @@ with these methods:
             `"abc!@#".IsAlphaNumeric()`<br>
         will return False._
     
-- ### ***IsChar()***
+- ### **IsChar()**
     > _This method takes a char[] as one of its arguments against which the<br>
         given string object is validated.  If the given string object contains<br>
         only characters found in the char[] it will return True, otherwise it<br>
@@ -92,7 +92,7 @@ with these methods:
             `"abc123".IsChar(new char[] {'a', 'c'})`<br>
         will return False._
    
-- ### ***IsUrlRoot()***
+- ### **IsUrlRoot()**
     > _Check if the given string object containing a URL, is that of the<br>
         URL root only.  Returns True if so, False if not.<br>
         For example:<br>
@@ -101,11 +101,11 @@ with these methods:
             `"https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()`<br>
         will return False._
 
-- ### ***Lines()***
+- ### **Lines()**
     > _This method returns the number of lines/sentences in the given string<br>
         object._
 
-- ### ***LoremIpsum()***
+- ### **LoremIpsum()**
     > _Poplates the given string with a given number of paragraphs of dummy<br>
         text in the lorem ipsum style.
         For example:<br>
@@ -130,7 +130,7 @@ with these methods:
             odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu.<br> 
             Suspendisse et sapien quis ipsum scelerisque rutrum."<br>_
 
-- ### ***Retry()***
+- ### **Retry()**
     > _Checks if a System.Net.WebException contains a "Retry-After" header.<br>
         If it does, it sleeps the thread for that period (+ 60 seconds)<br>
         before reattempting to HTTP call that caused the exception in the<br>
@@ -149,11 +149,11 @@ with these methods:
             }
         ```_
 
-- ### ***ReplaceTokens()***
+- ### **ReplaceTokens()**
     > _Takes a given string object and replaces 1 to n tokens in the string<br>
         with replacement tokens as defined in the given Dictionary of strings._
 
-- ### ***Set()***
+- ### **Set()**
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
         For example:<br>
@@ -176,7 +176,7 @@ with these methods:
         A derived override method for Get() and Set() can be defined<br>
         using specific class objects if finer controls is needed.<br>
 
-- ### ***ToBinary()***
+- ### **ToBinary()**
     > _This method returns the given string represented in 1s and 0s as<br>
         a binary result.<br>
         For example:<br>
@@ -184,7 +184,7 @@ with these methods:
         will return <br>
             `1010100 1101000 1101001 1110011 100000 1110100 1100101 1110011 1110100`_
 
-- ### ***Words()***
+- ### **Words()**
     > _This method returns the number of words used in the given string<br>
         object.
         For example:<br>
