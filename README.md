@@ -9,13 +9,13 @@ The toolset contains the following projects:
      System.Text.StringBuilder
    with these methods:
    
-   -  `Elevate()`
+   - ### ***Elevate()***
       > _Restarts the current process with elevated permissions.<br>
          For example:<br>
            `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
            will restart the current console app in admin mode._
            
-   - `GetUrlRoot()`
+   - ### ***GetUrlRoot()***
       > _Get the URL root for the given string object containing a URL.<br>
          For example:<br>
            `"https://cjvandyk.sharepoint.com".GetUrlRoot()`<br>
@@ -23,7 +23,7 @@ The toolset contains the following projects:
            `"https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()`<br>
            will also return "https://cjvandyk.sharepoint.com"._
            
-   - `IsAlphabetic()`
+   - ### ***IsAlphabetic()***
       > _Validates that the given string object contains all alphabetic
          characters (a-z and A-Z) returning True if it does and False if 
          it doesn't.
@@ -33,7 +33,7 @@ The toolset contains the following projects:
            `"abc123".IsAlphabetic()`<br>
            will return False._
            
-   - `IsNumeric()`
+   - ### ***IsNumeric()***
       > _Validates that the given string object contains all numeric 
          characters (0-9) returning True if it does and False  if it
          doesn't.
@@ -43,7 +43,7 @@ The toolset contains the following projects:
            `"abc123".IsNumeric()`<br>
            will return False._
            
-   - `IsAlphaNumeric()`
+   - ### ***IsAlphaNumeric()***
       > _Validates that the given string object contains all alphabetic 
          and/or numeric characters (a-z and A-Z and 0-9) returning True if it 
          does and False  if it doesn't.
@@ -57,7 +57,7 @@ The toolset contains the following projects:
            `"abc!@#".IsAlphaNumeric()`<br>
            will return False._
            
-   - `IsChar()`
+   - ### ***IsChar()***
       > _This method takes a char[] as one of its arguments against which the
          given string object is validated.  If the given string object contains
          only characters found in the char[] it will return True, otherwise it
@@ -68,7 +68,7 @@ The toolset contains the following projects:
            `"abc123".IsChar(new char[] {'a', 'c'})`<br>
            will return False._
    
-   - `IsUrlRoot()`
+   - ### ***IsUrlRoot()***
       > _Check if the given string object containing a URL, is that of the<br>
          URL root only.  Returns True if so, False if not.<br>
          For example:<br>
@@ -77,11 +77,11 @@ The toolset contains the following projects:
            `"https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()`<br>
            will return False._
            
-   - `Lines()`
+   - ### ***Lines()***
       > _This method returns the number of lines/sentences in the given string
          object._
          
-   - `LoremIpsum()`
+   - ### ***LoremIpsum()***
       > _Poplates the given string with a given number of paragraphs of dummy<br>
          text in the lorem ipsum style e.g.<br>
          `"".LoremIpsum(2)`<br>
@@ -104,11 +104,11 @@ The toolset contains the following projects:
           odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu. 
           Suspendisse et sapien quis ipsum scelerisque rutrum."_
           
-   - `ReplaceTokens()`
+   - ### ***ReplaceTokens()***
       > _Takes a given string object and replaces 1 to n tokens in the string
          with replacement tokens as defined in the given Dictionary of strings._
          
-   - `Words()`
+   - ### ***Words()***
       > _This method returns the number of words used in the given string
          object.
          For example:<br>
