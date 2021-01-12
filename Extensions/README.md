@@ -137,17 +137,15 @@ with these methods:
         first place.  If no "Retry-After" header exist, the exception is<br>
         simply rethrown.<br>
         For example:<br>
-        ```
-            System.Net.HttpWebRequest request ...
-            Try
-            {
-                request.GetResponse();
-            }
-            Catch (System.Net.WebException ex)
-            {
-                ex.Retry(request);
-            }
-        ```_
+            `System.Net.HttpWebRequest request ...`<br>
+            `Try`<br>
+            `{`<br>
+                `request.GetResponse();`<br>
+            `}`<br>
+            `Catch (System.Net.WebException ex)`<br>
+            `{`<br>
+                `ex.Retry(request);`<br>
+            `}`<br>_
 
 - ### **ReplaceTokens()**
     > _Takes a given string object and replaces 1 to n tokens in the string<br>
