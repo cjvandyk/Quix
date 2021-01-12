@@ -20,22 +20,16 @@ with these methods:
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
         For example:<br>
-            `Microsoft.SharePoint.Client client = new`<br>
-                    `Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
+            `Microsoft.SharePoint.Client client = new Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
             `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;`<br>
             `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");`<br>
-        This allows the creation of the extension property *"HeaderDecoration"*<br>
+        This allows the creation of the extension property "HeaderDecoration"<br>
         which can be changed as needed.  Later in the delegate method we<br>
         refer back to the extension property value thus:<br>
-        ```
-            private void ClientContext_ExecutingWebRequest(<br>
-                object sender,<br>
-                WebRequestEventArgs e)<br>
-            {<br>
-                e.WebRequestExecutor.WebRequest.UserAgent =<br>
-                    (string)e.Get("HeaderDecoration");<br>
-            }<br>
-        ```
+            `private void ClientContext_ExecutingWebRequest(object sender, WebRequestEventArgs e)`<br>
+            `{`<br>
+                `e.WebRequestExecutor.WebRequest.UserAgent = (string)e.Get("HeaderDecoration");`<br>
+            `}`<br>
     NOTE: We did not have to access the ClientContext class in order to<br>
         retrieve the "HeaderDecoration" value since the extension was<br>
         done against the System.Object class.  As such, any object can<br>
