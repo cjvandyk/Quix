@@ -2,19 +2,47 @@
 
 The following classes have been extended:
 
-  - System.Diagnostics.Process
-  - System.String
-  - System.Text.StringBuilder
+    - System.Diagnostics.Process
+    - System.Object
+    - System.String
+    - System.Text.StringBuilder
 
 with these methods:
 
-   -  `Elevate()`
-      > _Restarts the current process with elevated permissions.<br>
-         For example:<br>
+    - ### ***Elevate()***
+        > _Restarts the current process with elevated permissions.<br>
+            For example:<br>
            `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
-           will restart the current console app in admin mode._
+            will restart the current console app in admin mode._
 
-  - `GetUrlRoot()`
+    -  ### ***Get()***
+        > _Language extension for properties.  Use to set the value of the<br>
+         extension property in question.<br>
+         For example:<br>
+           `Microsoft.SharePoint.Client client = new`<br>
+           `  Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
+           `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;
+           `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");`<br>
+           This allows the creation of the extension property "HeaderDecoration"<br>
+           which can be changed as needed.  Later in the delegate method we<br>
+           refer back to the extension property value thus:<br>
+           `private void ClientContext_ExecutingWebRequest(`<br>
+              `object sender,` <br>
+              `WebRequestEventArgs e)`<br>
+            `{`<br>
+              `e.WebRequestExecutor.WebRequest.UserAgent =`<br>
+                `(string)e.Get("HeaderDecoration");`<br>
+            `}`<br>
+         NOTE: We did not have to access the ClientContext class in order to<br>
+               retrieve the "HeaderDecoration" value since the extension was<br>
+               done against the System.Object class.  As such, any object can<br>
+               be used to retrieve the extension property value, as long as<br>
+               you know the key value under which the property was stored and<br>
+               you know the type to which the returned value needs to be cast.<br>
+               A derived override method for Get() and Set() can be defined<br>
+               using specific class objects if finer controls is needed.<br>
+
+  - ### ***GetUrlRoot()***
     > _Get the URL root for the given string object containing a URL.<br>
        For example:<br>
          `"https://cjvandyk.sharepoint.com".GetUrlRoot()`<br>
@@ -22,7 +50,7 @@ with these methods:
          `"https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()`<br>
          will also return "https://cjvandyk.sharepoint.com"._
 
-  - `IsAlphabetic()`
+  - ### ***IsAlphabetic()***
     > _Validates that the given string object contains all alphabetic<br>
        characters (a-z and A-Z) returning True if it does and False if<br>
        it doesn't.<br>
@@ -32,7 +60,7 @@ with these methods:
          `"abc123".IsAlphabetic()`<br>
          will return False._
     
-  - `IsNumeric()`
+  - ### ***IsNumeric()***
     > _Validates that the given string object contains all numeric<br>
        characters (0-9) returning True if it does and False  if it<br>
        doesn't.<br>
@@ -42,7 +70,7 @@ with these methods:
          `"abc123".IsNumeric()`<br>
          will return False._
 
-  - `IsAlphaNumeric()`
+  - ### ***IsAlphaNumeric()***
     > _Validates that the given string object contains all alphabetic<br>
        and/or numeric characters (a-z and A-Z and 0-9) returning True if it<br>
        does and False  if it doesn't.<br>
@@ -56,7 +84,7 @@ with these methods:
          `"abc!@#".IsAlphaNumeric()`<br>
          will return False._
     
-  - `IsChar()`
+  - ### ***IsChar()***
     > _This method takes a char[] as one of its arguments against which the<br>
        given string object is validated.  If the given string object contains<br>
        only characters found in the char[] it will return True, otherwise it<br>
@@ -67,7 +95,7 @@ with these methods:
          `"abc123".IsChar(new char[] {'a', 'c'})`<br>
          will return False._
    
-  - `IsUrlRoot()`
+  - ### ***IsUrlRoot()***
     > _Check if the given string object containing a URL, is that of the<br>
        URL root only.  Returns True if so, False if not.<br>
        For example:<br>
@@ -76,11 +104,11 @@ with these methods:
          `"https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()`<br>
          will return False._
 
-  - `Lines()`
+  - ### ***Lines()***
     > _This method returns the number of lines/sentences in the given string<br>
        object._
 
-  - `LoremIpsum()`
+  - ### ***LoremIpsum()***
     > _Poplates the given string with a given number of paragraphs of dummy<br>
        text in the lorem ipsum style.
        For example:<br>
@@ -105,12 +133,66 @@ with these methods:
         odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu.<br> 
         Suspendisse et sapien quis ipsum scelerisque rutrum."<br>_
 
-  - `ReplaceTokens()`
-    > _Takes a given string object and replaces 1 to n tokens in the string
+  - ### ***Retry()***
+    > _Checks if a System.Net.WebException contains a "Retry-After" header.<br>
+      If it does, it sleeps the thread for that period (+ 60 seconds)<br>
+      before reattempting to HTTP call that caused the exception in the<br>
+      first place.  If no "Retry-After" header exist, the exception is<br>
+      simply rethrown.<br>
+      For example:<br>
+      ```
+      System.Net.HttpWebRequest request ...
+      Try
+      {
+          request.GetResponse();
+      }
+      Catch (System.Net.WebException ex)
+      {
+          ex.Retry(request);
+      }
+      ```_
+
+  - ### ***ReplaceTokens()***
+    > _Takes a given string object and replaces 1 to n tokens in the string<br>
        with replacement tokens as defined in the given Dictionary of strings._
 
-  - `Words()`
-    > _This method returns the number of words used in the given string
+  - ### ***Set()***
+      > _Language extension for properties.  Use to set the value of the<br>
+         extension property in question.<br>
+         For example:<br>
+           `Microsoft.SharePoint.Client client = new`<br>
+           `  Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
+           `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;
+           `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");`<br>
+           This allows the creation of the extension property "HeaderDecoration"<br>
+           which can be changed as needed.  Later in the delegate method we<br>
+           refer back to the extension property value thus:<br>
+           `private void ClientContext_ExecutingWebRequest(`<br>
+              `object sender,` <br>
+              `WebRequestEventArgs e)`<br>
+            `{`<br>
+              `e.WebRequestExecutor.WebRequest.UserAgent =`<br>
+                `(string)e.Get("HeaderDecoration");`<br>
+            `}`<br>
+         NOTE: We did not have to access the ClientContext class in order to<br>
+               retrieve the "HeaderDecoration" value since the extension was<br>
+               done against the System.Object class.  As such, any object can<br>
+               be used to retrieve the extension property value, as long as<br>
+               you know the key value under which the property was stored and<br>
+               you know the type to which the returned value needs to be cast.<br>
+               A derived override method for Get() and Set() can be defined<br>
+               using specific class objects if finer controls is needed.<br>
+
+  - ### ***ToBinary()***
+    > _This method returns the given string represented in 1s and 0s as<br>
+       a binary result.<br>
+       For example:<br>
+         `"This test".ToBinary()`<br>
+         will return <br>
+         `1010100 1101000 1101001 1110011 100000 1110100 1100101 1110011 1110100`_
+
+  - ### ***Words()***
+    > _This method returns the number of words used in the given string<br>
        object.
        For example:<br>
          `"This is my test".Words()`<br>
