@@ -3,13 +3,14 @@
 The following classes have been extended:
 
     - System.Diagnostics.Process
+    - System.Net.WebException
     - System.Object
     - System.String
     - System.Text.StringBuilder
 
 with these methods:
 
-- ### ***Elevate()***
+    - ### ***Elevate()***
         > _Restarts the current process with elevated permissions.<br>
             For example:<br>
                 `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
