@@ -9,16 +9,16 @@ The following classes have been extended:
 
 with these methods:
 
-    - ### ***Elevate()***
+  - ### ***Elevate()***
     > _Restarts the current process with elevated permissions.
       For example:
       `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`
       will restart the current console app in admin mode._
 
-    -  ### ***Get()***
-        > _Language extension for properties.  Use to set the value of the<br>
-         extension property in question.<br>
-         For example:<br>
+  - ### ***Get()***
+    > _Language extension for properties.  Use to set the value of the<br>
+      extension property in question.<br>
+      For example:<br>
            `Microsoft.SharePoint.Client client = new`<br>
            `  Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
            `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;
