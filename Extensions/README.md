@@ -20,12 +20,10 @@ with these methods:
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
         For example:<br>
-        ```
-        Microsoft.SharePoint.Client client = new
-            Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");
-        client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;
-        client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");
-        ```
+            `Microsoft.SharePoint.Client client = new`<br>
+                `Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
+            `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;`<br>
+            `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");<br>
         This allows the creation of the extension property *"HeaderDecoration"*<br>
         which can be changed as needed.  Later in the delegate method we<br>
         refer back to the extension property value thus:<br>
