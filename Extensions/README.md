@@ -40,7 +40,7 @@ with these methods:
                you know the key value under which the property was stored and<br>
                you know the type to which the returned value needs to be cast.<br>
                A derived override method for Get() and Set() can be defined<br>
-               using specific class objects if finer controls is needed.<br>
+               using specific class objects if finer controls is needed.<br>_
 
   - ### ***GetUrlRoot()***
     > _Get the URL root for the given string object containing a URL.<br>
