@@ -9,38 +9,42 @@ The following classes have been extended:
 
 with these methods:
 
-  - ### ***Elevate()***
-    > _Restarts the current process with elevated permissions.
-      For example:
-      `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`
-      will restart the current console app in admin mode._
+    - ### ***Elevate()***
+        > _Restarts the current process with elevated permissions.<br>
+            For example:<br>
+                `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
+            will restart the current console app in admin mode._
 
-  - ### ***Get()***
-    > _Language extension for properties.  Use to set the value of the<br>
-      extension property in question.<br>
-      For example:<br>
-           `Microsoft.SharePoint.Client client = new`<br>
-           `  Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");`<br>
-           `client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;
-           `client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");`<br>
-           This allows the creation of the extension property "HeaderDecoration"<br>
-           which can be changed as needed.  Later in the delegate method we<br>
-           refer back to the extension property value thus:<br>
-           `private void ClientContext_ExecutingWebRequest(`<br>
-              `object sender,` <br>
-              `WebRequestEventArgs e)`<br>
-            `{`<br>
-              `e.WebRequestExecutor.WebRequest.UserAgent =`<br>
-                `(string)e.Get("HeaderDecoration");`<br>
-            `}`<br>
-         NOTE: We did not have to access the ClientContext class in order to<br>
-               retrieve the "HeaderDecoration" value since the extension was<br>
-               done against the System.Object class.  As such, any object can<br>
-               be used to retrieve the extension property value, as long as<br>
-               you know the key value under which the property was stored and<br>
-               you know the type to which the returned value needs to be cast.<br>
-               A derived override method for Get() and Set() can be defined<br>
-               using specific class objects if finer controls is needed.<br>_
+    - ### ***Get()***
+        > _Language extension for properties.  Use to set the value of the<br>
+            extension property in question.<br>
+            For example:<br>
+            ```
+                Microsoft.SharePoint.Client client = new<br>
+                    Microsoft.SharePoint.Client("https://cjvandyk.sharepoint.com");<br>
+                client.ExecutingWebRequest += ClientContext_ExecutingWebRequest;<br>
+                client.Set("HeaderDecoration", "NONISV|Crayveon|MyApp/1.0");<br>
+            ```
+            This allows the creation of the extension property *"HeaderDecoration"*<br>
+            which can be changed as needed.  Later in the delegate method we<br>
+            refer back to the extension property value thus:<br>
+            ```
+                private void ClientContext_ExecutingWebRequest(<br>
+                    object sender,<br>
+                    WebRequestEventArgs e)<br>
+                {<br>
+                    e.WebRequestExecutor.WebRequest.UserAgent =<br>
+                        (string)e.Get("HeaderDecoration");<br>
+                }<br>
+            ```
+        NOTE: We did not have to access the ClientContext class in order to<br>
+            retrieve the "HeaderDecoration" value since the extension was<br>
+            done against the System.Object class.  As such, any object can<br>
+            be used to retrieve the extension property value, as long as<br>
+            you know the key value under which the property was stored and<br>
+            you know the type to which the returned value needs to be cast.<br>
+            A derived override method for Get() and Set() can be defined<br>
+            using specific class objects if finer controls is needed.<br>_
 
   - ### ***GetUrlRoot()***
     > _Get the URL root for the given string object containing a URL.<br>
