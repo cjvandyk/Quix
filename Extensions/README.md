@@ -10,10 +10,10 @@ The following classes have been extended:
 with these methods:
 
     - ### ***Elevate()***
-        > _Restarts the current process with elevated permissions.<br>
-            For example:<br>
-           `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
-            will restart the current console app in admin mode._
+        > Restarts the current process with elevated permissions.
+            For example:
+           `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`
+            will restart the current console app in admin mode.
 
     -  ### ***Get()***
         > _Language extension for properties.  Use to set the value of the<br>
