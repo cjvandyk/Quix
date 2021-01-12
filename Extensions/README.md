@@ -9,7 +9,7 @@ The following classes have been extended:
 
 with these methods:
 
-    - ### ***Elevate()***
+- ### ***Elevate()***
         > _Restarts the current process with elevated permissions.<br>
             For example:<br>
                 `System.Diagnostics.Process.GetCurrentProcess().Elevate(args)`<br>
