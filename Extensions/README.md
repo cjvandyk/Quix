@@ -1,5 +1,5 @@
 ﻿# Extensions.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
-![icon](https://github.com/cjvandyk/Quix/blob/master/Extensions/Extensions-64x64.png?raw=true)<br>
+![icon](https://github.com/cjvandyk/Quix/blob/master/Extensions/Images/Extensions-64x64.png?raw=true)<br>
 ![NuGet Badge](https://buildstats.info/nuget/Extensions.cs)
 
 The following classes have been extended:
