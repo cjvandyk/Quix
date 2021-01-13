@@ -1,6 +1,6 @@
 ﻿# Extensions.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
 
-[![NuGet Badge](https://buildstats.info/nuget/Extensions.cs)]
+![NuGet Badge](https://buildstats.info/nuget/Extensions.cs)
 
 The following classes have been extended:
 
