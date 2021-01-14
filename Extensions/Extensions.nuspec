@@ -8,13 +8,14 @@
     <owners>$author$</owners>
     <license type="expression">GPL-3.0-or-later</license>
     <projectUrl>https://github.com/cjvandyk/Quix/tree/master/Extensions</projectUrl>
-    <iconUrl>https://github.com/cjvandyk/Quix/tree/master/Quix/Quix.ico</iconUrl>
+    <iconUrl>https://github.com/cjvandyk/Quix/blob/master/Extensions/Extensions.png?raw=true</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <summary>
       Extensions.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
       These methods are included:
       Elevate()
+      Get()
       GetUrlRoot()
       IsAlphabetic()
       IsNumeric()
@@ -24,6 +25,9 @@
       Lines()
       LoremIpsum()
       ReplaceTokens()
+      Retry()
+      Set()
+      ToBinary()
       Words()
     </summary>
     <releaseNotes>
@@ -33,16 +37,20 @@
       System.Diagnostics.Process.GetCurrentProcess().Elevate(args)
       will restart the current console app in admin mode.
 
+      Get()
+      Language extension for properties.  Use to get the value of the
+      extension property in question.
+
       GetUrlRoot()
       Get the URL root for the given string object containing a URL.
       For example:
-      "https://cjvandyk.sharepoint.com".GetUrlRoot()
+      "https://blog.cjvandyk.com".GetUrlRoot()
       will return
-      "https://cjvandyk.sharepoint.com"
+      "https://blog.cjvandyk.com"
       whereas
-      "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
+      "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
       will also return
-      "https://cjvandyk.sharepoint.com".
+      "https://blog.cjvandyk.com".
 
       IsAlphabetic()
       Validates that the given string object contains all alphabetic
@@ -92,9 +100,9 @@
       IsUrlRoot()
       Check if the given string object containing a URL, is that of the
       URL root only.  Returns True if so, False if not.  For example:
-      "https://cjvandyk.sharepoint.com".IsUrlRootOnly()
+      "https://blog.cjvandyk.com".IsUrlRootOnly()
       will return True whereas
-      "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+      "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
       will return False.
 
       Lines()
@@ -128,6 +136,35 @@
       ReplaceTokens()
       Takes a given string object and replaces 1 to n tokens in the string
       with replacement tokens as defined in the given Dictionary of strings.
+
+      Retry()
+      Checks if a System.Net.WebException contains a "Retry-After" header.
+      If it does, it sleeps the thread for that period (+ 60 seconds)
+      before reattempting to HTTP call that caused the exception in the
+      first place.  If no "Retry-After" header exist, the exception is
+      simply rethrown.
+      For example:
+      System.Net.HttpWebRequest request ...
+      Try
+      {
+      request.GetResponse();
+      }
+      Catch (System.Net.WebException ex)
+      {
+      ex.Retry(request);
+      }
+
+      Set()
+      Language extension for properties.  Use to set the value of the
+      extension property in question.
+
+      ToBinary()
+      This method returns the given string represented in 1s and 0s as
+      a binary result.
+      For example:
+      "This test".ToBinary()
+      will return
+      1010100 1101000 1101001 1110011 100000 1110100 1100101 1110011 1110100
 
       Words()
       This method returns the number of words used in the given string

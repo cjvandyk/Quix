@@ -21,10 +21,10 @@ namespace Extensions
         /// <summary>
         /// Get the URL root for the given string object containing a URL.
         /// For example:
-        ///   "https://cjvandyk.sharepoint.com".GetUrlRoot() 
-        ///   will return "https://cjvandyk.sharepoint.com" whereas
-        ///   "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
-        ///   will also return "https://cjvandyk.sharepoint.com".
+        ///   "https://blog.cjvandyk.com".GetUrlRoot() 
+        ///   will return "https://blog.cjvandyk.com" whereas
+        ///   "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
+        ///   will also return "https://blog.cjvandyk.com".
         /// </summary>
         /// <param name="url">The System.String object containing the URL
         /// from which the root is to be extracted.</param>
@@ -38,10 +38,10 @@ namespace Extensions
         /// <summary>
         /// Get the URL root for the given string builder object containing a
         /// URL.  For example:
-        ///   "https://cjvandyk.sharepoint.com".GetUrlRoot() 
-        ///   will return "https://cjvandyk.sharepoint.com" whereas
-        ///   "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
-        ///   will also return "https://cjvandyk.sharepoint.com".
+        ///   "https://blog.cjvandyk.com".GetUrlRoot() 
+        ///   will return "https://blog.cjvandyk.com" whereas
+        ///   "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
+        ///   will also return "https://blog.cjvandyk.com".
         /// </summary>
         /// <param name="url">The System.Text.StringBuilder object containing
         /// the URL from which the root is to be extracted.</param>
@@ -187,9 +187,9 @@ namespace Extensions
         /// <summary>
         /// Check if the given string object containing a URL, is that of the
         /// URL root only.  Returns True if so, False if not.  For example:
-        ///   "https://cjvandyk.sharepoint.com".IsUrlRootOnly() 
+        ///   "https://blog.cjvandyk.com".IsUrlRootOnly() 
         ///   will return True whereas
-        ///   "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+        ///   "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
         ///   will return False.
         /// </summary>
         /// <param name="url">The System.String object containing the URL to 
@@ -208,9 +208,9 @@ namespace Extensions
         /// Check if the given string builder object containing a URL, is that
         ///  of the URL root only.  Returns True if so, False if not.  
         ///  For example:
-        ///   "https://cjvandyk.sharepoint.com".IsUrlRootOnly() 
+        ///   "https://blog.cjvandyk.com".IsUrlRootOnly() 
         ///   will return True whereas
-        ///   "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+        ///   "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
         ///   will return False.
         /// </summary>
         /// <param name="url">The System.Text.StringBuilder object containing 
@@ -316,9 +316,36 @@ namespace Extensions
         }
 
         /// <summary>
+        /// Returns the binary representation of a given string object.
+        /// </summary>
+        /// <param name="str">The System.String object to convert to binary.</param>
+        /// <returns></returns>
+        public static string ToBinary(this System.String str)
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            foreach (byte b in System.Text.ASCIIEncoding.UTF8.GetBytes(str.ToCharArray()))
+            {
+                sb.Append(Convert.ToString(b, 2) + " ");
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the binary representation of a given StringBuilder object.
+        /// </summary>
+        /// <param name="str">The System.Text.StringBuilder object to convert
+        /// to binary.</param>
+        /// <returns></returns>
+        public static string ToBinary(this System.Text.StringBuilder str)
+        {
+            return ToBinary(str.ToString());
+        }
+
+        /// <summary>
         /// Returns the number of words in the given string object.
         /// </summary>
-        /// <param name="str">A System.String object.</param>
+        /// <param name="str">A System.String object for which to count 
+        /// words.</param>
         /// <returns>The number of words in the given object.</returns>
         public static int Words(this System.String str)
         {
@@ -334,11 +361,43 @@ namespace Extensions
         /// <summary>
         /// Returns the number of words in the given string builder object.
         /// </summary>
-        /// <param name="str">A System.Text.StringBuilder object.</param>
+        /// <param name="str">A System.Text.StringBuilder object for which
+        /// to count words.</param>
         /// <returns>The number of words in the given object.</returns>
         public static int Words(this System.Text.StringBuilder str)
         {
             return Words(str.ToString());
         }
+
+        //public static bool ToEmailSafeTextFile(this System.String filePath)
+        //{
+        //    if (System.IO.File.Exists(filePath))
+        //    {
+        //        System.IO.File.WriteAllText(
+        //            filePath + ".txt",
+        //            Convert.ToBase64String(
+        //                System.IO.File.ReadAllBytes(filePath)));
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
+        //public static bool FromEmailSafeTextFile(this System.String filePath)
+        //{
+        //    if (System.IO.File.Exists(filePath))
+        //    {
+        //        System.IO.File.WriteAllBytes(
+        //            filePath.ToLower()
+        //                    .TrimEnd(new char[] { 
+        //                        '.', 
+        //                        't', 
+        //                        'x', 
+        //                        't'}),
+        //            Convert.FromBase64String(
+        //                System.IO.File.ReadAllText(filePath)));
+        //        return true;
+        //    }
+        //    return false;
+        //}
     }
 }

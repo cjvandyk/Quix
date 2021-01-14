@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <AssemblyVersion>1.0.13</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Extensions.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Console.cs" />
+    <Compile Include="System.Console.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Diagnostics.Process.cs" />
-    <Compile Include="String.cs" />
+    <Compile Include="System.Diagnostics.Process.cs" />
+    <Compile Include="System.Net.WebException.cs" />
+    <Compile Include="System.Object.cs" />
+    <Compile Include="System.String.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,7 +58,13 @@
     <None Include="Extensions.nuspec" />
     <None Include="NuGet\Extensions.cs.1.0.1.nupkg" />
     <None Include="README.md" />
+    <None Include="VersionHistory.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\Discord.png" />
+    <Content Include="Images\Extensions-64x64.png" />
+    <Content Include="Images\Extensions.ico" />
+    <Content Include="Images\Extensions.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
