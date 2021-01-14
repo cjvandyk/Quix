@@ -1,6 +1,6 @@
 ﻿# Extensions.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
-![icon](https://github.com/cjvandyk/Quix/blob/master/Extensions/Images/Extensions-64x64.png?raw=true)<br>
-![License](https://img.shields.io/github/license/cjvandyk/quix) ![NuGet Badge](https://buildstats.info/nuget/Extensions.CS) [![GitHub release](https://img.shields.io/github/release/cjvandyk/quix.svg)](https://GitHub.com/cjvandyk/quix/releases/) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ExtensionsCS/Extensions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Discord](https://github.com/cjvandyk/Quix/blob/master/Extensions/Images/Discord.png?raw=true)](https://discord.com/channels/799027565465305088/799027565993394219)
+[![icon](https://github.com/cjvandyk/Quix/blob/master/Extensions/Images/Extensions-64x64.png?raw=true)](https://github.com/cjvandyk/quix/Extensions)<br>
+![License](https://img.shields.io/github/license/cjvandyk/quix) ![NuGet Badge](https://buildstats.info/nuget/Extensions.CS) [![GitHub release](https://img.shields.io/github/release/cjvandyk/quix.svg)](https://GitHub.com/cjvandyk/quix/releases/) [![Repo Size](https://img.shields.io/github/repo-size/cjvandyk/quix)](https://github.com/cjvandyk/quix/Extensions) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ExtensionsCS/Extensions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Discord](https://github.com/cjvandyk/Quix/blob/master/Extensions/Images/Discord.png?raw=true)](https://discord.com/channels/799027565465305088/799027565993394219)
 
 The following classes have been extended:
 
