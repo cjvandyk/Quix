@@ -1,4 +1,7 @@
 # Quix Utilities
+
+[![Join the chat at https://gitter.im/ExtensionsCS/community](https://badges.gitter.im/ExtensionsCS/community.svg)](https://gitter.im/ExtensionsCS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A suite of tools and utilities to assist with C# development.
 The toolset contains the following projects:
  - Extensions
