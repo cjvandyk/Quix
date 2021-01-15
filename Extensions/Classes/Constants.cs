@@ -25,6 +25,9 @@ namespace Extensions
             "Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu tristique lacus, sed porta nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum libero neque, faucibus sed condimentum sed, aliquet vitae massa. Sed dignissim a velit tempus feugiat. Etiam sollicitudin, neque sit amet posuere semper, enim enim facilisis quam, ac sollicitudin lectus purus ut urna. Vivamus interdum odio nec felis interdum mollis. Praesent et massa quis augue accumsan laoreet. Nullam ultrices, dui ac condimentum cursus, lectus elit molestie velit, vitae consequat elit arcu sed massa. Praesent at lacinia ante, varius lacinia urna. Donec pretium gravida nunc, sed congue mi tincidunt eu. Aenean ut diam eget orci dignissim placerat. Pellentesque fermentum aliquet velit et fermentum. Etiam ut risus dapibus, dictum augue ac, ornare metus."
         };
 
+        /// <summary>
+        /// String array of args that will trigger help text.
+        /// </summary>
         public readonly static string[] HelpStrings =
         {
             "/?",
@@ -36,5 +39,53 @@ namespace Extensions
             "huh",
             "-huh"
         };
+
+        /// <summary>
+        /// Dictionary of alphabetic to Morse code translation values.
+        /// </summary>
+        public readonly static Dictionary<char, string> MorseCode = new Dictionary<char, string>()
+        {
+            {'a', ".-"},
+            {'b', "-..."},
+            {'c', "-.-."},
+            {'d', "-.."},
+            {'e', "."},
+            {'f', "..-."},
+            {'g', "--."},
+            {'h', "...."},
+            {'i', ".."},
+            {'j', ".---"},
+            {'k', "-.-"},
+            {'l', ".-.."},
+            {'m', "--"},
+            {'n', "-."},
+            {'o', "---"},
+            {'p', ".--."},
+            {'q', "--.-"},
+            {'r', ".-."},
+            {'s', "..."},
+            {'t', "-"},
+            {'u', "..-"},
+            {'v', "...-"},
+            {'w', ".--"},
+            {'x', "-..-"},
+            {'y', "-.--"},
+            {'z', "--.."},
+            {'0', "-----"},
+            {'1', ".----"},
+            {'2', "..---"},
+            {'3', "...--"},
+            {'4', "....-"},
+            {'5', "....."},
+            {'6', "-...."},
+            {'7', "--..."},
+            {'8', "---.."},
+            {'9', "----."},
+            {'.',".-.-.-"},
+            {',',"--.--"},
+            {'?',"..--.."},
+            {' ',"-...-"}
+        };
+
     }
 }

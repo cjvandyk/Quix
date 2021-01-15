@@ -134,6 +134,13 @@
       odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu.
       Suspendisse et sapien quis ipsum scelerisque rutrum."
 
+      MorseCodeBeep()
+      Takes a given System.String representing Morse code and audiblize
+      it according to standards.
+      https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code
+      Assumes the input value to be in Morse code format already.
+      Use .ToMorseCode() to pre-convert text if needed.
+
       ReplaceTokens()
       Takes a given string object and replaces 1 to n tokens in the string
       with replacement tokens as defined in the given Dictionary of strings.
@@ -176,6 +183,15 @@
       Console.WriteLine(testEnumResult == testEnum.first);
       will return
       True
+
+      ToMorseCode()
+      Convert given System.String to its Morse code representation.
+      Undefined characters will return in the format:
+      [Undefined:[char=""]]
+      For example:
+      "sos@".ToMorseCode()
+      will return
+      "...---...[Undefined:[@]]"
 
       Words()
       This method returns the number of words used in the given string

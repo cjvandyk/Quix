@@ -34,3 +34,7 @@
 1.2.x (2021-01-22)
 	- Add `System.String.ToEnum<T>()`
 	- Add `System.Text.StringBuilder.ToEnum<T>()`
+	- Add `System.String.ToMorseCode()`
+	- Add `System.Text.StringBuilder.ToMorseCode()`
+	- Add `System.String.MorseCodeBeep()`
+	- Add `System.Text.StringBuilder.MorseCodeBeep()`

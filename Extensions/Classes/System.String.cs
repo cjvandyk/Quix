@@ -279,6 +279,53 @@ namespace Extensions
         }
 
         /// <summary>
+        /// Takes a given System.String representing Morse code and audiblize
+        /// it according to standards.
+        /// https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code
+        /// Assumes the input value to be in Morse code format already.
+        /// Use .ToMorseCode() to pre-convert text if needed.
+        /// </summary>
+        /// <param name="str">The System.String text in Morse code format.</param>
+        /// <param name="frequency">The beep frequency.</param>
+        /// <param name="duration">The duration of a dot beep in ms.</param>
+        public static void MorseCodeBeep(this System.String str, int frequency = 999, int duration = 200)
+        {
+            foreach (char c in str)
+            {
+                switch (c)
+                {
+                    case '.':
+                        Console.Beep(frequency, duration);
+                        break;
+
+                    case '-':
+                        Console.Beep(frequency, duration * 3);
+                        break;
+
+                    case ' ':
+                        Console.Beep(frequency, duration * 6);
+                        break;
+                }
+                System.Threading.Thread.Sleep(duration * 3);
+            }
+        }
+
+        /// <summary>
+        /// Takes a given System.Text.StringBuilder representing Morse code
+        /// and audiblize it according to standards.
+        /// https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code
+        /// Assumes the input value to be in Morse code format already.
+        /// Use .ToMorseCode() to pre-convert text if needed.
+        /// </summary>
+        /// <param name="str">The System.Text.StringBuilder text in Morse code format.</param>
+        /// <param name="frequency">The beep frequency.</param>
+        /// <param name="duration">The duration of a dot beep in ms.</param>
+        public static void MorseCodeBeep(this System.Text.StringBuilder str, int frequency = 999, int duration = 200)
+        {
+            MorseCodeBeep(str.ToString(), frequency, duration);
+        }
+
+        /// <summary>
         /// Takes a given string and replaces 1 to n tokens in the string
         /// with replacement tokens as defined in the given Dictionary
         /// of strings.
@@ -347,9 +394,68 @@ namespace Extensions
         /// <typeparam name="T">The enum type.</typeparam>
         /// <param name="str">The string to match to an enum.</param>
         /// <returns>The enum value.</returns>
-        public static T ToEnum<T>(this string str)
+        public static T ToEnum<T>(this System.String str)
         {
             return (T)Enum.Parse(typeof(T), str);
+        }
+
+        /// <summary>
+        /// Convert a System.String to its Enum value.
+        /// </summary>
+        /// <typeparam name="T">The enum type.</typeparam>
+        /// <param name="str">The string to match to an enum.</param>
+        /// <returns>The enum value.</returns>
+        public static T ToEnum<T>(this System.Text.StringBuilder str)
+        {
+            return (str.ToString().ToEnum<T>());
+        }
+
+        /// <summary>
+        /// Convert given System.String to its Morse code representation.
+        /// Undefined characters will return in the format:
+        /// <Undefined:[char]>
+        /// For example:
+        /// "sos@".ToMorseCode()
+        /// will return
+        /// "...---...<Undefined:[@]>"
+        /// </summary>
+        /// <param name="str">The given string to convert to Morse code.</param>
+        /// <param name="includeSpaces">Are spaces included in translation.</param>
+        /// <returns>The Morse code represenation of the given string.</returns>
+        public static string ToMorseCode(this System.String str, bool includeSpaces = true)
+        {
+            System.Text.StringBuilder returnValue = new System.Text.StringBuilder();
+            string tempStr = "";
+            foreach (char c in str.ToLower())
+            {
+                if (Constants.MorseCode.TryGetValue(c, out tempStr))
+                {
+                    returnValue.Append(c != ' ' ? tempStr : (includeSpaces ? tempStr : ""));
+                }
+                else
+                {
+                    returnValue.Append("<Undefined:[" + c + "]>");
+                }
+            }
+            return returnValue.ToString();
+        }
+
+        /// <summary>
+        /// Convert given System.Text.Stringbuilder object to its Morse code
+        /// representation.
+        /// Undefined characters will return in the format:
+        /// <Undefined:[char]>
+        /// For example:
+        /// "sos@".ToMorseCode()
+        /// will return
+        /// "...---...<Undefined:[@]>"
+        /// </summary>
+        /// <param name="str">The given string to convert to Morse code.</param>
+        /// <param name="includeSpaces">Are spaces included in translation.</param>
+        /// <returns>The Morse code represenation of the given string.</returns>
+        public static string ToMorseCode(this System.Text.StringBuilder str, bool includeSpaces = true)
+        {
+            return (str.ToString());
         }
 
         /// <summary>

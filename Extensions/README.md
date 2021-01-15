@@ -133,6 +133,13 @@ with these methods:
             odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu.<br> 
             Suspendisse et sapien quis ipsum scelerisque rutrum."<br>_
 
+- ### **MorseCodeBeep()**
+    > _Takes a given System.String representing Morse code and audiblize<br>
+        it according to standards.<br>
+        https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code<br>
+        Assumes the input value to be in Morse code format already.<br>
+        Use `.ToMorseCode()` to pre-convert text if needed._
+
 - ### **Retry()**
     > _Checks if a System.Net.WebException contains a "Retry-After" header.<br>
         If it does, it sleeps the thread for that period (+ 60 seconds)<br>
@@ -194,6 +201,15 @@ with these methods:
             `Console.WriteLine(testEnumResult == testEnum.first);`<br>
         will return<br>
         `True`_
+
+- ### **ToMorseCode()**
+    > _Convert given System.String to its Morse code representation.<br>
+        Undefined characters will return in the format:<br>
+        <Undefined:[char=""]><br>
+        For example:<br>
+            `"sos@".ToMorseCode()`<br>
+        will return<br>
+        `"...---...<Undefined:[@]>"`_
 
 - ### **Words()**
     > _This method returns the number of words used in the given string<br>
