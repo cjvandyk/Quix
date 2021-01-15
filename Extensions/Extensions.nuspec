@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <license type="expression">GPL-3.0-or-later</license>
     <projectUrl>https://github.com/cjvandyk/Quix/tree/master/Extensions</projectUrl>
-    <iconUrl>https://github.com/cjvandyk/Quix/blob/master/Extensions/Extensions.png?raw=true</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/cjvandyk/Quix/master/Extensions/Images/Extensions-64x64.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <summary>

@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>1.1.27</AssemblyVersion>
+    <AssemblyVersion>1.1.28</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +58,7 @@
     <None Include="Extensions.nuspec" />
     <None Include="NuGet\Extensions.cs.1.0.1.nupkg" />
     <None Include="NuGet\Extensions.cs.1.1.27.nupkg" />
+    <None Include="NuGet\Extensions.cs.1.1.28.nupkg" />
     <None Include="README.md" />
     <None Include="VersionHistory.md" />
   </ItemGroup>
