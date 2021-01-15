@@ -57,6 +57,7 @@
     <None Include="BuildNuGet.bat" />
     <None Include="Extensions.nuspec" />
     <None Include="NuGet\Extensions.cs.1.0.1.nupkg" />
+    <None Include="NuGet\Extensions.cs.1.1.27.nupkg" />
     <None Include="README.md" />
     <None Include="VersionHistory.md" />
   </ItemGroup>
