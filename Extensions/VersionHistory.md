@@ -23,7 +23,7 @@
    - Add `System.Text.StringBuilder.ReplaceTokens()`
    - Add `System.Text.StringBuilder.Words()`
 
-1.0.2 (2021-01-15)
+1.1.27 (2021-01-15)
    - Add `System.String.ToBinary()`
    - Add `System.Text.StringBuilder.ToBinary()`
    - Add `System.Net.WebException.Retry()`
