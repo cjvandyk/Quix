@@ -28,6 +28,7 @@
       Retry()
       Set()
       ToBinary()
+      ToEnum()
       Words()
     </summary>
     <releaseNotes>
@@ -165,6 +166,16 @@
       "This test".ToBinary()
       will return
       1010100 1101000 1101001 1110011 100000 1110100 1100101 1110011 1110100
+
+      ToEnum()
+      This method matches a given string to the given enum set and returns
+      the matched enum.
+      For example:
+      enum testEnum { first, second, third };
+      var testEnumResult = "first".ToEnum[testEnum]();
+      Console.WriteLine(testEnumResult == testEnum.first);
+      will return
+      True
 
       Words()
       This method returns the number of words used in the given string

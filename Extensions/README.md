@@ -184,6 +184,16 @@ with these methods:
         will return <br>
             `1010100 1101000 1101001 1110011 100000 1110100 1100101 1110011 1110100`_
 
+- ### **ToEnum()**
+    > _This method matches a given string to the given enum set and returns<br>
+        the matched enum.<br>
+        For example:<br>
+            `enum testEnum { first, second, third };`<br>
+            `var testEnumResult = "first".ToEnum<testEnum>();`<br>
+            `Console.WriteLine(testEnumResult == testEnum.first);`<br>
+        will return<br>
+        `True`_
+
 - ### **Words()**
     > _This method returns the number of words used in the given string<br>
         object.

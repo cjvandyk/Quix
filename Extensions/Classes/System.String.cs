@@ -342,6 +342,17 @@ namespace Extensions
         }
 
         /// <summary>
+        /// Convert a System.String to its Enum value.
+        /// </summary>
+        /// <typeparam name="T">The enum type.</typeparam>
+        /// <param name="str">The string to match to an enum.</param>
+        /// <returns>The enum value.</returns>
+        public static T ToEnum<T>(this string str)
+        {
+            return (T)Enum.Parse(typeof(T), str);
+        }
+
+        /// <summary>
         /// Returns the number of words in the given string object.
         /// </summary>
         /// <param name="str">A System.String object for which to count 
