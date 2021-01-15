@@ -45,12 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="System.Console.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="System.Diagnostics.Process.cs" />
-    <Compile Include="System.Net.WebException.cs" />
-    <Compile Include="System.Object.cs" />
-    <Compile Include="System.String.cs" />
+    <Compile Include="Classes\System.Console.cs" />
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Classes\System.Diagnostics.Process.cs" />
+    <Compile Include="Classes\System.Net.WebException.cs" />
+    <Compile Include="Classes\System.Object.cs" />
+    <Compile Include="Classes\System.String.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
