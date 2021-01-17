@@ -84,7 +84,7 @@ with these methods:
         will return True whereas<br>
             `"abc123".IsChar(new char[] {'a', 'c'})`<br>
         will return False._
-
+         
 - ### **IsEmail()**
     > _Validates that the given string object contains a valid email address.<br>
         For example:<br>
@@ -211,13 +211,28 @@ with these methods:
         `True`_
 
 - ### **ToMorseCode()**
-    > _Convert given System.String to its Morse code representation.<br>
+    > _Convert given string to its Morse code representation.<br>
         Undefined characters will return in the format:<br>
         <Undefined:[char=""]><br>
         For example:<br>
             `"sos@".ToMorseCode()`<br>
         will return<br>
         `"...---...<Undefined:[@]>"`_
+
+- ### **TrimLength()**
+    > _Returns part of the given System.Text.StringBuilder object<br>
+        tuncated to the requested length minus the length of the<br>
+        suffix.<br>
+        If the string is null or empty, it returns said value.<br>
+        If the string is shorter than the requested length, it returns<br>
+        the whole string.<br>
+        For example:<br>
+            `"The Extensions.cs NuGet package rocks!".TrimLength(20)`<br>
+        will return "The Extensions.cs..." while<br>
+            `"The Extensions.cs NuGet package rocks!".TrimLength(20, "")`<br>
+        will return "The Extensions.cs Nu" and<br>
+            `"The Extensions.cs NuGet package rocks!".TrimLength(20, ">>")`<br>
+        will return "The Extensions.cs >>"<br>_
 
 - ### **Words()**
     > _This method returns the number of words used in the given string<br>

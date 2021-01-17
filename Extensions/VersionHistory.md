@@ -40,3 +40,5 @@
 	- Add `System.Text.StringBuilder.ToEnum<T>()`
 	- Add `System.String.ToMorseCode()`
 	- Add `System.Text.StringBuilder.ToMorseCode()`
+	- Add `System.String.TrimLength()`
+	- Add `System.Text.StringBuilder.TrimLength()`

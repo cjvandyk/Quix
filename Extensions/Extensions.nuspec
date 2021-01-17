@@ -63,16 +63,6 @@
       "abc123".IsAlphabetic()
       will return False.
 
-      IsNumeric()
-      Validates that the given string object contains all numeric
-      characters (0-9) returning True if it does and False  if it
-      doesn't.
-      For example:
-      "123456".IsNumeric()
-      will return True whereas
-      "abc123".IsNumeric()
-      will return False.
-
       IsAlphaNumeric()
       Validates that the given string object contains all alphabetic
       and/or numeric characters (a-z and A-Z and 0-9) returning True if it
@@ -94,6 +84,24 @@
       will return False.
       For example:
       "aacc".IsChar(new char[] {'a', 'c'})
+      will return True whereas
+      "abc123".IsNumeric()
+      will return False.
+
+      IsEmail()
+      Validates that the given string object contains a valid email address.
+      For example:
+      "noreply@crayveon.com".IsEmail()
+      will return True whereas
+      "noreplay-at-crayveon.com".IsEmail()
+      will return False.
+
+      IsNumeric()
+      Validates that the given string object contains all numeric
+      characters (0-9) returning True if it does and False  if it
+      doesn't.
+      For example:
+      "123456".IsNumeric()
       will return True whereas
       "abc123".IsNumeric()
       will return False.
@@ -192,6 +200,21 @@
       "sos@".ToMorseCode()
       will return
       "...---...[Undefined:[@]]"
+
+      TrimLength()
+      Returns part of the given System.Text.StringBuilder object
+      tuncated to the requested length minus the length of the
+      suffix.
+      If the string is null or empty, it returns said value.
+      If the string is shorter than the requested length, it returns
+      the whole string.
+      For example:
+      "The Extensions.cs NuGet package rocks!".TrimLength(20)
+      will return "The Extensions.cs..." while
+      "The Extensions.cs NuGet package rocks!".TrimLength(20, "")
+      will return "The Extensions.cs Nu" and
+      "The Extensions.cs NuGet package rocks!".TrimLength(20, ">>")
+      will return "The Extensions.cs >>"
 
       Words()
       This method returns the number of words used in the given string

@@ -18,6 +18,7 @@ namespace Extensions
     /// </summary>
     public static class String
     {
+        #region GetUrlRoot()
         /// <summary>
         /// Get the URL root for the given string object containing a URL.
         /// For example:
@@ -52,7 +53,9 @@ namespace Extensions
             url.Append(GetUrlRoot(url.ToString()));
             return url;
         }
+        #endregion GetUrlRoot()
 
+        #region IsAlphabetic()
         /// <summary>
         /// Checks if the given string contains all alphabetic characters.
         /// </summary>
@@ -87,7 +90,9 @@ namespace Extensions
         {
             return IsAlphabetic(str.ToString(), Classic);
         }
+        #endregion IsAlphabetic()
 
+        #region IsAlphaNumeric()
         /// <summary>
         /// Checks if the given string contains only alphabetic and numeric 
         /// characters.
@@ -124,7 +129,9 @@ namespace Extensions
         {
             return IsAlphaNumeric(str.ToString(), Classic);
         }
+        #endregion IsAlphaNumeric()
 
+        #region IsEmail()
         /// <summary>
         /// Checks if a given System.String object is an email address.
         /// </summary>
@@ -154,7 +161,9 @@ namespace Extensions
         {
             return IsEmail(str.ToString());
         }
+        #endregion IsEmail()
 
+        #region IsNumeric()
         /// <summary>
         /// Checks if the given string contains all numeric characters.
         /// </summary>
@@ -189,7 +198,9 @@ namespace Extensions
         {
             return IsNumeric(str.ToString(), Classic);
         }
+        #endregion IsNumeric()
 
+        #region IsChar()
         /// <summary>
         /// Check if the given string contains only the characters in the 
         /// Chars array being passed.
@@ -246,7 +257,9 @@ namespace Extensions
         {
             return IsChar(str.ToString(), Chars, Classic);
         }
+        #endregion IsChar()
 
+        #region IsUrlRoot()
         /// <summary>
         /// Check if the given string object containing a URL, is that of the
         /// URL root only.  Returns True if so, False if not.  For example:
@@ -283,7 +296,9 @@ namespace Extensions
         {
             return IsUrlRoot(url.ToString());
         }
+        #endregion IsUrlRoot()
 
+        #region Lines()
         /// <summary>
         /// Returns the number of sentences in the given string object.
         /// </summary>
@@ -305,7 +320,9 @@ namespace Extensions
         {
             return Lines(str.ToString());
         }
+        #endregion Lines()
 
+        #region LoremIpsum()
         /// <summary>
         /// Returns a string containing 1 - 10 paragraphs of dummy text
         /// in lorem ipsum style.
@@ -342,7 +359,9 @@ namespace Extensions
             str.Append(LoremIpsum(str.ToString(), Paragraphs));
             return str;
         }
+        #endregion LoremIpsum()
 
+        #region MorseCodeBeep()
         /// <summary>
         /// Takes a given System.String representing Morse code and audiblize
         /// it according to standards.
@@ -394,7 +413,9 @@ namespace Extensions
         {
             MorseCodeBeep(str.ToString(), frequency, duration);
         }
+        #endregion MorseCodeBeep()
 
+        #region ReplaceTokens()
         /// <summary>
         /// Takes a given string and replaces 1 to n tokens in the string
         /// with replacement tokens as defined in the given Dictionary
@@ -433,7 +454,9 @@ namespace Extensions
             str.Append(ReplaceTokens(str.ToString(), tokens));
             return str;
         }
+        #endregion ReplaceTokens()
 
+        #region ToBinary()
         /// <summary>
         /// Returns the binary representation of a given string object.
         /// </summary>
@@ -460,7 +483,9 @@ namespace Extensions
         {
             return ToBinary(str.ToString());
         }
+        #endregion ToBinary()
 
+        #region ToEnum()
         /// <summary>
         /// Convert a System.String to its Enum value.
         /// </summary>
@@ -482,7 +507,9 @@ namespace Extensions
         {
             return (str.ToString().ToEnum<T>());
         }
+        #endregion ToEnum()
 
+        #region ToMorseCode()
         /// <summary>
         /// Convert given System.String to its Morse code representation.
         /// Undefined characters will return in the format:
@@ -534,7 +561,53 @@ namespace Extensions
         {
             return (str.ToString());
         }
+        #endregion ToMorseCode()
 
+        #region TrimLength()
+        /// <summary>
+        /// Returns part of the given System.String object tuncated to 
+        /// the requested length minus the length of the suffix.
+        /// If the string is null or empty, it returns said value.
+        /// If the string is shorter than the requested length, it returns
+        /// the whole string.
+        /// </summary>
+        /// <param name="str">The given System.String object.</param>
+        /// <param name="length">The requested length of the return string.</param>
+        /// <param name="suffix">The string appended to the end of the
+        /// returned string.  Default value is "..."</param>
+        /// <returns>Returns part of the given System.String object tuncated 
+        /// to the requested length minus the length of the suffix.</returns>
+        public static string TrimLength(this System.String str, 
+                                        int length, 
+                                        string suffix = "...")
+        {
+            return (string.IsNullOrEmpty(str) || str.Length < length ? str :
+                (str.Substring(0, length - suffix.Length) + suffix));
+        }
+
+        /// <summary>
+        /// Returns part of the given System.Text.StringBuilder object 
+        /// tuncated to the requested length minus the length of the 
+        /// suffix.
+        /// If the string is null or empty, it returns said value.
+        /// If the string is shorter than the requested length, it returns
+        /// the whole string.
+        /// </summary>
+        /// <param name="str">The given System.Text.StringBuilder object.</param>
+        /// <param name="length">The requested length of the return string.</param>
+        /// <param name="suffix">The string appended to the end of the
+        /// returned string.  Default value is "..."</param>
+        /// <returns>Returns part of the given System.String object tuncated 
+        /// to the requested length minus the length of the suffix.</returns>
+        public static string TrimLength(this System.Text.StringBuilder str, 
+                                        int length,
+                                        string suffix = "...")
+        {
+            return TrimLength(str.ToString(), length, suffix);
+        }
+        #endregion TrimLength()
+
+        #region Words()
         /// <summary>
         /// Returns the number of words in the given string object.
         /// </summary>
@@ -562,6 +635,7 @@ namespace Extensions
         {
             return Words(str.ToString());
         }
+        #endregion Words()
 
         //public static bool ToEmailSafeTextFile(this System.String filePath)
         //{
