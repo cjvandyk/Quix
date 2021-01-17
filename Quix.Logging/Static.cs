@@ -60,7 +60,12 @@ namespace Quix
         /// </summary>
         public static bool logToEventLog { get; set; } = false;
 
-        public static System.Diagnostics.EventLogEntryType logToEventLogEntryType = System.Diagnostics.EventLogEntryType.Information;
+        /// <summary>
+        /// Allows caller to control the severity of the Event Log entry.
+        /// </summary>
+        public static System.Diagnostics.EventLogEntryType 
+            logToEventLogEntryType = 
+            System.Diagnostics.EventLogEntryType.Information;
 
         /// <summary>
         /// Initialize the log file path, but include an identifying string
@@ -128,12 +133,33 @@ namespace Quix
         /// percentage etc.</param>
         /// <returns>true if logging was successful, false if not.</returns>
         public static bool Log(string message, bool noTimeStamp = false,
-            bool staticOutputLocation = false)
+            bool staticOutputLocation = false, bool includeStackFrame = false,
+            bool overLoaded = false)
         {
             // No logging code should EVER terminate it's parent program 
             // through exceptions.
             try
             {
+                // Check if caller wants StackFrame info included.
+                if (includeStackFrame)
+                {
+                    int frameOffset = 1;
+                    // Check if an overloaded method is used to call Log().
+                    if (overLoaded)
+                    {
+                        frameOffset++;
+                    }
+                    // Get the StackFrame including FileInfo.
+                    var stackFrame = new System.Diagnostics.StackTrace(true)
+                        .GetFrame(frameOffset);
+                    // Append the StackFrame info to the message.
+                    message = string.Format(message +
+                        " --->>> Called from {0} in {1} line {2} column {3}.",
+                        stackFrame.GetMethod().ToString(),
+                        stackFrame.GetFileName(), 
+                        stackFrame.GetFileLineNumber(),
+                        stackFrame.GetFileColumnNumber());
+                }
                 // We use a single & because if we're not logging to the 
                 // console, it does not matter to what value 
                 // staticOutputLocation is set.  The use of single & prevents

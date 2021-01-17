@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "..\Auth\Auth.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quix", "..\Quix\Quix.csproj", "{EDCE7940-02BE-4988-8E06-35BFD89DBD64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rename", "..\Rename\Rename.csproj", "{9921BB12-F52B-4F1D-96F6-3943734E5F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "..\Extensions\Extensions.csproj", "{331A7C3B-45DC-4E04-85BF-DE1934C6B3FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddLinks", "..\AddLinks\AddLinks.csproj", "{6601C6D1-C3DB-453C-B734-BD7EF19A413F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registry", "..\Registry\Registry.csproj", "{0EFC405C-BE09-40ED-8BF1-6C878BB4E15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UX", "..\UX\UX.csproj", "{CCB5E64A-6AD7-440A-AA57-2AE597E2D258}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +37,26 @@ Global
 		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDCE7940-02BE-4988-8E06-35BFD89DBD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9921BB12-F52B-4F1D-96F6-3943734E5F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9921BB12-F52B-4F1D-96F6-3943734E5F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9921BB12-F52B-4F1D-96F6-3943734E5F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9921BB12-F52B-4F1D-96F6-3943734E5F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{331A7C3B-45DC-4E04-85BF-DE1934C6B3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331A7C3B-45DC-4E04-85BF-DE1934C6B3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331A7C3B-45DC-4E04-85BF-DE1934C6B3FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331A7C3B-45DC-4E04-85BF-DE1934C6B3FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6601C6D1-C3DB-453C-B734-BD7EF19A413F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6601C6D1-C3DB-453C-B734-BD7EF19A413F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6601C6D1-C3DB-453C-B734-BD7EF19A413F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6601C6D1-C3DB-453C-B734-BD7EF19A413F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFC405C-BE09-40ED-8BF1-6C878BB4E15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFC405C-BE09-40ED-8BF1-6C878BB4E15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFC405C-BE09-40ED-8BF1-6C878BB4E15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFC405C-BE09-40ED-8BF1-6C878BB4E15F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB5E64A-6AD7-440A-AA57-2AE597E2D258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB5E64A-6AD7-440A-AA57-2AE597E2D258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB5E64A-6AD7-440A-AA57-2AE597E2D258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB5E64A-6AD7-440A-AA57-2AE597E2D258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

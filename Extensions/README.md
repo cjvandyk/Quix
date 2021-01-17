@@ -60,16 +60,6 @@ with these methods:
             `"abc123".IsAlphabetic()`<br>
         will return False._
     
-- ### **IsNumeric()**
-    > _Validates that the given string object contains all numeric<br>
-        characters (0-9) returning True if it does and False  if it<br>
-        doesn't.<br>
-        For example:<br>
-            `"123456".IsNumeric()`<br>
-        will return True whereas<br>
-            `"abc123".IsNumeric()`<br>
-        will return False._
-
 - ### **IsAlphaNumeric()**
     > _Validates that the given string object contains all alphabetic<br>
         and/or numeric characters (a-z and A-Z and 0-9) returning True if it<br>
@@ -94,7 +84,25 @@ with these methods:
         will return True whereas<br>
             `"abc123".IsChar(new char[] {'a', 'c'})`<br>
         will return False._
-   
+
+- ### **IsEmail()**
+    > _Validates that the given string object contains a valid email address.<br>
+        For example:<br>
+            `"noreply@crayveon.com".IsEmail()`<br>
+        will return True whereas<br>
+            `"noreplay-at-crayveon.com".IsEmail()`<br>
+        will return False._
+
+- ### **IsNumeric()**
+    > _Validates that the given string object contains all numeric<br>
+        characters (0-9) returning True if it does and False  if it<br>
+        doesn't.<br>
+        For example:<br>
+            `"123456".IsNumeric()`<br>
+        will return True whereas<br>
+            `"abc123".IsNumeric()`<br>
+        will return False._
+
 - ### **IsUrlRoot()**
     > _Check if the given string object containing a URL, is that of the<br>
         URL root only.  Returns True if so, False if not.<br>

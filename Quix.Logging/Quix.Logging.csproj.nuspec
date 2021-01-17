@@ -7,14 +7,14 @@
     <owners>Cornelius J. van Dyk</owners>
     <licenseUrl>https://github.com/cjvandyk/Quix/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/cjvandyk/Quix</projectUrl>
-    <iconUrl>https://github.com/cjvandyk/Quix/blob/master/Quix.File/Quix.ico</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/cjvandyk/Quix/master/Quix.File/Quix.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Logging framework for Quix Utilities.</description>
     <releaseNotes>Added static logging class.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Quix Logging Crayveon cjvandyk</tags>
     <dependencies>
-      <dependency id="Quix.Core" version="1.0.8" />
+      <dependency id="Quix.Core" version="1.0.27" />
     </dependencies>
   </metadata>
 </package>

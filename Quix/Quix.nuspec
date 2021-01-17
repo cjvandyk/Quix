@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <license type="expression">GPL-3.0-or-later</license>
+    <projectUrl>https://github.com/cjvandyk/Quix/tree/master/Quix</projectUrl>
+    <iconUrl>https://github.com/cjvandyk/Quix/tree/master/Quix/Quix.ico</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <summary>
+      Quix.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
+      These methods are included:
+        GetUrlRoot()
+        IsAlphabetic()
+        IsNumeric()
+        IsAlphaNumeric()
+        IsChar()
+        IsUrlRoot()
+        Lines()
+        Words()
+    </summary>
+    <releaseNotes>
+                  GetUrlRoot()
+                    Get the URL root for the given string object containing a URL.
+                    For example:
+                      "https://cjvandyk.sharepoint.com".GetUrlRoot()
+                      will return 
+                      "https://cjvandyk.sharepoint.com" 
+                      whereas
+                      "https://cjvandyk.sharepoint.com/sites/Approval".GetUrlRoot()
+                      will also return 
+                      "https://cjvandyk.sharepoint.com".
+                  
+                  IsAlphabetic()
+                    Validates that the given string object contains all alphabetic
+                    characters (a-z and A-Z) returning True if it does and False if
+                    it doesn't.
+
+                  IsNumeric()
+                    Validates that the given string object contains all numeric
+                    characters (0-9) returning True if it does and False  if it
+                    doesn't.
+
+                  IsAlphaNumeric()
+                    Validates that the given string object contains all alphabetic
+                    and/or numeric characters (a-z and A-Z and 0-9) returning True if it
+                    does and False  if it doesn't.
+
+                  IsChar()
+                    This method takes a char[] as one of its arguments against which the
+                    given string object is validated.  If the given string object contains
+                    only characters found in the char[] it will return True, otherwise it
+                    will return False.
+
+                  IsUrlRoot()
+                    Check if the given string object containing a URL, is that of the
+                    URL root only.  Returns True if so, False if not.  For example:
+                      "https://cjvandyk.sharepoint.com".IsUrlRootOnly()
+                      will return True whereas
+                      "https://cjvandyk.sharepoint.com/sites/Approval".IsUrlRootOnly()
+                      will return False.
+
+                  Lines()
+                    This method returns the number of lines/sentences in the given string
+                    object.
+
+                  Words()
+                    This method returns the number of words used in the given string
+                    object.</releaseNotes>
+    <copyright>Copyright 2020-2021</copyright>
+    <tags>Quix Extensions C# cjvandyk Crayveon</tags>
+  </metadata>
+</package>

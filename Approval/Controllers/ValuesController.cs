@@ -16,6 +16,7 @@ using System.Web.Http;
 
 namespace Approval.Controllers
 {
+    [System.Web.Http.Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values

@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quix.Logging</RootNamespace>
     <AssemblyName>Quix.Logging</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-    <AssemblyVersion>1.0.35</AssemblyVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <AssemblyVersion>1.0.54</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,9 +47,6 @@
     <AssemblyOriginatorKeyFile>Quix.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Quix.Core, Version=1.0.9.0, Culture=neutral, PublicKeyToken=3c270b17dee88fe3, processorArchitecture=MSIL">
-      <HintPath>packages\Quix.Core.1.0.8\lib\net20\Quix.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -63,7 +61,6 @@
     <Content Include="Quix.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Quix.Logging.csproj.nuspec" />
     <None Include="Quix.snk" />
   </ItemGroup>

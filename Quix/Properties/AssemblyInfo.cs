@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Quix")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Quix.dll contains extension methods that enhance existing C# classes thus making life easier for developers.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Cornelius J. van Dyk")]
 [assembly: AssemblyProduct("Quix")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Quix and Crayveon are trademarks of Crayveon Corporation.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("edce7940-02be-4988-8e06-35bfd89dbd64")]
+[assembly: Guid("27c0479c-6e7f-4a10-aa3f-3b8fa2b77194")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,7 +32,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.5.0")]
-[assembly: AssemblyFileVersion("1.0.5.0")]
+[assembly: AssemblyVersion("1.0.31.0")]
+[assembly: AssemblyFileVersion("1.0.31.0")]
 
-[assembly: AssemblyInformationalVersion("1.0.5")]
+[assembly: AssemblyInformationalVersion("1.0.31")]

@@ -57,15 +57,18 @@ namespace Extensions
         /// Checks if the given string contains all alphabetic characters.
         /// </summary>
         /// <param name="str">The given string object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if all characters in the given string are alphabetic, else False.</returns>
-        public static bool IsAlphabetic(this System.String str, bool Classic = false)
+        /// <param name="Classic">Switch to force RegEx comparison instead of
+        /// Linq.</param>
+        /// <returns>True if all characters in the given string are alphabetic,
+        /// else False.</returns>
+        public static bool IsAlphabetic(this System.String str, 
+                                        bool Classic = false)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
                 return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[a-zA-Z]+$");
             }
-            else  //This method is on average 670% faster than the Classic RegEx method.
+            else  //This method is on average 670% faster than RegEx method.
             {
                 return str.ToCharArray().All(Char.IsLetter);
             }
@@ -75,26 +78,99 @@ namespace Extensions
         /// Checks if the given string contains all alphabetic characters.
         /// </summary>
         /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if all characters in the given string are alphabetic, else False.</returns>
-        public static bool IsAlphabetic(this System.Text.StringBuilder str, bool Classic = false)
+        /// <param name="Classic">Switch to force RegEx comparison instead
+        /// of Linq.</param>
+        /// <returns>True if all characters in the given string are alphabetic,
+        /// else False.</returns>
+        public static bool IsAlphabetic(this System.Text.StringBuilder str, 
+                                        bool Classic = false)
         {
             return IsAlphabetic(str.ToString(), Classic);
+        }
+
+        /// <summary>
+        /// Checks if the given string contains only alphabetic and numeric 
+        /// characters.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <param name="Classic">Switch to force RegEx comparison instead of 
+        /// Linq.</param>
+        /// <returns>True if all characters in the given string are either 
+        /// alphabetic or numeric, else False.</returns>
+        public static bool IsAlphaNumeric(this System.String str,
+                                          bool Classic = false)
+        {
+            if (Classic)  //No LINQ available e.g. .NET 2.0
+            {
+                return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[a-zA-Z0-9]+$");
+            }
+            else  //This method is on average 670% faster than RegEx method.
+            {
+                return str.ToCharArray().All(Char.IsLetterOrDigit);
+            }
+        }
+
+        /// <summary>
+        /// Checks if the given string contains only alphabetic and numeric 
+        /// characters.
+        /// </summary>
+        /// <param name="str">The given string builder object to check.</param>
+        /// <param name="Classic">Switch to force RegEx comparison instead of 
+        /// Linq.</param>
+        /// <returns>True if all characters in the given string are either 
+        /// alphabetic or numeric, else False.</returns>
+        public static bool IsAlphaNumeric(this System.Text.StringBuilder str,
+                                          bool Classic = false)
+        {
+            return IsAlphaNumeric(str.ToString(), Classic);
+        }
+
+        /// <summary>
+        /// Checks if a given System.String object is an email address.
+        /// </summary>
+        /// <param name="str">The System.String to validate as email.</param>
+        /// <returns>True if email, false if not.</returns>
+        public static bool IsEmail(this System.String str)
+        {
+            try
+            {
+                var email = new System.Net.Mail.MailAddress(str);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Checks if a given System.Text.StringBuilder object is an email
+        /// address.
+        /// </summary>
+        /// <param name="str">The System.Text.StringBuilder to validate as
+        /// email.</param>
+        /// <returns>True if email, false if not.</returns>
+        public static bool IsEmail(this System.Text.StringBuilder str)
+        {
+            return IsEmail(str.ToString());
         }
 
         /// <summary>
         /// Checks if the given string contains all numeric characters.
         /// </summary>
         /// <param name="str">The given string object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if all characters in the given string are numeric, else False.</returns>
-        public static bool IsNumeric(this System.String str, bool Classic = false)
+        /// <param name="Classic">Switch to force RegEx comparison instead
+        /// of Linq.</param>
+        /// <returns>True if all characters in the given string are numeric,
+        /// else False.</returns>
+        public static bool IsNumeric(this System.String str, 
+                                     bool Classic = false)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
                 return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[0-9]+$");
             }
-            else  //This method is on average 670% faster than the Classic RegEx method.
+            else  //This method is on average 670% faster than RegEx method.
             {
                 return str.ToCharArray().All(Char.IsDigit);
             }
@@ -104,50 +180,30 @@ namespace Extensions
         /// Checks if the given string contains all numeric characters.
         /// </summary>
         /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if all characters in the given string are numeric, else False.</returns>
-        public static bool IsNumeric(this System.Text.StringBuilder str, bool Classic = false)
+        /// <param name="Classic">Switch to force RegEx comparison instead of 
+        /// Linq.</param>
+        /// <returns>True if all characters in the given string are numeric,
+        /// else False.</returns>
+        public static bool IsNumeric(this System.Text.StringBuilder str, 
+                                     bool Classic = false)
         {
             return IsNumeric(str.ToString(), Classic);
         }
 
         /// <summary>
-        /// Checks if the given string contains only alphabetic and numeric characters.
+        /// Check if the given string contains only the characters in the 
+        /// Chars array being passed.
         /// </summary>
         /// <param name="str">The given string object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if all characters in the given string are either alphabetic or numeric, else False.</returns>
-        public static bool IsAlphaNumeric(this System.String str, bool Classic = false)
-        {
-            if (Classic)  //No LINQ available e.g. .NET 2.0
-            {
-                return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[a-zA-Z0-9]+$");
-            }
-            else  //This method is on average 670% faster than the Classic RegEx method.
-            {
-                return str.ToCharArray().All(Char.IsLetterOrDigit);
-            }
-        }
-
-        /// <summary>
-        /// Checks if the given string contains only alphabetic and numeric characters.
-        /// </summary>
-        /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if all characters in the given string are either alphabetic or numeric, else False.</returns>
-        public static bool IsAlphaNumeric(this System.Text.StringBuilder str, bool Classic = false)
-        {
-            return IsAlphaNumeric(str.ToString(), Classic);
-        }
-
-        /// <summary>
-        /// Check if the given string contains only the characters in the Chars array being passed.
-        /// </summary>
-        /// <param name="str">The given string object to check.</param>
-        /// <param name="Chars">The array of valid characters that are checked in the string.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if the given string contains only characters in the Chars array, else False.</returns>
-        public static bool IsChar(this System.String str, char[] Chars, bool Classic = false)
+        /// <param name="Chars">The array of valid characters that are checked
+        /// in the string.</param>
+        /// <param name="Classic">Switch to force RegEx comparison instead of
+        /// Linq.</param>
+        /// <returns>True if the given string contains only characters in the 
+        /// Chars array, else False.</returns>
+        public static bool IsChar(this System.String str, 
+                                  char[] Chars, 
+                                  bool Classic = false)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
@@ -157,7 +213,8 @@ namespace Extensions
                     comparor += c;
                 }
                 comparor += "]+$";
-                return System.Text.RegularExpressions.Regex.IsMatch(str, comparor);
+                return System.Text.RegularExpressions.Regex.IsMatch(str, 
+                                                                    comparor);
             }
             else
             {
@@ -173,13 +230,19 @@ namespace Extensions
         }
 
         /// <summary>
-        /// Check if the given string contains only the characters in the Chars array being passed.
+        /// Check if the given string contains only the characters in the
+        /// Chars array being passed.
         /// </summary>
         /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Chars">The array of valid characters that are checked in the string.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of Linq.</param>
-        /// <returns>True if the given string contains only characters in the Chars array, else False.</returns>
-        public static bool IsChar(this System.Text.StringBuilder str, char[] Chars, bool Classic = false)
+        /// <param name="Chars">The array of valid characters that are checked
+        /// in the string.</param>
+        /// <param name="Classic">Switch to force RegEx comparison instead of
+        /// Linq.</param>
+        /// <returns>True if the given string contains only characters in the
+        /// Chars array, else False.</returns>
+        public static bool IsChar(this System.Text.StringBuilder str, 
+                                  char[] Chars, 
+                                  bool Classic = false)
         {
             return IsChar(str.ToString(), Chars, Classic);
         }
@@ -252,7 +315,8 @@ namespace Extensions
         /// <param name="Paragraphs">An integer with the number of paragraphs
         /// to be returned.  Presently supports 1-10</param>
         /// <returns>The string containing the generated dummy text.</returns>
-        public static string LoremIpsum(this System.String str, int Paragraphs)
+        public static string LoremIpsum(this System.String str, 
+                                        int Paragraphs)
         {
             str = null;
             for (int i = 0; i < Paragraphs; i++)
@@ -271,7 +335,8 @@ namespace Extensions
         /// <param name="Paragraphs">An integer with the number of paragraphs
         /// to be returned.  Presently supports 1-10</param>
         /// <returns>The string containing the generated dummy text.</returns>
-        public static System.Text.StringBuilder LoremIpsum(this System.Text.StringBuilder str, int Paragraphs)
+        public static System.Text.StringBuilder LoremIpsum(this System.Text.StringBuilder str, 
+                                                           int Paragraphs)
         {
             str.Clear();
             str.Append(LoremIpsum(str.ToString(), Paragraphs));
@@ -288,7 +353,9 @@ namespace Extensions
         /// <param name="str">The System.String text in Morse code format.</param>
         /// <param name="frequency">The beep frequency.</param>
         /// <param name="duration">The duration of a dot beep in ms.</param>
-        public static void MorseCodeBeep(this System.String str, int frequency = 999, int duration = 200)
+        public static void MorseCodeBeep(this System.String str, 
+                                         int frequency = 999, 
+                                         int duration = 200)
         {
             foreach (char c in str)
             {
@@ -317,10 +384,13 @@ namespace Extensions
         /// Assumes the input value to be in Morse code format already.
         /// Use .ToMorseCode() to pre-convert text if needed.
         /// </summary>
-        /// <param name="str">The System.Text.StringBuilder text in Morse code format.</param>
+        /// <param name="str">The System.Text.StringBuilder text in Morse
+        /// code format.</param>
         /// <param name="frequency">The beep frequency.</param>
         /// <param name="duration">The duration of a dot beep in ms.</param>
-        public static void MorseCodeBeep(this System.Text.StringBuilder str, int frequency = 999, int duration = 200)
+        public static void MorseCodeBeep(this System.Text.StringBuilder str, 
+                                         int frequency = 999, 
+                                         int duration = 200)
         {
             MorseCodeBeep(str.ToString(), frequency, duration);
         }
@@ -335,7 +405,8 @@ namespace Extensions
         /// <param name="tokens">A Dictionary of tokens and replacement
         /// strings to be used for replacement.</param>
         /// <returns>A System.String value with tokens replaced.</returns>
-        public static string ReplaceTokens(this System.String str, Dictionary<string, string> tokens)
+        public static string ReplaceTokens(this System.String str, 
+                                           Dictionary<string, string> tokens)
         {
             string returnValue = str;
             foreach (string key in tokens.Keys)
@@ -355,7 +426,8 @@ namespace Extensions
         /// <param name="tokens">A Dictionary of tokens and replacement
         /// strings to be used for replacement.</param>
         /// <returns>A System.Text.StringBuilder value with tokens replaced.</returns>
-        public static System.Text.StringBuilder ReplaceTokens(this System.Text.StringBuilder str, Dictionary<string, string> tokens)
+        public static System.Text.StringBuilder ReplaceTokens(this System.Text.StringBuilder str, 
+                                                              Dictionary<string, string> tokens)
         {
             str.Clear();
             str.Append(ReplaceTokens(str.ToString(), tokens));
@@ -370,7 +442,8 @@ namespace Extensions
         public static string ToBinary(this System.String str)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            foreach (byte b in System.Text.ASCIIEncoding.UTF8.GetBytes(str.ToCharArray()))
+            foreach (byte b in System.Text.ASCIIEncoding.UTF8.GetBytes(
+                str.ToCharArray()))
             {
                 sb.Append(Convert.ToString(b, 2) + " ");
             }
@@ -422,15 +495,18 @@ namespace Extensions
         /// <param name="str">The given string to convert to Morse code.</param>
         /// <param name="includeSpaces">Are spaces included in translation.</param>
         /// <returns>The Morse code represenation of the given string.</returns>
-        public static string ToMorseCode(this System.String str, bool includeSpaces = true)
+        public static string ToMorseCode(this System.String str, 
+                                         bool includeSpaces = true)
         {
-            System.Text.StringBuilder returnValue = new System.Text.StringBuilder();
+            System.Text.StringBuilder returnValue = 
+                new System.Text.StringBuilder();
             string tempStr = "";
             foreach (char c in str.ToLower())
             {
                 if (Constants.MorseCode.TryGetValue(c, out tempStr))
                 {
-                    returnValue.Append(c != ' ' ? tempStr : (includeSpaces ? tempStr : ""));
+                    returnValue.Append(c != ' ' ? tempStr : 
+                        (includeSpaces ? tempStr : ""));
                 }
                 else
                 {
@@ -453,7 +529,8 @@ namespace Extensions
         /// <param name="str">The given string to convert to Morse code.</param>
         /// <param name="includeSpaces">Are spaces included in translation.</param>
         /// <returns>The Morse code represenation of the given string.</returns>
-        public static string ToMorseCode(this System.Text.StringBuilder str, bool includeSpaces = true)
+        public static string ToMorseCode(this System.Text.StringBuilder str, 
+                                         bool includeSpaces = true)
         {
             return (str.ToString());
         }

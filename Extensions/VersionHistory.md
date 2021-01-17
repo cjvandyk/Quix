@@ -4,9 +4,9 @@
 	- Add `System.Diagnostics.Process.Elevate()`
 	- Add `System.String.GetUrlRoot()`
 	- Add `System.String.IsAlphabetic()`
-	- Add `System.String.IsNumeric()`
 	- Add `System.String.IsAlphaNumeric()`
 	- Add `System.String.IsChar()`
+	- Add `System.String.IsNumeric()`
 	- Add `System.String.IsUrlRoot()`
 	- Add `System.String.Lines()`
 	- Add `System.String.LoremIpsum()`
@@ -14,9 +14,9 @@
 	- Add `System.String.Words()`
 	- Add `System.Text.StringBuilder.GetUrlRoot()`
 	- Add `System.Text.StringBuilder.IsAlphabetic()`
-	- Add `System.Text.StringBuilder.IsNumeric()`
 	- Add `System.Text.StringBuilder.IsAlphaNumeric()`
 	- Add `System.Text.StringBuilder.IsChar()`
+	- Add `System.Text.StringBuilder.IsNumeric()`
 	- Add `System.Text.StringBuilder.IsUrlRoot()`
 	- Add `System.Text.StringBuilder.Lines()`
 	- Add `System.Text.StringBuilder.LoremIpsum()`
@@ -32,9 +32,11 @@
 	- Add `System.Object.Set()`
 
 1.2.x (2021-01-22)
+	- Add `System.String.IsEmail()`
+	- Add `System.Text.StringBuilder.IsEmail()`
+	- Add `System.String.MorseCodeBeep()`
+	- Add `System.Text.StringBuilder.MorseCodeBeep()`
 	- Add `System.String.ToEnum<T>()`
 	- Add `System.Text.StringBuilder.ToEnum<T>()`
 	- Add `System.String.ToMorseCode()`
 	- Add `System.Text.StringBuilder.ToMorseCode()`
-	- Add `System.String.MorseCodeBeep()`
-	- Add `System.Text.StringBuilder.MorseCodeBeep()`
