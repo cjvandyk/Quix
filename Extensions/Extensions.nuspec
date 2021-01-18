@@ -149,6 +149,14 @@
       Assumes the input value to be in Morse code format already.
       Use .ToMorseCode() to pre-convert text if needed.
 
+      RemoveExtraSpace()
+      Trims leading and trailing white space and then removes all extra
+      white space in the given string returning a single spaced result.
+      For example:
+      "  blog.cjvandyk.com    rocks   !   ".RemoveExtraSpace()
+      will return
+      "blog.cjvandyk.com rocks !"
+
       ReplaceTokens()
       Takes a given string object and replaces 1 to n tokens in the string
       with replacement tokens as defined in the given Dictionary of strings.

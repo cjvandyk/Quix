@@ -36,6 +36,8 @@
 	- Add `System.Text.StringBuilder.IsEmail()`
 	- Add `System.String.MorseCodeBeep()`
 	- Add `System.Text.StringBuilder.MorseCodeBeep()`
+	- Add `System.String.RemoveExtraSpace()`
+	- Add `System.Text.StringBuilder.RemoveExtraSpace()`
 	- Add `System.String.ToEnum<T>()`
 	- Add `System.Text.StringBuilder.ToEnum<T>()`
 	- Add `System.String.ToMorseCode()`

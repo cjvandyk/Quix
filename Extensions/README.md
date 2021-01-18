@@ -148,6 +148,18 @@ with these methods:
         Assumes the input value to be in Morse code format already.<br>
         Use `.ToMorseCode()` to pre-convert text if needed._
 
+- ### **RemoveExtraSpace()**
+    > _Trims leading and trailing white space and then removes all extra<br>
+        white space in the given string returning a single spaced result.<br>
+        For example:<br>
+            `"  blog.cjvandyk.com    rocks   !   ".RemoveExtraSpace()`<br>
+        will return<br>
+            `"blog.cjvandyk.com rocks !"`_
+
+- ### **ReplaceTokens()**
+    > _Takes a given string object and replaces 1 to n tokens in the string<br>
+        with replacement tokens as defined in the given Dictionary of strings._
+
 - ### **Retry()**
     > _Checks if a System.Net.WebException contains a "Retry-After" header.<br>
         If it does, it sleeps the thread for that period (+ 60 seconds)<br>
@@ -164,10 +176,6 @@ with these methods:
             `{`<br>
                 `ex.Retry(request);`<br>
             `}`<br>_
-
-- ### **ReplaceTokens()**
-    > _Takes a given string object and replaces 1 to n tokens in the string<br>
-        with replacement tokens as defined in the given Dictionary of strings._
 
 - ### **Set()**
     > _Language extension for properties.  Use to set the value of the<br>

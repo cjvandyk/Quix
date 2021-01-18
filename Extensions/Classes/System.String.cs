@@ -456,6 +456,38 @@ namespace Extensions
         }
         #endregion ReplaceTokens()
 
+        #region RemoveExtraSpace()
+        /// <summary>
+        /// Trims leading and trailing white space and then removes all extra
+        /// white space in the given System.String object returning a single
+        /// spaced result.
+        /// </summary>
+        /// <param name="str">The given System.String object from which
+        /// extra spaces needs to be removed.</param>
+        /// <returns>The given string object with leading and strailing white
+        /// space removed and all other spaces reduced to single space.</returns>
+        public static string RemoveExtraSpace(this System.String str)
+        {
+            return System.Text.RegularExpressions.Regex.Replace(str.Trim(), 
+                                                                "\\s+", 
+                                                                " ");
+        }
+
+        /// <summary>
+        /// Trims leading and trailing white space and then removes all extra
+        /// white space in the given System.Text.StringBuilder returning a 
+        /// single spaced result.
+        /// </summary>
+        /// <param name="str">The given System.Text.StringBuilder object from
+        /// which extra spaces needs to be removed.</param>
+        /// <returns>The given string object with leading and strailing white
+        /// space removed and all other spaces reduced to single space.</returns>
+        public static string RemoveExtraSpace(this System.Text.StringBuilder str)
+        {
+            return RemoveExtraSpace(str.ToString());
+        }
+        #endregion RemoveExtraSpace()
+
         #region ToBinary()
         /// <summary>
         /// Returns the binary representation of a given string object.
