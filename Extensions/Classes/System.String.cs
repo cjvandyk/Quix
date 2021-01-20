@@ -62,18 +62,24 @@ namespace Extensions
         /// <param name="str">The given string object to check.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead of
         /// Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are alphabetic,
         /// else False.</returns>
         public static bool IsAlphabetic(this System.String str, 
-                                        bool Classic = false)
+                                        bool Classic = false,
+                                        bool ignoreSpaces = true)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
-                return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[a-zA-Z]+$");
+                return System.Text.RegularExpressions.Regex.IsMatch(
+                    (ignoreSpaces ? str.Replace(" ", "") : str), 
+                    @"^[a-zA-Z]+$");
             }
             else  //This method is on average 670% faster than RegEx method.
             {
-                return str.ToCharArray().All(Char.IsLetter);
+                return (ignoreSpaces ? str.Replace(" ", "") : str)
+                        .ToCharArray()
+                        .All(Char.IsLetter);
             }
         }
 
@@ -83,12 +89,16 @@ namespace Extensions
         /// <param name="str">The given string builder object to check.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead
         /// of Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are alphabetic,
         /// else False.</returns>
         public static bool IsAlphabetic(this System.Text.StringBuilder str, 
-                                        bool Classic = false)
+                                        bool Classic = false,
+                                        bool ignoreSpaces = true)
         {
-            return IsAlphabetic(str.ToString(), Classic);
+            return IsAlphabetic(str.ToString(), 
+                                Classic, 
+                                ignoreSpaces);
         }
         #endregion IsAlphabetic()
 
@@ -100,18 +110,24 @@ namespace Extensions
         /// <param name="str">The given string object to check.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead of 
         /// Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are either 
         /// alphabetic or numeric, else False.</returns>
         public static bool IsAlphaNumeric(this System.String str,
-                                          bool Classic = false)
+                                          bool Classic = false,
+                                          bool ignoreSpaces = true)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
-                return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[a-zA-Z0-9]+$");
+                return System.Text.RegularExpressions.Regex.IsMatch(
+                    (ignoreSpaces ? str.Replace(" ", "") : str),
+                    @"^[a-zA-Z0-9]+$");
             }
             else  //This method is on average 670% faster than RegEx method.
             {
-                return str.ToCharArray().All(Char.IsLetterOrDigit);
+                return (ignoreSpaces ? str.Replace(" ", "") : str)
+                        .ToCharArray()
+                        .All(Char.IsLetterOrDigit);
             }
         }
 
@@ -122,12 +138,16 @@ namespace Extensions
         /// <param name="str">The given string builder object to check.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead of 
         /// Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are either 
         /// alphabetic or numeric, else False.</returns>
         public static bool IsAlphaNumeric(this System.Text.StringBuilder str,
-                                          bool Classic = false)
+                                          bool Classic = false,
+                                          bool ignoreSpaces = true)
         {
-            return IsAlphaNumeric(str.ToString(), Classic);
+            return IsAlphaNumeric(str.ToString(), 
+                                  Classic, 
+                                  ignoreSpaces);
         }
         #endregion IsAlphaNumeric()
 
@@ -256,18 +276,24 @@ namespace Extensions
         /// <param name="str">The given string object to check.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead
         /// of Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are numeric,
         /// else False.</returns>
         public static bool IsNumeric(this System.String str, 
-                                     bool Classic = false)
+                                     bool Classic = false,
+                                     bool ignoreSpaces = true)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
-                return System.Text.RegularExpressions.Regex.IsMatch(str, @"^[0-9]+$");
+                return System.Text.RegularExpressions.Regex.IsMatch(
+                    (ignoreSpaces ? str.Replace(" ", "") : str),
+                    @"^[0-9]+$");
             }
             else  //This method is on average 670% faster than RegEx method.
             {
-                return str.ToCharArray().All(Char.IsDigit);
+                return (ignoreSpaces ? str.Replace(" ", "") : str)
+                        .ToCharArray()
+                        .All(Char.IsDigit);
             }
         }
 
@@ -277,12 +303,16 @@ namespace Extensions
         /// <param name="str">The given string builder object to check.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead of 
         /// Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are numeric,
         /// else False.</returns>
         public static bool IsNumeric(this System.Text.StringBuilder str, 
-                                     bool Classic = false)
+                                     bool Classic = false,
+                                     bool ignoreSpaces = true)
         {
-            return IsNumeric(str.ToString(), Classic);
+            return IsNumeric(str.ToString(), 
+                             Classic, 
+                             ignoreSpaces);
         }
         #endregion IsNumeric()
 

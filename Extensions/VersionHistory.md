@@ -3,27 +3,27 @@
 1.0.1 (2021-01-08)
 	- Add `System.Diagnostics.Process.Elevate()`
 	- Add `System.String.GetUrlRoot()`
-	- Add `System.String.IsAlphabetic()`
-	- Add `System.String.IsAlphaNumeric()`
-	- Add `System.String.IsChar()`
-	- Add `System.String.IsNumeric()`
-	- Add `System.String.IsUrlRoot()`
-	- Add `System.String.Lines()`
-	- Add `System.String.LoremIpsum()`
-	- Add `System.String.ReplaceTokens()`
-	- Add `System.String.Words()`
 	- Add `System.Text.StringBuilder.GetUrlRoot()`
+	- Add `System.String.IsAlphabetic()`
 	- Add `System.Text.StringBuilder.IsAlphabetic()`
+	- Add `System.String.IsAlphaNumeric()`
 	- Add `System.Text.StringBuilder.IsAlphaNumeric()`
+	- Add `System.String.IsChar()`
 	- Add `System.Text.StringBuilder.IsChar()`
+	- Add `System.String.IsNumeric()`
 	- Add `System.Text.StringBuilder.IsNumeric()`
+	- Add `System.String.IsUrlRoot()`
 	- Add `System.Text.StringBuilder.IsUrlRoot()`
+	- Add `System.String.Lines()`
 	- Add `System.Text.StringBuilder.Lines()`
+	- Add `System.String.LoremIpsum()`
 	- Add `System.Text.StringBuilder.LoremIpsum()`
+	- Add `System.String.ReplaceTokens()`
 	- Add `System.Text.StringBuilder.ReplaceTokens()`
+	- Add `System.String.Words()`
 	- Add `System.Text.StringBuilder.Words()`
 
-1.1.27 (2021-01-15)
+1.1.28 (2021-01-15)
 	- Add `System.String.ToBinary()`
 	- Add `System.Text.StringBuilder.ToBinary()`
 	- Add `System.Net.WebException.Retry()`
@@ -78,3 +78,9 @@
 	- Add `System.Text.StringBuilder.ToMorseCode()`
 	- Add `System.String.TrimLength()`
 	- Add `System.Text.StringBuilder.TrimLength()`
+	- Add ignore white space option to `System.String.IsAlphabetic()`
+	- Add ignore white space option to `System.Text.StringBuilder.IsAlphabetic()`
+	- Add ignore white space option to `System.String.IsAlphaNumeric()`
+	- Add ignore white space option to `System.Text.StringBuilder.IsAlphaNumeric()`
+	- Add ignore white space option to `System.String.IsNumeric()`
+	- Add ignore white space option to `System.Text.StringBuilder.IsNumeric()`
