@@ -96,6 +96,16 @@
       "noreplay-at-crayveon.com".IsEmail()
       will return False.
 
+      IsLower()
+      Validates that the given string object contains only lower case letters.
+      For example:
+      "IsLower test".IsLower()
+      will return False while
+      "islower test".IsLower()
+      will return True and
+      "islower test".IsLower(false)
+      will return False.
+
       IsNumeric()
       Validates that the given string object contains all numeric
       characters (0-9) returning True if it does and False  if it
@@ -104,6 +114,16 @@
       "123456".IsNumeric()
       will return True whereas
       "abc123".IsNumeric()
+      will return False.
+
+      IsUpper()
+      Validates that the given string object contains only upper case letters.
+      For example:
+      "IsUpper test".IsUpper()
+      will return False while
+      "ISUPPER TEST".IsUpper()
+      will return True and
+      "ISUPPER TEST".IsUpper(false)
       will return False.
 
       IsUrlRoot()
@@ -117,6 +137,15 @@
       Lines()
       This method returns the number of lines/sentences in the given string
       object.
+
+      Load()
+      Language extension providing a universal method to all objects
+      that allows them to be deserialized from disk.
+      Does NOT require the [Serializable] property on object.
+      For example:
+      ComplexClass myClass = new ComplexClass();
+      myClass = myClass.Load("My file path");
+      Use .Save() to save objects to disk.
 
       LoremIpsum()
       Poplates the given string with a given number of paragraphs of dummy
@@ -178,6 +207,15 @@
       ex.Retry(request);
       }
 
+      Save()
+      Language extension providing a universal method to all objects
+      that allows them to be serialized to disk.
+      Does NOT require the [Serializable] property on object.
+      For example:
+      ComplexClass myClass = new ComplexClass(...constructor parms...);
+      myClass.Save("My file path");
+      Use .Load() to reload objects back from disk.
+
       Set()
       Language extension for properties.  Use to set the value of the
       extension property in question.
@@ -208,6 +246,45 @@
       "sos@".ToMorseCode()
       will return
       "...---...[Undefined:[@]]"
+
+      Binary Data Size Convertions
+      System.Double.ToNumberBytes() >>> Returns the given number expressed as Bytes.
+      System.Double.ToKB() >>> Returns the given number expressed as Kilobytes (2^10).
+      System.Double.ToMB() >>> Returns the given number expressed as Megabytes (2^20).
+      System.Double.ToGB() >>> Returns the given number expressed as Gigabytes (2^30).
+      System.Double.ToTB() >>> Returns the given number expressed as Terrabytes (2^40).
+      System.Double.ToPB() >>> Returns the given number expressed as Petabytes (2^50).
+      System.Double.ToEB() >>> Returns the given number expressed as Exabytes (2^60).
+      System.Double.ToZB() >>> Returns the given number expressed as Zettabytes (2^70).
+      System.Double.ToYB() >>> Returns the given number expressed as Yottabytes (2^80).
+      System.Double.ToBB() >>> Returns the given number expressed as Brontobytes (2^90).
+      System.Double.ToGpB() >>> Returns the given number expressed as Geopbytes (2^100).
+      System.Double.ToSB() >>> Returns the given number expressed as Saganbytes (2^110).
+      System.Double.ToPaB() >>> Returns the given number expressed as Pijabytes (2^120).
+      System.Double.ToAB() >>> Returns the given number expressed as Alphabytes (2^130).
+      System.Double.ToPlB() >>> Returns the given number expressed as Pectrolbytes (2^140).
+      System.Double.ToBrB() >>> Returns the given number expressed as Bolgerbytes (2^150).
+      System.Double.ToSoB() >>> Returns the given number expressed as Sambobytes (2^160).
+      System.Double.ToQB() >>> Returns the given number expressed as Quesabytes (2^170).
+      System.Double.ToKaB() >>> Returns the given number expressed as Kinsabytes (2^180).
+      System.Double.ToRB() >>> Returns the given number expressed as Rutherbytes (2^190).
+      System.Double.ToDB() >>> Returns the given number expressed as Dubnibytes (2^200).
+      System.Double.ToHB() >>> Returns the given number expressed as Hassiubytes (2^210).
+      System.Double.ToMrB() >>> Returns the given number expressed as Meitnerbytes (2^220).
+      System.Double.ToDdB() >>> Returns the given number expressed as Darmstadbytes (2^230).
+      System.Double.ToRtB() >>> Returns the given number expressed as Roentbytes (2^240).
+      System.Double.ToShB() >>> Returns the given number expressed as Sophobytes (2^250).
+      System.Double.ToCB() >>> Returns the given number expressed as Coperbytes (2^260).
+      System.Double.ToKkB() >>> Returns the given number expressed as Koentekbytes (2^270).
+      For example:
+      double dbl = 1;
+      Console.WriteLine(dbl.ToKB(Constants.NumberType.TB));
+      Console.WriteLine(dbl.ToKB(Constants.NumberType.GB));
+      Console.WriteLine(dbl.ToKB(Constants.NumberType.ZB));
+      will return
+      1073741824
+      1048576
+      1.15292150460685E+18
 
       TrimLength()
       Returns part of the given System.Text.StringBuilder object

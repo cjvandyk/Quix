@@ -1,8 +1,14 @@
-﻿using System;
+﻿#pragma warning disable IDE1006, IDE0017, CS0162, IDE0060, IDE0079 // Naming Styles, Simplify declaration (FQCN used), break after return, Remove unused (string[] args, Remove unnecessary suppression)
+
+/// <summary>
+/// Author: Cornelius J. van Dyk blog.cjvandyk.com @cjvandyk
+/// This code is provided under GNU GPL 3.0 and is a copyrighted work of the
+/// author and contributors.  Please see:
+/// https://github.com/cjvandyk/Quix/blob/master/LICENSE
+/// </summary>
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Extensions
 {
@@ -11,7 +17,7 @@ namespace Extensions
         /// <summary>
         /// String array of lorem ipsum text.
         /// </summary>
-        public readonly static string[] LoremIpsum = 
+        public readonly static string[] LoremIpsum =
         {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam arcu rhoncus erat consectetur, quis rutrum augue tincidunt. Suspendisse elit ipsum, lobortis lobortis tellus eu, vulputate fringilla lorem. Cras molestie nibh sed turpis dapibus sollicitudin ut a nulla. Suspendisse blandit suscipit egestas. Nunc et ante mattis nulla vehicula rhoncus. Vivamus commodo nunc id ultricies accumsan. Mauris vitae ante ut justo venenatis tempus.",
             "Nunc posuere, nisi eu convallis convallis, quam urna sagittis ipsum, et tempor ante libero ac ex. Aenean lacus mi, blandit non eros luctus, ultrices consectetur nunc. Vivamus suscipit justo odio, a porta massa posuere ac. Aenean varius leo non ipsum porttitor eleifend. Phasellus accumsan ultrices massa et finibus. Nunc vestibulum augue ut bibendum facilisis. Donec est massa, lobortis quis molestie at, placerat a neque. Donec quis bibendum leo. Pellentesque ultricies ac odio id pharetra. Nulla enim massa, lacinia nec nunc nec, egestas pulvinar odio. Sed pulvinar molestie justo, eu hendrerit nunc blandit eu. Suspendisse et sapien quis ipsum scelerisque rutrum.",
@@ -87,5 +93,183 @@ namespace Extensions
             {' ',"-...-"}
         };
 
+        #region Binary Constrants
+
+        /// <summary>
+        /// Enum of the binary number types.
+        /// </summary>
+        public enum NumberType 
+        {
+            Bytes,
+            KB, 
+            MB,
+            GB,
+            TB,
+            PB,
+            EB,
+            ZB,
+            YB,
+            BB,
+            GpB,
+            SB,
+            PaB,
+            AB,
+            PlB,
+            BrB,
+            SoB,
+            QB,
+            KaB,
+            RB,
+            DB,
+            HB,
+            MrB,
+            DdB,
+            RtB,
+            ShB,
+            CB,
+            KkB
+        }
+
+        /// <summary>
+        /// Number of bits per byte.
+        /// </summary>
+        public const double BitsPerByte = 8;
+
+        /// <summary>
+        /// Number of bytes in a Kilobyte.
+        /// </summary>
+        public const double KB = 1024;
+
+        /// <summary>
+        /// Number of bytes in a Megabyte.
+        /// </summary>
+        public const double MB = KB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Gigabyte.
+        /// </summary>
+        public const double GB = MB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Terabyte.
+        /// </summary>
+        public const double TB = GB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Petabyte.
+        /// </summary>
+        public const double PB = TB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Exabyte.
+        /// </summary>
+        public const double EB = PB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Zettabyte.
+        /// </summary>
+        public const double ZB = EB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Yottabyte.
+        /// </summary>
+        public const double YB = ZB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Brontobyte.
+        /// </summary>
+        public const double BB = YB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Geopbyte.
+        /// </summary>
+        public const double GpB = BB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Saganbyte.
+        /// </summary>
+        public const double SB = GpB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Pijabyte.
+        /// </summary>
+        public const double PaB = SB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Alphabyte.
+        /// </summary>
+        public const double AB = PaB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Pectrolbyte.
+        /// </summary>
+        public const double PlB = AB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Bolgerbyte.
+        /// </summary>
+        public const double BrB = PlB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Sambobyte.
+        /// </summary>
+        public const double SoB = BrB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Quesabyte.
+        /// </summary>
+        public const double QB = SoB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Kinsabyte.
+        /// </summary>
+        public const double KaB = QB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Rutherbyte.
+        /// </summary>
+        public const double RB = KaB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Dubnibyte.
+        /// </summary>
+        public const double DB = RB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Hassiubyte.
+        /// </summary>
+        public const double HB = DB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Meitnerbyte.
+        /// </summary>
+        public const double MrB = HB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Darmstadbyte.
+        /// </summary>
+        public const double DdB = MrB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Roentbyte.
+        /// </summary>
+        public const double RtB = DdB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Sophobyte.
+        /// </summary>
+        public const double ShB = RtB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Coperbyte.
+        /// </summary>
+        public const double CB = ShB * 1024;
+
+        /// <summary>
+        /// Number of bytes in a Koentekbyte.
+        /// </summary>
+        public const double KkB = CB * 1024;
+
+        #endregion Binary Constrants
     }
 }

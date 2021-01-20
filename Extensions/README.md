@@ -93,6 +93,16 @@ with these methods:
             `"noreplay-at-crayveon.com".IsEmail()`<br>
         will return False._
 
+- ### **IsLower()**
+    > _Validates that the given string object contains only lower case letters.<br>
+        For example:<br>
+            `"IsLower test".IsLower()`<br>
+        will return False while<br>
+            `"islower test".IsLower()`<br>
+        will return True and<br>
+            `"islower test".IsLower(false)`<br>
+        will return False._
+
 - ### **IsNumeric()**
     > _Validates that the given string object contains all numeric<br>
         characters (0-9) returning True if it does and False  if it<br>
@@ -101,6 +111,16 @@ with these methods:
             `"123456".IsNumeric()`<br>
         will return True whereas<br>
             `"abc123".IsNumeric()`<br>
+        will return False._
+
+- ### **IsUpper()**
+    > _Validates that the given string object contains only upper case letters.<br>
+        For example:<br>
+            `"IsUpper test".IsUpper()`<br>
+        will return False while<br>
+            `"ISUPPER TEST".IsUpper()`<br>
+        will return True and<br>
+            `"ISUPPER TEST".IsUpper(false)`<br>
         will return False._
 
 - ### **IsUrlRoot()**
@@ -115,6 +135,15 @@ with these methods:
 - ### **Lines()**
     > _This method returns the number of lines/sentences in the given string<br>
         object._
+
+- ### **Load()**
+    > _Language extension providing a universal method to all objects<br>
+        that allows them to be deserialized from disk.<br>
+        Does NOT require the `[Serializable]` property on object.<br>
+        For example:<br>
+            `ComplexClass myClass = new ComplexClass();`<br>
+            `myClass = myClass.Load("My file path");`<br>
+        Use `.Save()` to save objects to disk._
 
 - ### **LoremIpsum()**
     > _Poplates the given string with a given number of paragraphs of dummy<br>
@@ -177,6 +206,15 @@ with these methods:
                 `ex.Retry(request);`<br>
             `}`<br>_
 
+- ### **Save()**
+    > _Language extension providing a universal method to all objects<br>
+        that allows them to be serialized to disk.<br>
+        Does NOT require the `[Serializable]` property on object.<br>
+        For example:<br>
+            `ComplexClass myClass = new ComplexClass(...<constructor parms>...);`<br>
+            `myClass.Save("My file path");`<br>
+        Use `.Load()` to reload objects back from disk._
+
 - ### **Set()**
     > _Language extension for properties.  Use to set the value of the<br>
         extension property in question.<br>
@@ -226,6 +264,45 @@ with these methods:
             `"sos@".ToMorseCode()`<br>
         will return<br>
         `"...---...<Undefined:[@]>"`_
+
+- ### **Binary Data Size Convertions**<br>
+    - `System.Double.ToNumberBytes()` >>> _Returns the given number expressed as Bytes._<br>
+	- `System.Double.ToKB()` >>> _Returns the given number expressed as Kilobytes (2^10)._<br>
+	- `System.Double.ToMB()` >>> _Returns the given number expressed as Megabytes (2^20)._<br>
+	- `System.Double.ToGB()` >>> _Returns the given number expressed as Gigabytes (2^30)._<br>
+	- `System.Double.ToTB()` >>> _Returns the given number expressed as Terrabytes (2^40)._<br>
+	- `System.Double.ToPB()` >>> _Returns the given number expressed as Petabytes (2^50)._<br>
+	- `System.Double.ToEB()` >>> _Returns the given number expressed as Exabytes (2^60)._<br>
+	- `System.Double.ToZB()` >>> _Returns the given number expressed as Zettabytes (2^70)._<br>
+	- `System.Double.ToYB()` >>> _Returns the given number expressed as Yottabytes (2^80)._<br>
+	- `System.Double.ToBB()` >>> _Returns the given number expressed as Brontobytes (2^90)._<br>
+	- `System.Double.ToGpB()` >>> _Returns the given number expressed as Geopbytes (2^100)._<br>
+	- `System.Double.ToSB()` >>> _Returns the given number expressed as Saganbytes (2^110)._<br>
+	- `System.Double.ToPaB()` >>> _Returns the given number expressed as Pijabytes (2^120)._<br>
+	- `System.Double.ToAB()` >>> _Returns the given number expressed as Alphabytes (2^130)._<br>
+	- `System.Double.ToPlB()` >>> _Returns the given number expressed as Pectrolbytes (2^140)._<br>
+	- `System.Double.ToBrB()` >>> _Returns the given number expressed as Bolgerbytes (2^150)._<br>
+	- `System.Double.ToSoB()` >>> _Returns the given number expressed as Sambobytes (2^160)._<br>
+	- `System.Double.ToQB()` >>> _Returns the given number expressed as Quesabytes (2^170)._<br>
+	- `System.Double.ToKaB()` >>> _Returns the given number expressed as Kinsabytes (2^180)._<br>
+	- `System.Double.ToRB()` >>> _Returns the given number expressed as Rutherbytes (2^190)._<br>
+	- `System.Double.ToDB()` >>> _Returns the given number expressed as Dubnibytes (2^200)._<br>
+	- `System.Double.ToHB()` >>> _Returns the given number expressed as Hassiubytes (2^210)._<br>
+	- `System.Double.ToMrB()` >>> _Returns the given number expressed as Meitnerbytes (2^220)._<br>
+	- `System.Double.ToDdB()` >>> _Returns the given number expressed as Darmstadbytes (2^230)._<br>
+	- `System.Double.ToRtB()` >>> _Returns the given number expressed as Roentbytes (2^240)._<br>
+	- `System.Double.ToShB()` >>> _Returns the given number expressed as Sophobytes (2^250)._<br>
+	- `System.Double.ToCB()` >>> _Returns the given number expressed as Coperbytes (2^260)._<br>
+	- `System.Double.ToKkB()` >>> _Returns the given number expressed as Koentekbytes (2^270)._<br>
+    > _For example:<br>
+            `double dbl = 1;`<br>
+            `Console.WriteLine(dbl.ToKB(Constants.NumberType.TB));`<br>
+            `Console.WriteLine(dbl.ToKB(Constants.NumberType.GB));`<br>
+            `Console.WriteLine(dbl.ToKB(Constants.NumberType.ZB));`<br>
+        will return<br>
+            `1073741824`<br>
+            `1048576`<br>
+            `1.15292150460685E+18`_
 
 - ### **TrimLength()**
     > _Returns part of the given System.Text.StringBuilder object<br>

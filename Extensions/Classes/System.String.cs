@@ -131,6 +131,65 @@ namespace Extensions
         }
         #endregion IsAlphaNumeric()
 
+        #region IsChar()
+        /// <summary>
+        /// Check if the given string contains only the characters in the 
+        /// Chars array being passed.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <param name="Chars">The array of valid characters that are checked
+        /// in the string.</param>
+        /// <param name="Classic">Switch to force RegEx comparison instead of
+        /// Linq.</param>
+        /// <returns>True if the given string contains only characters in the 
+        /// Chars array, else False.</returns>
+        public static bool IsChar(this System.String str,
+                                  char[] Chars,
+                                  bool Classic = false)
+        {
+            if (Classic)  //No LINQ available e.g. .NET 2.0
+            {
+                string comparor = @"^[";
+                foreach (char c in Chars)
+                {
+                    comparor += c;
+                }
+                comparor += "]+$";
+                return System.Text.RegularExpressions.Regex.IsMatch(str,
+                                                                    comparor);
+            }
+            else
+            {
+                foreach (char c in str.ToCharArray())
+                {
+                    if (!Chars.Contains(c))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Check if the given string contains only the characters in the
+        /// Chars array being passed.
+        /// </summary>
+        /// <param name="str">The given string builder object to check.</param>
+        /// <param name="Chars">The array of valid characters that are checked
+        /// in the string.</param>
+        /// <param name="Classic">Switch to force RegEx comparison instead of
+        /// Linq.</param>
+        /// <returns>True if the given string contains only characters in the
+        /// Chars array, else False.</returns>
+        public static bool IsChar(this System.Text.StringBuilder str,
+                                  char[] Chars,
+                                  bool Classic = false)
+        {
+            return IsChar(str.ToString(), Chars, Classic);
+        }
+        #endregion IsChar()
+
         #region IsEmail()
         /// <summary>
         /// Checks if a given System.String object is an email address.
@@ -162,6 +221,33 @@ namespace Extensions
             return IsEmail(str.ToString());
         }
         #endregion IsEmail()
+
+        #region IsLower()
+        /// <summary>
+        /// Check if given System.String object is all lower case.
+        /// </summary>
+        /// <param name="str">The string object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before checking?</param>
+        /// <returns>True if the object is all lower case, else False.</returns>
+        public static bool IsLower(this System.String str, 
+                                   bool ignoreSpaces = true)
+        {
+            return (ignoreSpaces ? str.Replace(" ", "") : str)
+                    .ToCharArray()
+                    .Select(C => (int)C)
+                    .All(C => C >= 97 && C <= 122);
+        }
+
+        /// <summary>
+        /// Check if given System.Text.StringBuilder object is all lower case.
+        /// </summary>
+        /// <param name="str">The string object to check.</param>
+        /// <returns>True if the entire string is lower case, else False.</returns>
+        public static bool IsLower(this System.Text.StringBuilder str)
+        {
+            return IsLower(str.ToString());
+        }
+        #endregion IsLower()
 
         #region IsNumeric()
         /// <summary>
@@ -200,64 +286,32 @@ namespace Extensions
         }
         #endregion IsNumeric()
 
-        #region IsChar()
+        #region IsUpper()
         /// <summary>
-        /// Check if the given string contains only the characters in the 
-        /// Chars array being passed.
+        /// Check if given System.String object is all upper case.
         /// </summary>
-        /// <param name="str">The given string object to check.</param>
-        /// <param name="Chars">The array of valid characters that are checked
-        /// in the string.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of
-        /// Linq.</param>
-        /// <returns>True if the given string contains only characters in the 
-        /// Chars array, else False.</returns>
-        public static bool IsChar(this System.String str, 
-                                  char[] Chars, 
-                                  bool Classic = false)
+        /// <param name="str">The string object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before checking?</param>
+        /// <returns>True if the entire string is upper case, else False.</returns>
+        public static bool IsUpper(this System.String str, 
+                                   bool ignoreSpaces = true)
         {
-            if (Classic)  //No LINQ available e.g. .NET 2.0
-            {
-                string comparor = @"^[";
-                foreach (char c in Chars)
-                {
-                    comparor += c;
-                }
-                comparor += "]+$";
-                return System.Text.RegularExpressions.Regex.IsMatch(str, 
-                                                                    comparor);
-            }
-            else
-            {
-                foreach (char c in str.ToCharArray())
-                {
-                    if (!Chars.Contains(c))
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
+            return (ignoreSpaces ? str.Replace(" ", "") : str)
+                    .ToCharArray()
+                    .Select(C => (int)C)
+                    .All(C => C >= 65 && C <= 90);
         }
 
         /// <summary>
-        /// Check if the given string contains only the characters in the
-        /// Chars array being passed.
+        /// Check if given System.Text.StringBuilder object is all upper case.
         /// </summary>
-        /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Chars">The array of valid characters that are checked
-        /// in the string.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of
-        /// Linq.</param>
-        /// <returns>True if the given string contains only characters in the
-        /// Chars array, else False.</returns>
-        public static bool IsChar(this System.Text.StringBuilder str, 
-                                  char[] Chars, 
-                                  bool Classic = false)
+        /// <param name="str">The string object to check.</param>
+        /// <returns>True if the entire string is upper case, else False.</returns>
+        public static bool IsUpper(this System.Text.StringBuilder str)
         {
-            return IsChar(str.ToString(), Chars, Classic);
+            return IsUpper(str.ToString());
         }
-        #endregion IsChar()
+        #endregion IsUpper()
 
         #region IsUrlRoot()
         /// <summary>

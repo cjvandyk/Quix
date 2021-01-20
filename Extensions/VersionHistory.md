@@ -31,9 +31,43 @@
 	- Add `System.Object.Get()`
 	- Add `System.Object.Set()`
 
-1.2.x (2021-01-22)
+2.0.1 (2021-01-22)
+	- Add `.Save()`
+	- Add `.Load()`
+	- Add `System.Double.ToNumberBytes()`
+	- Add `System.Double.ToKB()`
+	- Add `System.Double.ToMB()`
+	- Add `System.Double.ToGB()`
+	- Add `System.Double.ToTB()`
+	- Add `System.Double.ToPB()`
+	- Add `System.Double.ToEB()`
+	- Add `System.Double.ToZB()`
+	- Add `System.Double.ToYB()`
+	- Add `System.Double.ToBB()`
+	- Add `System.Double.ToGpB()`
+	- Add `System.Double.ToSB()`
+	- Add `System.Double.ToPaB()`
+	- Add `System.Double.ToAB()`
+	- Add `System.Double.ToPlB()`
+	- Add `System.Double.ToBrB()`
+	- Add `System.Double.ToSoB()`
+	- Add `System.Double.ToQB()`
+	- Add `System.Double.ToKaB()`
+	- Add `System.Double.ToRB()`
+	- Add `System.Double.ToDB()`
+	- Add `System.Double.ToHB()`
+	- Add `System.Double.ToMrB()`
+	- Add `System.Double.ToDdB()`
+	- Add `System.Double.ToRtB()`
+	- Add `System.Double.ToShB()`
+	- Add `System.Double.ToCB()`
+	- Add `System.Double.ToKkB()`
 	- Add `System.String.IsEmail()`
 	- Add `System.Text.StringBuilder.IsEmail()`
+	- Add `System.String.IsLower()`
+	- Add `System.Text.StringBuilder.IsLower()`
+	- Add `System.String.IsUpper()`
+	- Add `System.Text.StringBuilder.IsUpper()`
 	- Add `System.String.MorseCodeBeep()`
 	- Add `System.Text.StringBuilder.MorseCodeBeep()`
 	- Add `System.String.RemoveExtraSpace()`

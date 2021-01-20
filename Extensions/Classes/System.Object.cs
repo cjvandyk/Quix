@@ -20,7 +20,8 @@ namespace Extensions
         /// <summary>
         /// The private dictionary object where extension properties are stored.
         /// </summary>
-        private static Dictionary<string, object> extensionProperties = new Dictionary<string, object>();
+        private static Dictionary<string, object> extensionProperties = 
+            new Dictionary<string, object>();
 
         /// <summary>
         /// Get the value of an extension property in the dictionary.
@@ -32,7 +33,8 @@ namespace Extensions
         /// <returns>An object representing the value of the extension
         /// property.  You would have to manually cast the return value
         /// to the proper data type you know it to be.</returns>
-        public static object Get(this object obj, string key)
+        public static object Get(this object obj, 
+                                 string key)
         {
             return extensionProperties[key];
         }
