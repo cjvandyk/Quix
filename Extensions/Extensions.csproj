@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>1.2.45</AssemblyVersion>
+    <AssemblyVersion>2.0.2</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,9 +50,11 @@
     <Compile Include="Classes\System.Console.cs" />
     <Compile Include="Classes\Constants.cs" />
     <Compile Include="Classes\System.Diagnostics.Process.cs" />
+    <Compile Include="Classes\System.Double.cs" />
     <Compile Include="Classes\System.Net.WebException.cs" />
     <Compile Include="Classes\System.Object.cs" />
     <Compile Include="Classes\System.String.cs" />
+    <Compile Include="Classes\Universal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
