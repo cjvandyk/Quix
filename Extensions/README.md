@@ -50,6 +50,47 @@ with these methods:
             `"https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()`<br>
         will also return "https://blog.cjvandyk.com"._
 
+- ### **HasLower()**
+    > _Validates that the given string object contains a lower case character.<br>
+        For example:<br>
+            `"abc".HasLower()`<br>
+        will return True whereas<br>
+            `"ABC".HasLower()`<br>
+        will return False and<br>
+            `"AbC".HasLower()`<br>
+        will return True._
+
+- ### **HasNumeric()**
+    > _Validates that the given string object contains a number character.<br>
+        For example:<br>
+            `"abc".HasNumeric()`<br>
+        will return False whereas<br>
+            `"ABC123".HasNumeric()`<br>
+        will return True and<br>
+            `"A2C".HasNumeric()`<br>
+        will return True._
+
+- ### **HasSymbol()**
+    > _Validates that the given string object contains a symbol or special<br>
+        character.<br>
+        For example:<br>
+            `"abc".HasSymbol()`<br>
+        will return False whereas<br>
+            `"ABC$".HasSymbol()`<br>
+        will return True and<br>
+            `"A@C".HasSymbol()`<br>
+        will return True._
+
+- ### **HasUpper()**
+    > _Validates that the given string object contains a lower case character.<br>
+        For example:<br>
+            `"abc".HasUpper()`<br>
+        will return False whereas<br>
+            `"ABC".HasUpper()`<br>
+        will return True and<br>
+            `"AbC".HasUpper()`<br>
+        will return True._
+
 - ### **IsAlphabetic()**
     > _Validates that the given string object contains all alphabetic<br>
         characters (a-z and A-Z) returning True if it does and False if<br>
@@ -112,6 +153,21 @@ with these methods:
         will return True whereas<br>
             `"abc123".IsNumeric()`<br>
         will return False._
+
+- ### **IsStrong()**
+    > _Validates that the given string object contains a strong password string.<br>
+        For example:<br>
+            `"abc123XYZ!@#".IsStrong()`<br>
+        will return True whereas<br>
+            `"abc123XYZ".IsStrong()`<br>
+        will return False and<br>
+            `"abc123XYZ".IsStrong(3)`<br>
+        will return True and<br>
+            `"abc123XYZ".IsStrong(2)`<br>
+        will return True.<br>
+        The number parameter for IsStrong() indicates the number of criteria<br>
+        that has to be true before the string is considered strong.  Valid<br>
+        values are 1 through 4 with the default value being 4._
 
 - ### **IsUpper()**
     > _Validates that the given string object contains only upper case letters.<br>

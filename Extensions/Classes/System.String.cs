@@ -55,6 +55,126 @@ namespace Extensions
         }
         #endregion GetUrlRoot()
 
+        #region HasLower()
+        /// <summary>
+        /// Check if given System.String object contains lower case.
+        /// </summary>
+        /// <param name="str">The string object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before checking?</param>
+        /// <returns>True if the object contains any lower case, else False.</returns>
+        public static bool HasLower(this System.String str,
+                                   bool ignoreSpaces = true)
+        {
+            return (ignoreSpaces ? str.Replace(" ", "") : str)
+                    .ToCharArray()
+                    .Select(C => (int)C)
+                    .Any(C => C >= 97 && C <= 122);
+        }
+
+        /// <summary>
+        /// Check if given System.Text.StringBuilder object contains lower case.
+        /// </summary>
+        /// <param name="str">The string object to check.</param>
+        /// <returns>True if the string contains any lower case, else False.</returns>
+        public static bool HasLower(this System.Text.StringBuilder str)
+        {
+            return HasLower(str.ToString());
+        }
+        #endregion HasLower()
+
+        #region HasNumeric()
+        /// <summary>
+        /// Checks if the given string contains any numeric characters.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
+        /// <returns>True if any characters in the given string are numeric,
+        /// else False.</returns>
+        public static bool HasNumeric(this System.String str,
+                                      bool ignoreSpaces = true)
+        {
+            return (ignoreSpaces ? str.Replace(" ", "") : str)
+                    .ToCharArray()
+                    .Any(Char.IsDigit);
+        }
+
+        /// <summary>
+        /// Checks if the given string contains any numeric characters.
+        /// </summary>
+        /// <param name="str">The given string builder object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
+        /// <returns>True if any characters in the given string are numeric,
+        /// else False.</returns>
+        public static bool HasNumeric(this System.Text.StringBuilder str,
+                                     bool ignoreSpaces = true)
+        {
+            return HasNumeric(str.ToString(),
+                             ignoreSpaces);
+        }
+        #endregion HasNumeric()
+
+        #region HasSymbol()
+        /// <summary>
+        /// Checks if the given System.String object contains symbols or 
+        /// special characters.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
+        /// <returns>True if any characters in the given string are 
+        /// symbols or special characters, else False.</returns>
+        public static bool HasSymbol(this System.String str,
+                                          bool ignoreSpaces = true)
+        {
+            return (!(ignoreSpaces ? str.Replace(" ", "") : str)
+                    .ToCharArray()
+                    .All(Char.IsLetterOrDigit));
+        }
+
+        /// <summary>
+        /// Checks if the given System.Text.StringBuilder object contains
+        /// symbols or special characters.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// Linq.</param>
+        /// <param name="ignoreSpaces">Remove spaces before compare?</param>
+        /// <returns>True if all characters in the given string contains
+        /// any symbols or special characters, else False.</returns>
+        public static bool HasSymbol(this System.Text.StringBuilder str,
+                                          bool Classic = false,
+                                          bool ignoreSpaces = true)
+        {
+            return HasSymbol(str.ToString(),
+                                  ignoreSpaces);
+        }
+        #endregion HasSymbol()
+
+        #region HasUpper()
+        /// <summary>
+        /// Check if given System.String object contains upper case.
+        /// </summary>
+        /// <param name="str">The string object to check.</param>
+        /// <param name="ignoreSpaces">Remove spaces before checking?</param>
+        /// <returns>True if the string contains any upper case, else False.</returns>
+        public static bool HasUpper(this System.String str,
+                                    bool ignoreSpaces = true)
+        {
+            return (ignoreSpaces ? str.Replace(" ", "") : str)
+                    .ToCharArray()
+                    .Select(C => (int)C)
+                    .Any(C => C >= 65 && C <= 90);
+        }
+
+        /// <summary>
+        /// Check if given System.Text.StringBuilder object contains upper case.
+        /// </summary>
+        /// <param name="str">The string object to check.</param>
+        /// <returns>True if the string contains any upper case, else False.</returns>
+        public static bool HasUpper(this System.Text.StringBuilder str)
+        {
+            return HasUpper(str.ToString());
+        }
+        #endregion HasUpper()
+
         #region IsAlphabetic()
         /// <summary>
         /// Checks if the given string contains all alphabetic characters.
@@ -315,6 +435,137 @@ namespace Extensions
                              ignoreSpaces);
         }
         #endregion IsNumeric()
+
+        #region IsStrong()
+        /// <summary>
+        /// Checks if the given System.String object is a strong password
+        /// string.
+        /// </summary>
+        /// <param name="str">The given string to check.</param>
+        /// <param name="numberCriteriaRequired">The number of strong criteria
+        /// that are required to be checked for.</param>
+        /// <param name="requireUpper">Are upper case characters required?
+        /// Default is Yes.</param>
+        /// <param name="requireLower">Are lower case characters required?
+        /// Default is Yes.</param>
+        /// <param name="requireNumeric">Are numbers required?
+        /// Default is Yes.</param>
+        /// <param name="requireSymbol">Are symbols or special characters 
+        /// required?  Default is Yes.</param>
+        /// <returns>True if string matches all require... criteria, 
+        /// else False.</returns>
+        public static bool IsStrong(this System.String str,
+                                    int numberCriteriaRequired = 4,
+                                    bool requireUpper = true,
+                                    bool requireLower = true,
+                                    bool requireNumeric = true,
+                                    bool requireSymbol = true)
+        {
+            if ((numberCriteriaRequired < 1) ||
+                (numberCriteriaRequired > 4))
+            {
+                return false;
+            }
+            int criteria = numberCriteriaRequired;
+            
+            if (requireUpper)
+            {
+                if (str.HasUpper())
+                {
+                    criteria -= 1;
+                    if (criteria == 0)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            if (requireLower)
+            {
+                if (str.HasLower())
+                {
+                    criteria -= 1;
+                    if (criteria == 0)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            if (requireNumeric)
+            {
+                if (str.HasNumeric())
+                {
+                    criteria -= 1;
+                    if (criteria == 0)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            if (requireSymbol)
+            {
+                if (str.HasSymbol())
+                {
+                    criteria -= 1;
+                    if (criteria == 0)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if the given System.Test.StringBuilder object is a strong 
+        /// password string.
+        /// </summary>
+        /// <param name="str">The given string to check.</param>
+        /// <param name="numberCriteriaRequired">The number of strong criteria
+        /// that are required to be checked for.</param>
+        /// <param name="requireUpper">Are upper case characters required?
+        /// Default is Yes.</param>
+        /// <param name="requireLower">Are lower case characters required?
+        /// Default is Yes.</param>
+        /// <param name="requireNumeric">Are numbers required?
+        /// Default is Yes.</param>
+        /// <param name="requireSymbol">Are symbols or special characters 
+        /// required?  Default is Yes.</param>
+        /// <returns>True if string matches all require... criteria, 
+        /// else False.</returns>
+        public static bool IsStrong(this System.Text.StringBuilder str,
+                                    int numberCriteriaRequired = 4,
+                                    bool requireUpper = true,
+                                    bool requireLower = true,
+                                    bool requireNumeric = true,
+                                    bool requireSymbol = true)
+        {
+            return IsStrong(str,
+                            numberCriteriaRequired,
+                            requireUpper,
+                            requireLower,
+                            requireNumeric,
+                            requireSymbol);
+        }
+        #endregion IsStrong()
 
         #region IsUpper()
         /// <summary>

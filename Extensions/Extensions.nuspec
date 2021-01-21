@@ -17,10 +17,15 @@
       Elevate()
       Get()
       GetUrlRoot()
+      HasLower()
+      HasNumeric()
+      HasSymbol()
+      HasUpper()
       IsAlphabetic()
       IsNumeric()
       IsAlphaNumeric()
       IsChar()
+      IsStrong()
       IsUrlRoot()
       Lines()
       LoremIpsum()
@@ -29,6 +34,10 @@
       Set()
       ToBinary()
       ToEnum()
+      ToNumberBytes()
+      ToMB()
+      ToGB()
+      ToTB()...
       Words()
     </summary>
     <releaseNotes>
@@ -52,6 +61,47 @@
       "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
       will also return
       "https://blog.cjvandyk.com".
+
+      HasLower()
+      Validates that the given string object contains a lower case character.
+      For example:
+      "abc".HasLower()
+      will return True whereas
+      "ABC".HasLower()
+      will return False and
+      "AbC".HasLower()
+      will return True.
+
+      HasNumeric()
+      Validates that the given string object contains a number character.
+      For example:
+      "abc".HasNumeric()
+      will return False whereas
+      "ABC123".HasNumeric()
+      will return True and
+      "A2C".HasNumeric()
+      will return True.
+
+      HasSymbol()
+      Validates that the given string object contains a symbol or special
+      character.
+      For example:
+      "abc".HasSymbol()
+      will return False whereas
+      "ABC$".HasSymbol()
+      will return True and
+      "A@C".HasSymbol()
+      will return True.
+
+      HasUpper()
+      Validates that the given string object contains a lower case character.
+      For example:
+      "abc".HasUpper()
+      will return False whereas
+      "ABC".HasUpper()
+      will return True and
+      "AbC".HasUpper()
+      will return True.
 
       IsAlphabetic()
       Validates that the given string object contains all alphabetic
@@ -115,6 +165,21 @@
       will return True whereas
       "abc123".IsNumeric()
       will return False.
+
+      IsStrong()
+      Validates that the given string object contains a strong password string.
+      For example:
+      "abc123XYZ!@#".IsStrong()
+      will return True whereas
+      "abc123XYZ".IsStrong()
+      will return False and
+      "abc123XYZ".IsStrong(3)
+      will return True and
+      "abc123XYZ".IsStrong(2)
+      will return True.
+      The number parameter for IsStrong() indicates the number of criteria
+      that has to be true before the string is considered strong.  Valid
+      values are 1 through 4 with the default value being 4.
 
       IsUpper()
       Validates that the given string object contains only upper case letters.

@@ -62,6 +62,14 @@
 	- Add `System.Double.ToShB()`
 	- Add `System.Double.ToCB()`
 	- Add `System.Double.ToKkB()`
+	- Add `System.String.HasLower()`
+	- Add `System.Text.StringBuilder.HasLower()`
+	- Add `System.String.HasNumeric()`
+	- Add `System.Text.StringBuilder.HasNumeric()`
+	- Add `System.String.HasSymbol()`
+	- Add `System.Text.StringBuilder.HasSymbol()`
+	- Add `System.String.HasUpper()`
+	- Add `System.Text.StringBuilder.HasUpper()`
 	- Add `System.String.IsEmail()`
 	- Add `System.Text.StringBuilder.IsEmail()`
 	- Add `System.String.IsLower()`
@@ -72,6 +80,8 @@
 	- Add `System.Text.StringBuilder.MorseCodeBeep()`
 	- Add `System.String.RemoveExtraSpace()`
 	- Add `System.Text.StringBuilder.RemoveExtraSpace()`
+	- Add `System.String.IsStrong()`
+	- Add `System.Text.StringBuilder.IsStrong()`
 	- Add `System.String.ToEnum<T>()`
 	- Add `System.Text.StringBuilder.ToEnum<T>()`
 	- Add `System.String.ToMorseCode()`
