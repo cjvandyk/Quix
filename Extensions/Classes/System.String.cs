@@ -633,6 +633,104 @@ namespace Extensions
         }
         #endregion IsUrlRoot()
 
+        #region IsVowel()
+        /// <summary>
+        /// Checks if the given System.Char is an English vowel.
+        /// </summary>
+        /// <param name="C">The char to check.</param>
+        /// <returns>True if it's a vowel, else False.</returns>
+        public static bool IsVowel(this System.Char C)
+        {
+            switch (C)
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                case 'y':
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Checks if the given System.String is an English vowel.
+        /// This allows the developer the ability to check a string without
+        /// having to first convert to a char e.g. as a substring return.
+        /// </summary>
+        /// <param name="C">The string to check.</param>
+        /// <returns>True if it's a vowel, else False.</returns>
+        public static bool IsVowel(this System.String str)
+        {
+            return IsVowel(Convert.ToChar(str));
+        }
+
+        /// <summary>
+        /// Checks if the given System.Test.StringBuilder is an English vowel.
+        /// This allows the developer the ability to check a string without
+        /// having to first convert to a char e.g. as a substring return.
+        /// </summary>
+        /// <param name="C">The string to check.</param>
+        /// <returns>True if it's a vowel, else False.</returns>
+        public static bool IsVowel(this System.Text.StringBuilder str)
+        {
+            return IsVowel(Convert.ToChar(str.ToString()));
+        }
+        #endregion IsVowel()
+
+        #region IsZipCode()
+        /// <summary>
+        /// Checks if the given System.String object is in the valid format
+        /// of a United States zip code i.e. nnnnn-nnnn or just nnnnn.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <returns>True if in valid format, else False.</returns>
+        public static bool IsZipCode(this System.String str)
+        {
+            string[] parts = str.Split('-');
+            if (parts.Length == 1)
+            {
+                return IsZipCode5Digits(str);
+            }
+            else
+            {
+                if (parts.Length == 2)
+                {
+                    return (str.Length == 10 && 
+                            IsZipCode5Digits(parts[0]) && 
+                            parts[1].Length == 4 && 
+                            int.TryParse(parts[1], out _));
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if the given System.Text.StringBuilder object is in the
+        /// valid format of a United States zip code i.e. nnnnn-nnnn or
+        /// just nnnnn.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <returns>True if in valid format, else False.</returns>
+        public static bool IsZipCode(this System.Text.StringBuilder str)
+        {
+            return IsZipCode(str.ToString());
+        }
+
+        /// <summary>
+        /// Checks if the given System.String is 5 digits long and numeric.
+        /// </summary>
+        /// <param name="str">The given string object to check.</param>
+        /// <returns>True if a 5 digit numeric, else False.</returns>
+        private static bool IsZipCode5Digits(this System.String str)
+        {
+            return (str.Length == 5 && 
+                    int.TryParse(str, out _));
+        }
+        #endregion IsZipCode()
+
         #region Lines()
         /// <summary>
         /// Returns the number of sentences in the given string object.

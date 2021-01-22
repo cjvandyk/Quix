@@ -82,6 +82,11 @@
 	- Add `System.Text.StringBuilder.RemoveExtraSpace()`
 	- Add `System.String.IsStrong()`
 	- Add `System.Text.StringBuilder.IsStrong()`
+	- Add `System.Char.IsVowel()`
+	- Add `System.String.IsVowel()`
+	- Add `System.Text.StringBuilder.IsVowel()`
+	- Add `System.String.IsZipCode()`
+	- Add `System.Text.StringBuilder.IsZipCode()`
 	- Add `System.String.ToEnum<T>()`
 	- Add `System.Text.StringBuilder.ToEnum<T>()`
 	- Add `System.String.ToMorseCode()`

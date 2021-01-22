@@ -188,6 +188,31 @@ with these methods:
             `"https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()`<br>
         will return False._
 
+- ### **IsVowel()**
+    > _Checks if the given char/string is an English vowel.<br>
+        This allows the developer the ability to check a string without<br>
+        having to first convert to a char e.g. as a substring return.<br>
+        For example:<br>
+            `"test".Substring(2, 1).IsVowel()`<br>
+        will return False since the "s" is checked whereas<br>
+            `"test".Substring(1, 1).IsVowel()`<br>
+        will return True since the "e" is checked._
+
+- ### **IsZipCode()**
+    > _Checks if the given string object is in the valid format<br>
+        of a United States zip code i.e. nnnnn-nnnn or just nnnnn.<br>
+        For example:<br>
+            `"12345-6789".IsZipCode()`<br>
+        will return True whereas<br>
+            `"1234-56789".IsZipCode()`<br>
+        will return False.<br>
+            `"12345".IsZipCode()`<br>
+        will return True.<br>            
+            `"123456".IsZipCode()`<br>
+        will return False.<br>
+            `"1234".IsZipCode()`<br>
+        will return False._
+
 - ### **Lines()**
     > _This method returns the number of lines/sentences in the given string<br>
         object._

@@ -27,6 +27,7 @@
       IsChar()
       IsStrong()
       IsUrlRoot()
+      IsVowel()
       Lines()
       LoremIpsum()
       ReplaceTokens()
@@ -197,6 +198,31 @@
       "https://blog.cjvandyk.com".IsUrlRootOnly()
       will return True whereas
       "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
+      will return False.
+
+      IsVowel()
+      Checks if the given char/string is an English vowel.
+      This allows the developer the ability to check a string without
+      having to first convert to a char e.g. as a substring return.
+      For example:
+      "test".Substring(2, 1).IsVowel()
+      will return False since the "s" is checked whereas
+      "test".Substring(1, 1).IsVowel()
+      will return True since the "e" is checked.
+
+      IsZipCode()
+      Checks if the given string object is in the valid format
+      of a United States zip code i.e. nnnnn-nnnn or just nnnnn.
+      For example:
+      "12345-6789".IsZipCode()
+      will return True whereas
+      "1234-56789".IsZipCode()
+      will return False.
+      "12345".IsZipCode()
+      will return True.
+      "123456".IsZipCode()
+      will return False.
+      "1234".IsZipCode()
       will return False.
 
       Lines()
