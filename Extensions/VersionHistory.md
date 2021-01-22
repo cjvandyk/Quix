@@ -1,101 +1,101 @@
 ﻿# Extensions.dll Version History.
 
-1.0.1 (2021-01-08)
-	- Add `System.Diagnostics.Process.Elevate()`
-	- Add `System.String.GetUrlRoot()`
-	- Add `System.Text.StringBuilder.GetUrlRoot()`
-	- Add `System.String.IsAlphabetic()`
-	- Add `System.Text.StringBuilder.IsAlphabetic()`
-	- Add `System.String.IsAlphaNumeric()`
-	- Add `System.Text.StringBuilder.IsAlphaNumeric()`
-	- Add `System.String.IsChar()`
-	- Add `System.Text.StringBuilder.IsChar()`
-	- Add `System.String.IsNumeric()`
-	- Add `System.Text.StringBuilder.IsNumeric()`
-	- Add `System.String.IsUrlRoot()`
-	- Add `System.Text.StringBuilder.IsUrlRoot()`
-	- Add `System.String.Lines()`
-	- Add `System.Text.StringBuilder.Lines()`
-	- Add `System.String.LoremIpsum()`
-	- Add `System.Text.StringBuilder.LoremIpsum()`
-	- Add `System.String.ReplaceTokens()`
-	- Add `System.Text.StringBuilder.ReplaceTokens()`
-	- Add `System.String.Words()`
-	- Add `System.Text.StringBuilder.Words()`
+### **1.0.1 (2021-01-08)**<br>
+	- Add `System.Diagnostics.Process.Elevate()`<br>
+	- Add `System.String.GetUrlRoot()`<br>
+	- Add `System.Text.StringBuilder.GetUrlRoot()`<br>
+	- Add `System.String.IsAlphabetic()`<br>
+	- Add `System.Text.StringBuilder.IsAlphabetic()`<br>
+	- Add `System.String.IsAlphaNumeric()`<br>
+	- Add `System.Text.StringBuilder.IsAlphaNumeric()`<br>
+	- Add `System.String.IsChar()`<br>
+	- Add `System.Text.StringBuilder.IsChar()`<br>
+	- Add `System.String.IsNumeric()`<br>
+	- Add `System.Text.StringBuilder.IsNumeric()`<br>
+	- Add `System.String.IsUrlRoot()`<br>
+	- Add `System.Text.StringBuilder.IsUrlRoot()`<br>
+	- Add `System.String.Lines()`<br>
+	- Add `System.Text.StringBuilder.Lines()`<br>
+	- Add `System.String.LoremIpsum()`<br>
+	- Add `System.Text.StringBuilder.LoremIpsum()`<br>
+	- Add `System.String.ReplaceTokens()`<br>
+	- Add `System.Text.StringBuilder.ReplaceTokens()`<br>
+	- Add `System.String.Words()`<br>
+	- Add `System.Text.StringBuilder.Words()`<br>
 
-1.1.28 (2021-01-15)
-	- Add `System.String.ToBinary()`
-	- Add `System.Text.StringBuilder.ToBinary()`
-	- Add `System.Net.WebException.Retry()`
-	*Expanded C# by adding the ability to use Extension Properties through:*
-	- Add `System.Object.Get()`
-	- Add `System.Object.Set()`
+### **1.1.28 (2021-01-15)**<br>
+	- Add `System.String.ToBinary()`<br>
+	- Add `System.Text.StringBuilder.ToBinary()`<br>
+	- Add `System.Net.WebException.Retry()`<br>
+	*Expanded C# by adding the ability to use Extension Properties through:*<br>
+	- Add `System.Object.Get()`<br>
+	- Add `System.Object.Set()`<br>
 
-2.0.1 (2021-01-22)
-	- Add `.Save()`
-	- Add `.Load()`
-	- Add `System.Double.ToNumberBytes()`
-	- Add `System.Double.ToKB()`
-	- Add `System.Double.ToMB()`
-	- Add `System.Double.ToGB()`
-	- Add `System.Double.ToTB()`
-	- Add `System.Double.ToPB()`
-	- Add `System.Double.ToEB()`
-	- Add `System.Double.ToZB()`
-	- Add `System.Double.ToYB()`
-	- Add `System.Double.ToBB()`
-	- Add `System.Double.ToGpB()`
-	- Add `System.Double.ToSB()`
-	- Add `System.Double.ToPaB()`
-	- Add `System.Double.ToAB()`
-	- Add `System.Double.ToPlB()`
-	- Add `System.Double.ToBrB()`
-	- Add `System.Double.ToSoB()`
-	- Add `System.Double.ToQB()`
-	- Add `System.Double.ToKaB()`
-	- Add `System.Double.ToRB()`
-	- Add `System.Double.ToDB()`
-	- Add `System.Double.ToHB()`
-	- Add `System.Double.ToMrB()`
-	- Add `System.Double.ToDdB()`
-	- Add `System.Double.ToRtB()`
-	- Add `System.Double.ToShB()`
-	- Add `System.Double.ToCB()`
-	- Add `System.Double.ToKkB()`
-	- Add `System.String.HasLower()`
-	- Add `System.Text.StringBuilder.HasLower()`
-	- Add `System.String.HasNumeric()`
-	- Add `System.Text.StringBuilder.HasNumeric()`
-	- Add `System.String.HasSymbol()`
-	- Add `System.Text.StringBuilder.HasSymbol()`
-	- Add `System.String.HasUpper()`
-	- Add `System.Text.StringBuilder.HasUpper()`
-	- Add `System.String.IsEmail()`
-	- Add `System.Text.StringBuilder.IsEmail()`
-	- Add `System.String.IsLower()`
-	- Add `System.Text.StringBuilder.IsLower()`
-	- Add `System.String.IsUpper()`
-	- Add `System.Text.StringBuilder.IsUpper()`
-	- Add `System.String.MorseCodeBeep()`
-	- Add `System.Text.StringBuilder.MorseCodeBeep()`
-	- Add `System.String.RemoveExtraSpace()`
-	- Add `System.Text.StringBuilder.RemoveExtraSpace()`
-	- Add `System.String.IsStrong()`
-	- Add `System.Text.StringBuilder.IsStrong()`
-	- Add `System.Char.IsVowel()`
-	- Add `System.String.IsVowel()`
-	- Add `System.Text.StringBuilder.IsVowel()`
-	- Add `System.String.IsZipCode()`
-	- Add `System.Text.StringBuilder.IsZipCode()`
-	- Add `System.String.ToEnum<T>()`
-	- Add `System.Text.StringBuilder.ToEnum<T>()`
-	- Add `System.String.ToMorseCode()`
-	- Add `System.Text.StringBuilder.ToMorseCode()`
-	- Add `System.String.TrimLength()`
-	- Add `System.Text.StringBuilder.TrimLength()`
-	- Add ignore white space option to `System.String.IsAlphabetic()`
-	- Add ignore white space option to `System.Text.StringBuilder.IsAlphabetic()`
-	- Add ignore white space option to `System.String.IsAlphaNumeric()`
-	- Add ignore white space option to `System.Text.StringBuilder.IsAlphaNumeric()`
-	- Add ignore white space option to `System.String.IsNumeric()`
-	- Add ignore white space option to `System.Text.StringBuilder.IsNumeric()`
+### **2.0.1 (2021-01-22)**<br>
+	- Add `.Save()`<br>
+	- Add `.Load()`<br>
+	- Add `System.Double.ToNumberBytes()`<br>
+	- Add `System.Double.ToKB()`<br>
+	- Add `System.Double.ToMB()`<br>
+	- Add `System.Double.ToGB()`<br>
+	- Add `System.Double.ToTB()`<br>
+	- Add `System.Double.ToPB()`<br>
+	- Add `System.Double.ToEB()`<br>
+	- Add `System.Double.ToZB()`<br>
+	- Add `System.Double.ToYB()`<br>
+	- Add `System.Double.ToBB()`<br>
+	- Add `System.Double.ToGpB()`<br>
+	- Add `System.Double.ToSB()`<br>
+	- Add `System.Double.ToPaB()`<br>
+	- Add `System.Double.ToAB()`<br>
+	- Add `System.Double.ToPlB()`<br>
+	- Add `System.Double.ToBrB()`<br>
+	- Add `System.Double.ToSoB()`<br>
+	- Add `System.Double.ToQB()`<br>
+	- Add `System.Double.ToKaB()`<br>
+	- Add `System.Double.ToRB()`<br>
+	- Add `System.Double.ToDB()`<br>
+	- Add `System.Double.ToHB()`<br>
+	- Add `System.Double.ToMrB()`<br>
+	- Add `System.Double.ToDdB()`<br>
+	- Add `System.Double.ToRtB()`<br>
+	- Add `System.Double.ToShB()`<br>
+	- Add `System.Double.ToCB()`<br>
+	- Add `System.Double.ToKkB()`<br>
+	- Add `System.String.HasLower()`<br>
+	- Add `System.Text.StringBuilder.HasLower()`<br>
+	- Add `System.String.HasNumeric()`<br>
+	- Add `System.Text.StringBuilder.HasNumeric()`<br>
+	- Add `System.String.HasSymbol()`<br>
+	- Add `System.Text.StringBuilder.HasSymbol()`<br>
+	- Add `System.String.HasUpper()`<br>
+	- Add `System.Text.StringBuilder.HasUpper()`<br>
+	- Add `System.String.IsEmail()`<br>
+	- Add `System.Text.StringBuilder.IsEmail()`<br>
+	- Add `System.String.IsLower()`<br>
+	- Add `System.Text.StringBuilder.IsLower()`<br>
+	- Add `System.String.IsUpper()`<br>
+	- Add `System.Text.StringBuilder.IsUpper()`<br>
+	- Add `System.String.MorseCodeBeep()`<br>
+	- Add `System.Text.StringBuilder.MorseCodeBeep()`<br>
+	- Add `System.String.RemoveExtraSpace()`<br>
+	- Add `System.Text.StringBuilder.RemoveExtraSpace()`<br>
+	- Add `System.String.IsStrong()`<br>
+	- Add `System.Text.StringBuilder.IsStrong()`<br>
+	- Add `System.Char.IsVowel()`<br>
+	- Add `System.String.IsVowel()`<br>
+	- Add `System.Text.StringBuilder.IsVowel()`<br>
+	- Add `System.String.IsZipCode()`<br>
+	- Add `System.Text.StringBuilder.IsZipCode()`<br>
+	- Add `System.String.ToEnum<T>()`<br>
+	- Add `System.Text.StringBuilder.ToEnum<T>()`<br>
+	- Add `System.String.ToMorseCode()`<br>
+	- Add `System.Text.StringBuilder.ToMorseCode()`<br>
+	- Add `System.String.TrimLength()`<br>
+	- Add `System.Text.StringBuilder.TrimLength()`<br>
+	- Add ignore white space option to `System.String.IsAlphabetic()`<br>
+	- Add ignore white space option to `System.Text.StringBuilder.IsAlphabetic()`<br>
+	- Add ignore white space option to `System.String.IsAlphaNumeric()`<br>
+	- Add ignore white space option to `System.Text.StringBuilder.IsAlphaNumeric()`<br>
+	- Add ignore white space option to `System.String.IsNumeric()`<br>
+	- Add ignore white space option to `System.Text.StringBuilder.IsNumeric()`<br>
