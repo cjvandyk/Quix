@@ -359,6 +359,18 @@
       will return
       "...---...[Undefined:[@]]"
 
+      ToQueryString()
+      Convert given Dictionary<string, string>
+      into a querystring.
+      For example:
+      Dictionary<string, string> dic1 = new Dictionary<string, string>();
+      dic1.Add("Parm1", "Val1");
+      dic1.Add("Parm2", "Val2");
+      dic1.Add("Parm3", "Val3");
+      Console.WriteLine(dic1.ToQueryString());
+      will return
+      "?Parm1=Val1&Parm2=Val2&Parm3=Val3"
+
       Binary Data Size Convertions
       System.Double.ToNumberBytes() >>> Returns the given number expressed as Bytes.
       System.Double.ToKB() >>> Returns the given number expressed as Kilobytes (2^10).

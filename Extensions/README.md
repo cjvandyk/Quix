@@ -6,6 +6,7 @@
 The following classes have been extended:
 
     - System.Array
+    - System.Collections.Generic.Dictionary
     - System.Diagnostics.Process
     - System.Double
     - System.Net.WebException
@@ -366,6 +367,17 @@ with these methods:
             `"sos@".ToMorseCode()`<br>
         will return<br>
         `"...---...<Undefined:[@]>"`_
+
+- ### **ToQueryString()**
+    > _Convert given Dictionary<string, string> into a querystring.<br>
+        For example:<br>
+            `Dictionary<string, string> dic1 = new Dictionary<string, string>();`<br>
+            `dic1.Add("Parm1", "Val1");`<br>
+            `dic1.Add("Parm2", "Val2");`<br>
+            `dic1.Add("Parm3", "Val3");`<br>
+            `Console.WriteLine(dic1.ToQueryString());`<br>
+        will return<br>
+        `"?Parm1=Val1&Parm2=Val2&Parm3=Val3"`_
 
 - ### **Binary Data Size Convertions**<br>
     - `System.Double.ToNumberBytes()` >>> _Returns the given number expressed as Bytes._<br>

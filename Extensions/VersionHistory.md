@@ -103,3 +103,4 @@
 ### **2.1.x (2021-01-29)**<br>
 	- Add `System.Array<byte>.CopyTo(this, length, start)`<br>
 	- Add `System.Array<byte>.Print()`<br>
+	- Add `System.Collections.Generic.Dictionary.ToQueryString()`<br>
