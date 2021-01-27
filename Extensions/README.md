@@ -5,13 +5,27 @@
 
 The following classes have been extended:
 
+    - System.Array
     - System.Diagnostics.Process
+    - System.Double
     - System.Net.WebException
     - System.Object
     - System.String
     - System.Text.StringBuilder
 
 with these methods:
+
+- ### **CopyTo()**
+    > _Copies a given length of bytes from a byte[] starting at a definable<br>
+        offset.<br>
+        For example:<br>
+            `byte[] b1 = System.Text.Encoding.UTF8.GetBytes("blog.cjvandyk.com rocks!");`<br>
+            `byte[] b2 = b1.CopyTo(10);`<br>
+            `byte[] b3 = b1.CopyTo(10, 5);`<br>
+        will result in the following arrays:<br>
+            `98  108 111 103 46  99  106 118 97  110 100 121 107 46  99  111 109 32  114 111 99  107 115 33`<br>
+            `98  108 111 103 46  99  106 118 97  110`<br>
+            `                    99  106 118 97  110 100 121 107 46  99`_
 
 - ### **Elevate()**
     > _Restarts the current process with elevated permissions.<br>
@@ -257,6 +271,13 @@ with these methods:
         https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code<br>
         Assumes the input value to be in Morse code format already.<br>
         Use `.ToMorseCode()` to pre-convert text if needed._
+
+- ### **Print()**
+    > _Print the byte[] to console, separated by spaces and space padded<br>
+        on the right to allow proper alignment for debug/testing output.<br>
+        For example:<br>
+            `byte[] bytes = System.Text.Encoding.UTF8.GetBytes("blog.cjvandyk.com rocks!");`<br>
+            `bytes.Print();`_
 
 - ### **RemoveExtraSpace()**
     > _Trims leading and trailing white space and then removes all extra<br>

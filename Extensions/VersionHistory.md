@@ -99,3 +99,7 @@
 	- Add ignore white space option to `System.Text.StringBuilder.IsAlphaNumeric()`<br>
 	- Add ignore white space option to `System.String.IsNumeric()`<br>
 	- Add ignore white space option to `System.Text.StringBuilder.IsNumeric()`<br>
+
+### **2.1.x (2021-01-29)**<br>
+	- Add `System.Array<byte>.CopyTo(this, length, start)`<br>
+	- Add `System.Array<byte>.Print()`<br>

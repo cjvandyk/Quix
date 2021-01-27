@@ -14,6 +14,7 @@
     <summary>
       Extensions.dll contains extension methods that enhance existing C# classes thus making life easier for developers.
       These methods are included:
+      CopyTo()
       Elevate()
       Get()
       GetUrlRoot()
@@ -30,6 +31,7 @@
       IsVowel()
       Lines()
       LoremIpsum()
+      Print()
       ReplaceTokens()
       Retry()
       Set()
@@ -42,6 +44,18 @@
       Words()
     </summary>
     <releaseNotes>
+      CopyTo()
+      Copies a given length of bytes from a byte[] starting at a definable
+      offset.
+      For example:
+      byte[] b1 = System.Text.Encoding.UTF8.GetBytes("blog.cjvandyk.com rocks!");
+      byte[] b2 = b1.CopyTo(10);
+      byte[] b3 = b1.CopyTo(10, 5);
+      will result in the following arrays:
+      98  108 111 103 46  99  106 118 97  110 100 121 107 46  99  111 109 32  114 111 99  107 115 33
+      98  108 111 103 46  99  106 118 97  110
+      99  106 118 97  110 100 121 107 46  99
+
       Elevate()
       Restarts the current process with elevated permissions.
       For example:
@@ -268,6 +282,13 @@
       https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code
       Assumes the input value to be in Morse code format already.
       Use .ToMorseCode() to pre-convert text if needed.
+
+      Print()
+      Print the byte[] to console, separated by spaces and space padded
+      on the right to allow proper alignment for debug/testing output.
+      For example:
+      byte[] bytes = System.Text.Encoding.UTF8.GetBytes("blog.cjvandyk.com rocks!");
+      bytes.Print();
 
       RemoveExtraSpace()
       Trims leading and trailing white space and then removes all extra
