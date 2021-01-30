@@ -13,6 +13,8 @@ namespace Extensions
 {
     public static class Double
     {
+        #region BinaryDataSizes
+
         /// <summary>
         /// Returns the given number expressed as Bytes.
         /// </summary>
@@ -20,8 +22,8 @@ namespace Extensions
         /// <param name="fromType">The number type of the given number.</param>
         /// <returns>Returns the given number in Bytes.</returns>
         public static double ToNumberBytes(this double number, 
-                                  Constants.NumberType fromType = 
-                                      Constants.NumberType.Bytes)
+                                           Constants.NumberType fromType = 
+                                               Constants.NumberType.Bytes)
         {
             switch (fromType)
             {
@@ -461,6 +463,22 @@ namespace Extensions
                               Constants.NumberType.Bytes)
         {
             return ToNumberBytes(number, fromType) / Constants.KkB;
+        }
+
+        #endregion BinaryDataSizes
+
+        /// <summary>
+        /// Shorthand extension encapsulating Convert.ToInt16() allowing
+        /// syntax changes from this:
+        /// ...Convert.ToInt16(doubleValue)...
+        /// to:
+        /// ...doubleValue.ToInt16()...
+        /// </summary>
+        /// <param name="dbl">The double value to convert.</param>
+        /// <returns>The value as Int16 format.</returns>
+        public static Int16 ToInt16(this double dbl)
+        {
+            return Convert.ToInt16(dbl);
         }
     }
 }

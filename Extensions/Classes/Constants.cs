@@ -271,5 +271,32 @@ namespace Extensions
         public const double KkB = CB * 1024;
 
         #endregion Binary Constrants
+
+        #region Cryptography
+
+        /// <summary>
+        /// List of encryption providers to use.
+        /// </summary>
+        public enum EncryptionProvider
+        {
+            AES,
+            DES,
+            DSA,
+            MD5,
+            RNG,
+            RSA,
+            SHA1,
+            SHA256,
+            SHA384,
+            SHA512,
+            TrippleDES
+        }
+
+        #endregion Cryptography
+
+        /// <summary>
+        /// Enum of possible enumerable types.
+        /// </summary>
+        public enum EnumerableType { Dictionary, NameValueCollection };
     }
 }

@@ -18,6 +18,90 @@ namespace Extensions
     /// </summary>
     public static class String
     {
+        #region Encrypt
+
+        //public static string Encrypt(this System.String str, 
+        //                             string password, 
+        //                             Constants.EncryptionProvider provider = 
+        //                                Constants.EncryptionProvider.SHA512)
+        //{
+        //    System.Security.Cryptography.SHA512CryptoServiceProvider cryptoServiceProvider =
+        //        new System.Security.Cryptography.SHA512CryptoServiceProvider();
+        //    System.Text.Encoding encoding = System.Text.Encoding.UTF8;
+        //    System.Security.Cryptography.Rfc2898DeriveBytes key =
+        //        new System.Security.Cryptography.Rfc2898DeriveBytes(password, salt);
+        //    byte[] raw = encoding.GetBytes(password);
+        //    byte[] hashKey = cryptoServiceProvider.ComputeHash(raw);
+        //    byte[] hashIV = hashKey.CopyTo(16);
+        //    byte[] encrypted;
+        //    using (System.Security.Cryptography.RijndaelManaged managed =
+        //        new System.Security.Cryptography.RijndaelManaged())
+        //    {
+        //        managed.Key = hashKey;
+        //        managed.IV = hashIV;
+        //        System.Security.Cryptography.ICryptoTransform encryptor =
+        //            managed.CreateEncryptor(managed.Key, managed.IV);
+        //        using (System.IO.MemoryStream memoryStream = 
+        //            new System.IO.MemoryStream())
+        //        {
+        //            using (System.Security.Cryptography.CryptoStream cryptoStream =
+        //                new System.Security.Cryptography.CryptoStream(memoryStream, 
+        //                                                              encryptor, 
+        //                                                              System.Security.Cryptography.CryptoStreamMode.Write))
+        //            {
+        //                using (System.IO.StreamWriter streamWriter =
+        //                    new System.IO.StreamWriter(cryptoStream))
+        //                {
+        //                    streamWriter.Write(str);
+        //                }
+        //                encrypted = memoryStream.ToArray();
+        //            }
+        //        }
+        //    }
+        //    return Convert.ToBase64String(encrypted);
+        //}
+
+        //public static string Decrypt(this System.String str,
+        //                     string password,
+        //                     Constants.EncryptionProvider provider =
+        //                        Constants.EncryptionProvider.SHA512)
+        //{
+        //    System.Security.Cryptography.SHA512CryptoServiceProvider cryptoServiceProvider =
+        //        new System.Security.Cryptography.SHA512CryptoServiceProvider();
+        //    System.Text.Encoding encoding = System.Text.Encoding.UTF8;
+        //    byte[] raw = encoding.GetBytes(password);
+        //    byte[] hashKey = cryptoServiceProvider.ComputeHash(raw);
+        //    byte[] hashIV = hashKey.CopyTo(16);
+        //    byte[] encrypted = Convert.FromBase64String(str);
+        //    string decrypted = null;
+        //    using (System.Security.Cryptography.RijndaelManaged managed =
+        //        new System.Security.Cryptography.RijndaelManaged())
+        //    {
+        //        managed.Key = hashKey;
+        //        managed.IV = hashIV;
+        //        System.Security.Cryptography.ICryptoTransform decryptor =
+        //            managed.CreateDecryptor(managed.Key, managed.IV);
+        //        using (System.IO.MemoryStream memoryStream =
+        //            new System.IO.MemoryStream(encrypted))
+        //        {
+        //            using (System.Security.Cryptography.CryptoStream cryptoStream =
+        //                new System.Security.Cryptography.CryptoStream(memoryStream,
+        //                                                              decryptor,
+        //                                                              System.Security.Cryptography.CryptoStreamMode.Read))
+        //            {
+        //                using (System.IO.StreamReader streamReader =
+        //                    new System.IO.StreamReader(cryptoStream))
+        //                {
+        //                    decrypted = streamReader.ReadToEnd();
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return decrypted;
+        //}
+
+        #endregion Encrypt
+
         #region GetUrlRoot()
         /// <summary>
         /// Get the URL root for the given string object containing a URL.
@@ -973,6 +1057,55 @@ namespace Extensions
             return (str.ToString().ToEnum<T>());
         }
         #endregion ToEnum()
+
+        #region ToEnumerable
+
+        /// <summary>
+        /// Converts the given querystring to a Dictionary<string, string>.
+        /// </summary>
+        /// <param name="str">The given querystring to convert.</param>
+        /// <param name="separator">Defaults to & per W3C standards.</param>
+        /// <param name="assigner">Defaults to = per W3C standards.</param>
+        /// <returns>The parsed dictionary containing querystring values.</returns>
+        public static Dictionary<string, string> QueryStringToDictionary(
+            this System.String str,
+            char separator = '&',
+            char assigner = '=')
+        {
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            string query = str.Substring(str.IndexOf('?') + 1);
+            string[] parts = query.Split(separator);
+            foreach (string part in parts)
+            {
+                string[] pair = part.Split(assigner);
+                result.Add(pair[0], pair[1]);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the given querystring to a NameValueCollection.
+        /// </summary>
+        /// <param name="str">The given querystring to convert.</param>
+        /// <param name="separator">Defaults to & per W3C standards.</param>
+        /// <param name="assigner">Defaults to = per W3C standards.</param>
+        /// <returns>The parsed NameValueCollection containing querystring
+        /// values.</returns>
+        public static System.Collections.Specialized.NameValueCollection QueryStringToNameValueCollection(
+            this System.String str,
+            char separator = '&',
+            char assigner = '=')
+        {
+            System.Collections.Specialized.NameValueCollection nvc = 
+                new System.Collections.Specialized.NameValueCollection();
+            foreach (KeyValuePair<string, string> kvp in QueryStringToDictionary(str))
+            {
+                nvc.Add(kvp.Key, kvp.Value);
+            }
+            return nvc;
+        }
+
+        #endregion ToEnumerable
 
         #region ToMorseCode()
         /// <summary>
