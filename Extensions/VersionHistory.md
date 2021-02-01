@@ -104,3 +104,6 @@
 	- Add `System.Array<byte>.CopyTo(this, length, start)`<br>
 	- Add `System.Array<byte>.Print()`<br>
 	- Add `System.Collections.Generic.Dictionary.ToQueryString()`<br>
+	- Add `enum Constants.TimeZone`<br>
+	- Add `Dictionary<Constants.TimeZone, string> Constants.TimeZones`<br>
+	- Add `System.TimeZoneInfo.GetTimeZoneString()`<br>

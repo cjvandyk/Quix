@@ -57,6 +57,11 @@ with these methods:
         A derived override method for Get() and Set() can be defined<br>
         using specific class objects if finer controls is needed.<br>_
 
+- ### **GetTimeZoneString()**
+    > _Get the registry ID string that can be used with<br>
+        TimeZoneInfo.FindSystemTimeZoneById() for time zone convertions.<br>
+        For example:<br>
+
 - ### **GetUrlRoot()**
     > _Get the URL root for the given string object containing a URL.<br>
         For example:<br>
