@@ -18,11 +18,47 @@ namespace Extensions
     /// </summary>
     public static class String
     {
+        #region Between
+
+        /// <summary>
+        /// Returns the string between two given string tokens.  If the opening
+        /// string is not found, an empty string is returned.  If the closing
+        /// string is not found, the string following the opening string is
+        /// returned.
+        /// </summary>
+        /// <param name="str">The given System.String object to process.</param>
+        /// <param name="fromThis">The opening string token from which the
+        /// string is to be returned.</param>
+        /// <param name="toThis">The closing string token to which the string
+        /// is to be returned.</param>
+        /// <param name="offset">Any offset from which to start.  Defaults
+        /// to zero.</param>
+        /// <returns></returns>
+        public static string Between(this string str,
+                                     string fromThis,
+                                     string toThis,
+                                     int offset = 0)
+        {
+            int begin = str.IndexOf(fromThis, offset);
+            if (begin == -1)
+            {
+                return string.Empty;
+            }
+            int end = str.IndexOf(toThis, begin);
+            if (end == -1)  //If second string not found, return whole from 1st.
+            {
+                return str.Substring(begin + fromThis.Length);
+            }
+            return str.Substring(begin + fromThis.Length, end - begin - fromThis.Length);
+        }
+
+        #endregion Between
+
         #region Encrypt
 
-        //public static string Encrypt(this System.String str, 
-        //                             string password, 
-        //                             Constants.EncryptionProvider provider = 
+        //public static string Encrypt(this System.String str,
+        //                             string password,
+        //                             Constants.EncryptionProvider provider =
         //                                Constants.EncryptionProvider.SHA512)
         //{
         //    System.Security.Cryptography.SHA512CryptoServiceProvider cryptoServiceProvider =
@@ -41,12 +77,12 @@ namespace Extensions
         //        managed.IV = hashIV;
         //        System.Security.Cryptography.ICryptoTransform encryptor =
         //            managed.CreateEncryptor(managed.Key, managed.IV);
-        //        using (System.IO.MemoryStream memoryStream = 
+        //        using (System.IO.MemoryStream memoryStream =
         //            new System.IO.MemoryStream())
         //        {
         //            using (System.Security.Cryptography.CryptoStream cryptoStream =
-        //                new System.Security.Cryptography.CryptoStream(memoryStream, 
-        //                                                              encryptor, 
+        //                new System.Security.Cryptography.CryptoStream(memoryStream,
+        //                                                              encryptor,
         //                                                              System.Security.Cryptography.CryptoStreamMode.Write))
         //            {
         //                using (System.IO.StreamWriter streamWriter =
@@ -106,7 +142,7 @@ namespace Extensions
         /// <summary>
         /// Get the URL root for the given string object containing a URL.
         /// For example:
-        ///   "https://blog.cjvandyk.com".GetUrlRoot() 
+        ///   "https://blog.cjvandyk.com".GetUrlRoot()
         ///   will return "https://blog.cjvandyk.com" whereas
         ///   "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
         ///   will also return "https://blog.cjvandyk.com".
@@ -123,7 +159,7 @@ namespace Extensions
         /// <summary>
         /// Get the URL root for the given string builder object containing a
         /// URL.  For example:
-        ///   "https://blog.cjvandyk.com".GetUrlRoot() 
+        ///   "https://blog.cjvandyk.com".GetUrlRoot()
         ///   will return "https://blog.cjvandyk.com" whereas
         ///   "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
         ///   will also return "https://blog.cjvandyk.com".
@@ -199,12 +235,12 @@ namespace Extensions
 
         #region HasSymbol()
         /// <summary>
-        /// Checks if the given System.String object contains symbols or 
+        /// Checks if the given System.String object contains symbols or
         /// special characters.
         /// </summary>
         /// <param name="str">The given string object to check.</param>
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
-        /// <returns>True if any characters in the given string are 
+        /// <returns>True if any characters in the given string are
         /// symbols or special characters, else False.</returns>
         public static bool HasSymbol(this System.String str,
                                           bool ignoreSpaces = true)
@@ -269,14 +305,14 @@ namespace Extensions
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are alphabetic,
         /// else False.</returns>
-        public static bool IsAlphabetic(this System.String str, 
+        public static bool IsAlphabetic(this System.String str,
                                         bool Classic = false,
                                         bool ignoreSpaces = true)
         {
             if (Classic)  //No LINQ available e.g. .NET 2.0
             {
                 return System.Text.RegularExpressions.Regex.IsMatch(
-                    (ignoreSpaces ? str.Replace(" ", "") : str), 
+                    (ignoreSpaces ? str.Replace(" ", "") : str),
                     @"^[a-zA-Z]+$");
             }
             else  //This method is on average 670% faster than RegEx method.
@@ -296,26 +332,26 @@ namespace Extensions
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are alphabetic,
         /// else False.</returns>
-        public static bool IsAlphabetic(this System.Text.StringBuilder str, 
+        public static bool IsAlphabetic(this System.Text.StringBuilder str,
                                         bool Classic = false,
                                         bool ignoreSpaces = true)
         {
-            return IsAlphabetic(str.ToString(), 
-                                Classic, 
+            return IsAlphabetic(str.ToString(),
+                                Classic,
                                 ignoreSpaces);
         }
         #endregion IsAlphabetic()
 
         #region IsAlphaNumeric()
         /// <summary>
-        /// Checks if the given string contains only alphabetic and numeric 
+        /// Checks if the given string contains only alphabetic and numeric
         /// characters.
         /// </summary>
         /// <param name="str">The given string object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of 
+        /// <param name="Classic">Switch to force RegEx comparison instead of
         /// Linq.</param>
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
-        /// <returns>True if all characters in the given string are either 
+        /// <returns>True if all characters in the given string are either
         /// alphabetic or numeric, else False.</returns>
         public static bool IsAlphaNumeric(this System.String str,
                                           bool Classic = false,
@@ -336,28 +372,28 @@ namespace Extensions
         }
 
         /// <summary>
-        /// Checks if the given string contains only alphabetic and numeric 
+        /// Checks if the given string contains only alphabetic and numeric
         /// characters.
         /// </summary>
         /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of 
+        /// <param name="Classic">Switch to force RegEx comparison instead of
         /// Linq.</param>
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
-        /// <returns>True if all characters in the given string are either 
+        /// <returns>True if all characters in the given string are either
         /// alphabetic or numeric, else False.</returns>
         public static bool IsAlphaNumeric(this System.Text.StringBuilder str,
                                           bool Classic = false,
                                           bool ignoreSpaces = true)
         {
-            return IsAlphaNumeric(str.ToString(), 
-                                  Classic, 
+            return IsAlphaNumeric(str.ToString(),
+                                  Classic,
                                   ignoreSpaces);
         }
         #endregion IsAlphaNumeric()
 
         #region IsChar()
         /// <summary>
-        /// Check if the given string contains only the characters in the 
+        /// Check if the given string contains only the characters in the
         /// Chars array being passed.
         /// </summary>
         /// <param name="str">The given string object to check.</param>
@@ -365,7 +401,7 @@ namespace Extensions
         /// in the string.</param>
         /// <param name="Classic">Switch to force RegEx comparison instead of
         /// Linq.</param>
-        /// <returns>True if the given string contains only characters in the 
+        /// <returns>True if the given string contains only characters in the
         /// Chars array, else False.</returns>
         public static bool IsChar(this System.String str,
                                   char[] Chars,
@@ -453,7 +489,7 @@ namespace Extensions
         /// <param name="str">The string object to check.</param>
         /// <param name="ignoreSpaces">Remove spaces before checking?</param>
         /// <returns>True if the object is all lower case, else False.</returns>
-        public static bool IsLower(this System.String str, 
+        public static bool IsLower(this System.String str,
                                    bool ignoreSpaces = true)
         {
             return (ignoreSpaces ? str.Replace(" ", "") : str)
@@ -483,7 +519,7 @@ namespace Extensions
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are numeric,
         /// else False.</returns>
-        public static bool IsNumeric(this System.String str, 
+        public static bool IsNumeric(this System.String str,
                                      bool Classic = false,
                                      bool ignoreSpaces = true)
         {
@@ -505,17 +541,17 @@ namespace Extensions
         /// Checks if the given string contains all numeric characters.
         /// </summary>
         /// <param name="str">The given string builder object to check.</param>
-        /// <param name="Classic">Switch to force RegEx comparison instead of 
+        /// <param name="Classic">Switch to force RegEx comparison instead of
         /// Linq.</param>
         /// <param name="ignoreSpaces">Remove spaces before compare?</param>
         /// <returns>True if all characters in the given string are numeric,
         /// else False.</returns>
-        public static bool IsNumeric(this System.Text.StringBuilder str, 
+        public static bool IsNumeric(this System.Text.StringBuilder str,
                                      bool Classic = false,
                                      bool ignoreSpaces = true)
         {
-            return IsNumeric(str.ToString(), 
-                             Classic, 
+            return IsNumeric(str.ToString(),
+                             Classic,
                              ignoreSpaces);
         }
         #endregion IsNumeric()
@@ -534,9 +570,9 @@ namespace Extensions
         /// Default is Yes.</param>
         /// <param name="requireNumeric">Are numbers required?
         /// Default is Yes.</param>
-        /// <param name="requireSymbol">Are symbols or special characters 
+        /// <param name="requireSymbol">Are symbols or special characters
         /// required?  Default is Yes.</param>
-        /// <returns>True if string matches all require... criteria, 
+        /// <returns>True if string matches all require... criteria,
         /// else False.</returns>
         public static bool IsStrong(this System.String str,
                                     int numberCriteriaRequired = 4,
@@ -551,7 +587,7 @@ namespace Extensions
                 return false;
             }
             int criteria = numberCriteriaRequired;
-            
+
             if (requireUpper)
             {
                 if (str.HasUpper())
@@ -619,7 +655,7 @@ namespace Extensions
         }
 
         /// <summary>
-        /// Checks if the given System.Test.StringBuilder object is a strong 
+        /// Checks if the given System.Test.StringBuilder object is a strong
         /// password string.
         /// </summary>
         /// <param name="str">The given string to check.</param>
@@ -631,9 +667,9 @@ namespace Extensions
         /// Default is Yes.</param>
         /// <param name="requireNumeric">Are numbers required?
         /// Default is Yes.</param>
-        /// <param name="requireSymbol">Are symbols or special characters 
+        /// <param name="requireSymbol">Are symbols or special characters
         /// required?  Default is Yes.</param>
-        /// <returns>True if string matches all require... criteria, 
+        /// <returns>True if string matches all require... criteria,
         /// else False.</returns>
         public static bool IsStrong(this System.Text.StringBuilder str,
                                     int numberCriteriaRequired = 4,
@@ -658,7 +694,7 @@ namespace Extensions
         /// <param name="str">The string object to check.</param>
         /// <param name="ignoreSpaces">Remove spaces before checking?</param>
         /// <returns>True if the entire string is upper case, else False.</returns>
-        public static bool IsUpper(this System.String str, 
+        public static bool IsUpper(this System.String str,
                                    bool ignoreSpaces = true)
         {
             return (ignoreSpaces ? str.Replace(" ", "") : str)
@@ -682,12 +718,12 @@ namespace Extensions
         /// <summary>
         /// Check if the given string object containing a URL, is that of the
         /// URL root only.  Returns True if so, False if not.  For example:
-        ///   "https://blog.cjvandyk.com".IsUrlRootOnly() 
+        ///   "https://blog.cjvandyk.com".IsUrlRootOnly()
         ///   will return True whereas
         ///   "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
         ///   will return False.
         /// </summary>
-        /// <param name="url">The System.String object containing the URL to 
+        /// <param name="url">The System.String object containing the URL to
         /// be checked.</param>
         /// <returns>True if the URL is a root, False if not.</returns>
         public static bool IsUrlRoot(this System.String url)
@@ -701,14 +737,14 @@ namespace Extensions
 
         /// <summary>
         /// Check if the given string builder object containing a URL, is that
-        ///  of the URL root only.  Returns True if so, False if not.  
+        ///  of the URL root only.  Returns True if so, False if not.
         ///  For example:
-        ///   "https://blog.cjvandyk.com".IsUrlRootOnly() 
+        ///   "https://blog.cjvandyk.com".IsUrlRootOnly()
         ///   will return True whereas
         ///   "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
         ///   will return False.
         /// </summary>
-        /// <param name="url">The System.Text.StringBuilder object containing 
+        /// <param name="url">The System.Text.StringBuilder object containing
         /// the URL to be checked.</param>
         /// <returns>True if the URL is a root, False if not.</returns>
         public static bool IsUrlRoot(this System.Text.StringBuilder url)
@@ -782,9 +818,9 @@ namespace Extensions
             {
                 if (parts.Length == 2)
                 {
-                    return (str.Length == 10 && 
-                            IsZipCode5Digits(parts[0]) && 
-                            parts[1].Length == 4 && 
+                    return (str.Length == 10 &&
+                            IsZipCode5Digits(parts[0]) &&
+                            parts[1].Length == 4 &&
                             int.TryParse(parts[1], out _));
                 }
             }
@@ -810,7 +846,7 @@ namespace Extensions
         /// <returns>True if a 5 digit numeric, else False.</returns>
         private static bool IsZipCode5Digits(this System.String str)
         {
-            return (str.Length == 5 && 
+            return (str.Length == 5 &&
                     int.TryParse(str, out _));
         }
         #endregion IsZipCode()
@@ -849,7 +885,7 @@ namespace Extensions
         /// <param name="Paragraphs">An integer with the number of paragraphs
         /// to be returned.  Presently supports 1-10</param>
         /// <returns>The string containing the generated dummy text.</returns>
-        public static string LoremIpsum(this System.String str, 
+        public static string LoremIpsum(this System.String str,
                                         int Paragraphs)
         {
             str = null;
@@ -869,7 +905,7 @@ namespace Extensions
         /// <param name="Paragraphs">An integer with the number of paragraphs
         /// to be returned.  Presently supports 1-10</param>
         /// <returns>The string containing the generated dummy text.</returns>
-        public static System.Text.StringBuilder LoremIpsum(this System.Text.StringBuilder str, 
+        public static System.Text.StringBuilder LoremIpsum(this System.Text.StringBuilder str,
                                                            int Paragraphs)
         {
             str.Clear();
@@ -889,8 +925,8 @@ namespace Extensions
         /// <param name="str">The System.String text in Morse code format.</param>
         /// <param name="frequency">The beep frequency.</param>
         /// <param name="duration">The duration of a dot beep in ms.</param>
-        public static void MorseCodeBeep(this System.String str, 
-                                         int frequency = 999, 
+        public static void MorseCodeBeep(this System.String str,
+                                         int frequency = 999,
                                          int duration = 200)
         {
             foreach (char c in str)
@@ -924,8 +960,8 @@ namespace Extensions
         /// code format.</param>
         /// <param name="frequency">The beep frequency.</param>
         /// <param name="duration">The duration of a dot beep in ms.</param>
-        public static void MorseCodeBeep(this System.Text.StringBuilder str, 
-                                         int frequency = 999, 
+        public static void MorseCodeBeep(this System.Text.StringBuilder str,
+                                         int frequency = 999,
                                          int duration = 200)
         {
             MorseCodeBeep(str.ToString(), frequency, duration);
@@ -943,7 +979,7 @@ namespace Extensions
         /// <param name="tokens">A Dictionary of tokens and replacement
         /// strings to be used for replacement.</param>
         /// <returns>A System.String value with tokens replaced.</returns>
-        public static string ReplaceTokens(this System.String str, 
+        public static string ReplaceTokens(this System.String str,
                                            Dictionary<string, string> tokens)
         {
             string returnValue = str;
@@ -964,7 +1000,7 @@ namespace Extensions
         /// <param name="tokens">A Dictionary of tokens and replacement
         /// strings to be used for replacement.</param>
         /// <returns>A System.Text.StringBuilder value with tokens replaced.</returns>
-        public static System.Text.StringBuilder ReplaceTokens(this System.Text.StringBuilder str, 
+        public static System.Text.StringBuilder ReplaceTokens(this System.Text.StringBuilder str,
                                                               Dictionary<string, string> tokens)
         {
             str.Clear();
@@ -985,14 +1021,14 @@ namespace Extensions
         /// space removed and all other spaces reduced to single space.</returns>
         public static string RemoveExtraSpace(this System.String str)
         {
-            return System.Text.RegularExpressions.Regex.Replace(str.Trim(), 
-                                                                "\\s+", 
+            return System.Text.RegularExpressions.Regex.Replace(str.Trim(),
+                                                                "\\s+",
                                                                 " ");
         }
 
         /// <summary>
         /// Trims leading and trailing white space and then removes all extra
-        /// white space in the given System.Text.StringBuilder returning a 
+        /// white space in the given System.Text.StringBuilder returning a
         /// single spaced result.
         /// </summary>
         /// <param name="str">The given System.Text.StringBuilder object from
@@ -1096,7 +1132,7 @@ namespace Extensions
             char separator = '&',
             char assigner = '=')
         {
-            System.Collections.Specialized.NameValueCollection nvc = 
+            System.Collections.Specialized.NameValueCollection nvc =
                 new System.Collections.Specialized.NameValueCollection();
             foreach (KeyValuePair<string, string> kvp in QueryStringToDictionary(str))
             {
@@ -1120,17 +1156,17 @@ namespace Extensions
         /// <param name="str">The given string to convert to Morse code.</param>
         /// <param name="includeSpaces">Are spaces included in translation.</param>
         /// <returns>The Morse code represenation of the given string.</returns>
-        public static string ToMorseCode(this System.String str, 
+        public static string ToMorseCode(this System.String str,
                                          bool includeSpaces = true)
         {
-            System.Text.StringBuilder returnValue = 
+            System.Text.StringBuilder returnValue =
                 new System.Text.StringBuilder();
             string tempStr = "";
             foreach (char c in str.ToLower())
             {
                 if (Constants.MorseCode.TryGetValue(c, out tempStr))
                 {
-                    returnValue.Append(c != ' ' ? tempStr : 
+                    returnValue.Append(c != ' ' ? tempStr :
                         (includeSpaces ? tempStr : ""));
                 }
                 else
@@ -1154,7 +1190,7 @@ namespace Extensions
         /// <param name="str">The given string to convert to Morse code.</param>
         /// <param name="includeSpaces">Are spaces included in translation.</param>
         /// <returns>The Morse code represenation of the given string.</returns>
-        public static string ToMorseCode(this System.Text.StringBuilder str, 
+        public static string ToMorseCode(this System.Text.StringBuilder str,
                                          bool includeSpaces = true)
         {
             return (str.ToString());
@@ -1163,7 +1199,7 @@ namespace Extensions
 
         #region TrimLength()
         /// <summary>
-        /// Returns part of the given System.String object tuncated to 
+        /// Returns part of the given System.String object tuncated to
         /// the requested length minus the length of the suffix.
         /// If the string is null or empty, it returns said value.
         /// If the string is shorter than the requested length, it returns
@@ -1173,10 +1209,10 @@ namespace Extensions
         /// <param name="length">The requested length of the return string.</param>
         /// <param name="suffix">The string appended to the end of the
         /// returned string.  Default value is "..."</param>
-        /// <returns>Returns part of the given System.String object tuncated 
+        /// <returns>Returns part of the given System.String object tuncated
         /// to the requested length minus the length of the suffix.</returns>
-        public static string TrimLength(this System.String str, 
-                                        int length, 
+        public static string TrimLength(this System.String str,
+                                        int length,
                                         string suffix = "...")
         {
             return (string.IsNullOrEmpty(str) || str.Length < length ? str :
@@ -1184,8 +1220,8 @@ namespace Extensions
         }
 
         /// <summary>
-        /// Returns part of the given System.Text.StringBuilder object 
-        /// tuncated to the requested length minus the length of the 
+        /// Returns part of the given System.Text.StringBuilder object
+        /// tuncated to the requested length minus the length of the
         /// suffix.
         /// If the string is null or empty, it returns said value.
         /// If the string is shorter than the requested length, it returns
@@ -1195,9 +1231,9 @@ namespace Extensions
         /// <param name="length">The requested length of the return string.</param>
         /// <param name="suffix">The string appended to the end of the
         /// returned string.  Default value is "..."</param>
-        /// <returns>Returns part of the given System.String object tuncated 
+        /// <returns>Returns part of the given System.String object tuncated
         /// to the requested length minus the length of the suffix.</returns>
-        public static string TrimLength(this System.Text.StringBuilder str, 
+        public static string TrimLength(this System.Text.StringBuilder str,
                                         int length,
                                         string suffix = "...")
         {
@@ -1209,7 +1245,7 @@ namespace Extensions
         /// <summary>
         /// Returns the number of words in the given string object.
         /// </summary>
-        /// <param name="str">A System.String object for which to count 
+        /// <param name="str">A System.String object for which to count
         /// words.</param>
         /// <returns>The number of words in the given object.</returns>
         public static int Words(this System.String str)
@@ -1254,10 +1290,10 @@ namespace Extensions
         //    {
         //        System.IO.File.WriteAllBytes(
         //            filePath.ToLower()
-        //                    .TrimEnd(new char[] { 
-        //                        '.', 
-        //                        't', 
-        //                        'x', 
+        //                    .TrimEnd(new char[] {
+        //                        '.',
+        //                        't',
+        //                        'x',
         //                        't'}),
         //            Convert.FromBase64String(
         //                System.IO.File.ReadAllText(filePath)));
